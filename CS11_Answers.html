@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Science XI – Exam Answers</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --paper: #fdf8f0;
+    --cream: #f5ede0;
+    --ruled: #ddd0bb;
+    --accent: #8b1a1a;
+    --accent2: #1a4d8b;
+    --gold: #c8860a;
+    --pale: #faf5ec;
+    --mark: #fff3cd;
+    --shadow: rgba(100,60,10,0.13);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #c9b99a;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(100,70,30,0.04) 40px, rgba(100,70,30,0.04) 80px);
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  /* ── HEADER ── */
+  .exam-header {
+    max-width: 860px;
+    margin: 0 auto 32px;
+    background: var(--accent);
+    border-radius: 4px 4px 0 0;
+    padding: 24px 36px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .exam-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      -55deg, transparent, transparent 8px,
+      rgba(255,255,255,0.04) 8px, rgba(255,255,255,0.04) 9px
+    );
+  }
+  .exam-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 0.03em;
+  }
+  .exam-header p {
+    color: rgba(255,255,255,0.82);
+    font-size: 1.05rem;
+    margin-top: 4px;
+  }
+  .exam-header .badge {
+    position: absolute;
+    right: 36px; top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    padding: 6px 14px;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* ── PRINT BAR ── */
+  .print-bar {
+    max-width: 860px;
+    margin: 0 auto 0;
+    background: var(--gold);
+    padding: 9px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .print-bar span { color: #fff; font-size: 0.88rem; font-style: italic; }
+  .print-bar button {
+    background: #fff;
+    color: var(--gold);
+    border: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 16px;
+    border-radius: 2px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .print-bar button:hover { background: var(--ink); color: #fff; }
+
+  /* ── SHEET ── */
+  .sheet {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    box-shadow: 0 8px 48px var(--shadow), 0 2px 8px rgba(0,0,0,0.10);
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+  }
+
+  /* ruled lines effect */
+  .sheet-inner {
+    padding: 0 48px 60px 72px;
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 31px,
+        var(--ruled) 31px,
+        var(--ruled) 32px
+      );
+    background-size: 100% 32px;
+    background-position: 0 60px;
+    position: relative;
+  }
+  /* red margin line */
+  .sheet-inner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 52px; bottom: 0;
+    width: 1.5px;
+    background: rgba(180,40,40,0.25);
+  }
+
+  /* ── QUESTION BLOCK ── */
+  .q-block {
+    padding-top: 28px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--cream);
+    animation: fadeUp 0.4s ease both;
+  }
+  .q-block:last-child { border-bottom: none; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .q-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .sub-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent2);
+    margin: 18px 0 6px;
+  }
+
+  p, li {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink);
+  }
+
+  ul, ol {
+    padding-left: 22px;
+    margin: 6px 0;
+  }
+
+  li { margin-bottom: 2px; }
+
+  /* ── HIGHLIGHT ANSWER ── */
+  .ans {
+    display: inline-block;
+    background: var(--mark);
+    border: 1px solid #e6c800;
+    border-radius: 2px;
+    padding: 0 6px;
+    font-weight: 700;
+    color: #7a5800;
+  }
+
+  /* ── STEPS BOX ── */
+  .steps {
+    background: var(--cream);
+    border-left: 3px solid var(--accent2);
+    border-radius: 0 3px 3px 0;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88rem;
+    line-height: 2;
+    white-space: pre-wrap;
+    color: #1a2a4d;
+  }
+
+  /* ── COMPARISON TABLE ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.96rem;
+  }
+  thead th {
+    background: var(--accent2);
+    color: #fff;
+    padding: 7px 12px;
+    text-align: left;
+    font-family: 'Crimson Pro', serif;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+  tbody td {
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--ruled);
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) td { background: rgba(200,185,160,0.18); }
+  tbody tr:hover td { background: rgba(200,185,160,0.35); }
+
+  /* ── CONVERSION TABLE (small) ── */
+  .conv-table {
+    display: inline-table;
+    border-collapse: collapse;
+    margin: 6px 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.84rem;
+  }
+  .conv-table th {
+    background: #3a5a8a;
+    color: #fff;
+    padding: 4px 10px;
+  }
+  .conv-table td {
+    background: var(--pale);
+    padding: 4px 10px;
+    border: 1px solid var(--ruled);
+    text-align: center;
+  }
+
+  /* ── RESULT LINE ── */
+  .result {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.96rem;
+    margin: 6px 0;
+    display: block;
+  }
+
+  /* ── DIVIDER ── */
+  .qdiv {
+    text-align: center;
+    color: var(--ruled);
+    font-size: 1.3rem;
+    letter-spacing: 8px;
+    padding: 8px 0 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .print-bar, .exam-header .badge { display: none; }
+    .sheet { box-shadow: none; }
+    .sheet-inner {
+      background-image: repeating-linear-gradient(
+        to bottom, transparent 0px, transparent 31px, #ccc 31px, #ccc 32px
+      );
+    }
+    .q-block { page-break-inside: avoid; }
+  }
+
+  @media (max-width: 600px) {
+    .sheet-inner { padding: 0 16px 40px 28px; }
+    .exam-header { padding: 18px 20px; }
+    .exam-header .badge { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="exam-header">
+  <h1>Computer Science – XI</h1>
+  <p>Second Term Examination &nbsp;|&nbsp; Marks: 50 &nbsp;|&nbsp; Time: 3 Hrs</p>
+  <div class="badge">JAI BAJRANG<br>Jr. COLLEGE<br>KUMBHARI</div>
+</div>
+<div class="print-bar">
+  <span>💡 Copy answers directly onto your answer sheet</span>
+  <button onclick="window.print()">🖨 Print</button>
+</div>
+
+<div class="sheet">
+<div class="sheet-inner">
+
+<!-- ══════════════════════════════════════════════ -->
+<div class="q-block">
+  <div class="q-title">Q.1.(A) — Select the correct alternative &nbsp;(4 marks)</div>
+
+  <p><b>(1)</b> ASCII code is basically &nbsp;<span class="ans">(iii) 7 bit code</span></p>
+  <p style="margin-left:16px; font-size:0.96rem; color:#555;">Reason: ASCII uses 7 bits → can represent 2⁷ = 128 characters.</p>
+
+  <p style="margin-top:10px;"><b>(2)</b> Pseudo code is used in &nbsp;<span class="ans">(ii) Program design</span></p>
+  <p style="margin-left:16px; font-size:0.96rem; color:#555;">Reason: Pseudo code is written during the design phase to plan the logic before coding.</p>
+
+  <p style="margin-top:10px;"><b>(3)</b> FTP is &nbsp;<span class="ans">(i) File Transfer Protocol</span></p>
+
+  <p style="margin-top:10px;"><b>(4)</b> When multiple computers are capable of processing then it is &nbsp;<span class="ans">(ii) Distributed computing</span></p>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<div class="q-block">
+  <div class="q-title">Q.1.(B) — Answer any TWO &nbsp;(6 marks)</div>
+
+  <div class="sub-title">(a) What is Program Design?</div>
+  <p>Program design is the process of <b>planning the solution to a problem before writing actual code</b>. It involves breaking the problem into smaller logical steps and deciding how each step will be solved.</p>
+  <p><b>Tools used in program design:</b></p>
+  <ul>
+    <li>Algorithm – step-by-step logical instructions</li>
+    <li>Flowchart – graphical representation of logic</li>
+    <li>Pseudo code – English-like description of program logic</li>
+  </ul>
+  <p><b>Importance:</b> Good program design reduces errors, saves time, and makes coding easier.</p>
+
+  <div class="sub-title">(b) Solve the following</div>
+  <p><b>i) (2CBA)₁₆ = ( ? )₂</b></p>
+  <p>Convert each hexadecimal digit to its 4-bit binary equivalent:</p>
+  <div style="margin: 8px 0;">
+    <table class="conv-table">
+      <tr><th>Hex</th><th>Binary</th></tr>
+      <tr><td>2</td><td>0010</td></tr>
+      <tr><td>C</td><td>1100</td></tr>
+      <tr><td>B</td><td>1011</td></tr>
+      <tr><td>A</td><td>1010</td></tr>
+    </table>
+  </div>
+  <span class="result">∴ (2CBA)₁₆ = 0010 1100 1011 1010 ₂</span>
+
+  <p style="margin-top:12px;"><b>ii) (1101101.1101)₂ = ( ? )₁₆</b></p>
+  <p>Group bits in sets of 4 from the decimal point (left = integer, right = fraction):</p>
+  <div class="steps">Integer part:  1101101  →  group from right  →  0110 1101  →  6   D
+Fraction part: .1101                                                →  D
+
+∴ (1101101.1101)₂  =  6D.D ₁₆</span></div>
+  <span class="result">∴ (1101101.1101)₂ = 6D.D₁₆</span>
+
+  <div class="sub-title">(c) What are Algorithms?</div>
+  <p>An <b>algorithm</b> is a finite, well-defined, step-by-step set of instructions written to solve a particular problem.</p>
+  <p><b>Properties of an Algorithm:</b></p>
+  <ol>
+    <li><b>Input</b> – Takes zero or more inputs</li>
+    <li><b>Output</b> – Produces at least one output</li>
+    <li><b>Definiteness</b> – Each step is clear and unambiguous</li>
+    <li><b>Finiteness</b> – Must end after a finite number of steps</li>
+    <li><b>Effectiveness</b> – Each step must be simple and practically executable</li>
+  </ol>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<div class="q-block">
+  <div class="q-title">Q.2.(A) — Answer any TWO &nbsp;(6 marks)</div>
+
+  <div class="sub-title">(a) Convert (1F8)₁₆</div>
+  <p><b>i) (1F8)₁₆ = ( ? )₂</b></p>
+  <div style="margin: 6px 0;">
+    <table class="conv-table">
+      <tr><th>Hex</th><th>Binary</th></tr>
+      <tr><td>1</td><td>0001</td></tr>
+      <tr><td>F</td><td>1111</td></tr>
+      <tr><td>8</td><td>1000</td></tr>
+    </table>
+  </div>
+  <span class="result">∴ (1F8)₁₆ = 0001 1111 1000 ₂</span>
+
+  <p style="margin-top:12px;"><b>ii) (1F8)₁₆ = ( ? )₁₀</b></p>
+  <div class="steps">= 1 × 16²  +  F × 16¹  +  8 × 16⁰
+= 1 × 256  + 15 × 16  +  8 × 1
+= 256  +  240  +  8
+= 504</div>
+  <span class="result">∴ (1F8)₁₆ = 504₁₀</span>
+
+  <div class="sub-title">(b) What is Transmission Medium?</div>
+  <p>A <b>transmission medium</b> is the physical or wireless path through which data travels from sender to receiver in a network.</p>
+  <p><b>Types:</b></p>
+  <ol>
+    <li><b>Wired (Guided):</b>
+      <ul>
+        <li>Twisted Pair Cable – used in telephone and LAN</li>
+        <li>Coaxial Cable – used in cable TV</li>
+        <li>Optical Fiber – uses light; very high speed</li>
+      </ul>
+    </li>
+    <li><b>Wireless (Unguided):</b>
+      <ul>
+        <li>Radio Waves – used in FM, Wi-Fi</li>
+        <li>Microwave – used in long-distance communication</li>
+        <li>Satellite – covers large areas globally</li>
+        <li>Infrared – short-range (TV remote)</li>
+      </ul>
+    </li>
+  </ol>
+
+  <div class="sub-title">(c) What is Centralized Computing? Explain.</div>
+  <p><b>Centralized computing</b> is a type of computing in which all processing is done by <b>one central, powerful computer</b> (usually a mainframe or server). Other terminals (called dumb terminals) are connected to this central computer.</p>
+  <p>The terminals only send requests and display results — they do <b>no processing themselves</b>.</p>
+  <p><b>Advantages:</b></p>
+  <ul>
+    <li>Easy to manage and maintain</li>
+    <li>All data is stored in one place (centralized control)</li>
+    <li>Better security</li>
+  </ul>
+  <p><b>Disadvantages:</b></p>
+  <ul>
+    <li>If central computer fails, the entire system stops working</li>
+    <li>Heavy load on the central computer</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<div class="q-block">
+  <div class="q-title">Q.2.(B) — Answer any ONE &nbsp;(4 marks)</div>
+
+  <div class="sub-title">(a) Explain: (i) ASCII &nbsp;&nbsp; (ii) BCD</div>
+  <p><b>i) ASCII (American Standard Code for Information Interchange):</b></p>
+  <ul>
+    <li>ASCII is a <b>7-bit character encoding standard</b>.</li>
+    <li>It can represent 2⁷ = <b>128 characters</b> including letters, digits, and symbols.</li>
+    <li>Example: 'A' = 65 in decimal = 1000001 in binary.</li>
+    <li>Used to store and transmit text in computers.</li>
+  </ul>
+  <p style="margin-top:8px;"><b>ii) BCD (Binary Coded Decimal):</b></p>
+  <ul>
+    <li>In BCD, each <b>decimal digit is separately converted</b> to its 4-bit binary equivalent.</li>
+    <li>Example: 25 in BCD = 0010 0101</li>
+    <li>Used in calculators and digital displays.</li>
+  </ul>
+
+  <div class="sub-title">(b) Describe with example: (i) WWW &nbsp;&nbsp; (ii) E-Commerce</div>
+  <p><b>i) WWW (World Wide Web):</b></p>
+  <ul>
+    <li>The WWW is a system of <b>interlinked hypertext documents</b> accessed over the internet using a browser.</li>
+    <li>It was invented by <b>Tim Berners-Lee</b> in 1989.</li>
+    <li>Example: Visiting <i>www.google.com</i> – your browser loads a web page stored on a server.</li>
+  </ul>
+  <p style="margin-top:8px;"><b>ii) E-Commerce (Electronic Commerce):</b></p>
+  <ul>
+    <li>E-Commerce means <b>buying and selling of goods and services over the internet</b>.</li>
+    <li>Types: B2B (Business to Business), B2C (Business to Consumer), C2C (Consumer to Consumer).</li>
+    <li>Example: Amazon, Flipkart – users browse products, place orders, and pay online.</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<div class="q-block">
+  <div class="q-title">Q.3.(A) — Answer any TWO &nbsp;(6 marks)</div>
+
+  <div class="sub-title">(1) What is Networking? Explain what is Protocol.</div>
+  <p><b>Networking:</b> Networking means <b>connecting two or more computers together</b> using communication links so they can share data and resources (printers, internet, etc.).</p>
+  <p><b>Types of Networks:</b></p>
+  <ul>
+    <li><b>LAN</b> – Local Area Network (within a building)</li>
+    <li><b>MAN</b> – Metropolitan Area Network (a city)</li>
+    <li><b>WAN</b> – Wide Area Network (countries/worldwide)</li>
+  </ul>
+  <p style="margin-top:8px;"><b>Protocol:</b> A protocol is a <b>set of rules that governs communication</b> between computers in a network. It ensures data is sent and received correctly.</p>
+  <p><b>Examples of Protocols:</b> TCP/IP, HTTP, FTP, SMTP, POP3.</p>
+
+  <div class="sub-title">(2) Solve the following conversions</div>
+  <p><b>i) (A9B)₁₆ = ( ? )₁₀</b></p>
+  <div class="steps">= A × 16²  +  9 × 16¹  +  B × 16⁰
+= 10 × 256  +  9 × 16  +  11 × 1
+= 2560  +  144  +  11
+= 2715</div>
+  <span class="result">∴ (A9B)₁₆ = 2715₁₀</span>
+
+  <p style="margin-top:12px;"><b>ii) (0011011101)₂ = ( ? )₁₀</b></p>
+  <div class="steps">= 0×2⁹ + 0×2⁸ + 1×2⁷ + 1×2⁶ + 0×2⁵ + 1×2⁴ + 1×2³ + 1×2² + 0×2¹ + 1×2⁰
+=  0  +  0  + 128 +  64  +  0  +  16  +   8  +   4  +  0  +  1
+= 221</div>
+  <span class="result">∴ (0011011101)₂ = 221₁₀</span>
+
+  <p style="margin-top:12px;"><b>iii) (3905)₁₀ = ( ? )₁₆</b></p>
+  <div class="steps">3905 ÷ 16 = 244  remainder  1
+ 244 ÷ 16 =  15  remainder  4
+  15 ÷ 16 =   0  remainder  15 → F
+
+Read remainders from bottom to top: F, 4, 1</div>
+  <span class="result">∴ (3905)₁₀ = F41₁₆</span>
+  <p style="font-size:0.92rem; color:#555;">Verification: 15×256 + 4×16 + 1 = 3840 + 64 + 1 = 3905 ✓</p>
+
+  <div class="sub-title">(3) What is E-Mail?</div>
+  <p>E-Mail (Electronic Mail) is a method of <b>sending and receiving messages digitally over the internet</b>. It allows users to send text, files, and attachments instantly to any person with an email address.</p>
+  <p><b>Components of E-Mail:</b></p>
+  <ul>
+    <li>Sender's email address</li>
+    <li>Receiver's email address</li>
+    <li>Subject, Body, and Attachments</li>
+  </ul>
+  <p><b>Protocols used:</b></p>
+  <ul>
+    <li><b>SMTP</b> (Simple Mail Transfer Protocol) – for sending email</li>
+    <li><b>POP3 / IMAP</b> – for receiving email</li>
+  </ul>
+  <p>Example: <i>yash@gmail.com</i></p>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<div class="q-block">
+  <div class="q-title">Q.3.(B) — Solve any ONE &nbsp;(4 marks)</div>
+
+  <div class="sub-title">(1) Advantages of Collaborative Computing</div>
+  <ol>
+    <li>Multiple users can work on the same project simultaneously from different locations.</li>
+    <li>Improves productivity and reduces the time to complete tasks.</li>
+    <li>Resources such as files, printers, and internet are shared easily.</li>
+    <li>Easy communication through email, video conferencing, and messaging tools.</li>
+    <li>Helps in decision making as different people can contribute ideas.</li>
+    <li>Cost-effective as resources are shared among users.</li>
+  </ol>
+
+  <div class="sub-title">(2) Convert the following</div>
+  <p><b>i) (98.58)₁₀ = ( ? )₂</b></p>
+  <div class="steps">Integer part – 98:
+98 ÷ 2 = 49  r  0
+49 ÷ 2 = 24  r  1
+24 ÷ 2 = 12  r  0
+12 ÷ 2 =  6  r  0
+ 6 ÷ 2 =  3  r  0
+ 3 ÷ 2 =  1  r  1
+ 1 ÷ 2 =  0  r  1
+Reading remainders bottom to top: 1100010
+
+Fractional part – 0.58:
+0.58 × 2 = 1.16  → 1
+0.16 × 2 = 0.32  → 0
+0.32 × 2 = 0.64  → 0
+0.64 × 2 = 1.28  → 1
+0.28 × 2 = 0.56  → 0
+0.56 × 2 = 1.12  → 1
+Fraction bits: .100101</div>
+  <span class="result">∴ (98.58)₁₀ ≈ 1100010.100101₂</span>
+
+  <p style="margin-top:12px;"><b>ii) (2E.8)₁₆ = ( ? )₁₀</b></p>
+  <div class="steps">= 2 × 16¹  +  E × 16⁰  +  8 × 16⁻¹
+= 2 × 16   + 14 × 1   +  8 ÷ 16
+= 32  +  14  +  0.5
+= 46.5</div>
+  <span class="result">∴ (2E.8)₁₆ = 46.5₁₀</span>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<div class="q-block">
+  <div class="q-title">Q.4.(A) — Answer any TWO &nbsp;(6 marks)</div>
+
+  <div class="sub-title">(1) Characteristics of an Algorithm</div>
+  <ol>
+    <li><b>Input:</b> An algorithm takes zero or more inputs from the user.</li>
+    <li><b>Output:</b> It must produce at least one output or result.</li>
+    <li><b>Definiteness:</b> Every step must be clear, precise, and unambiguous.</li>
+    <li><b>Finiteness:</b> The algorithm must end after a finite number of steps.</li>
+    <li><b>Effectiveness:</b> Each step must be basic, simple, and practically possible to execute.</li>
+  </ol>
+
+  <div class="sub-title">(2) What is Pseudo Code?</div>
+  <p>Pseudo code is an <b>informal, English-like description</b> of a program's logic. It is not written in any specific programming language — it uses simple English statements to describe steps.</p>
+  <p><b>Features:</b></p>
+  <ul>
+    <li>Easy to understand by non-programmers</li>
+    <li>Used in program design phase</li>
+    <li>No special syntax rules — just simple logic</li>
+  </ul>
+  <p><b>Example</b> (Find if a number is positive or not):</p>
+  <div class="steps">START
+  READ num
+  IF num > 0 THEN
+    PRINT "Number is Positive"
+  ELSE
+    PRINT "Number is not Positive"
+  END IF
+END</div>
+
+  <div class="sub-title">(3) Double-Double Method (with example)</div>
+  <p>The <b>double-double method</b> is used to convert a binary number to decimal. Start from the <b>leftmost bit</b>, double it, and add the next bit. Repeat until all bits are used.</p>
+  <p><b>Example: (1101)₂ = ( ? )₁₀</b></p>
+  <div class="steps">Step 1: Start with leftmost bit = 1
+Step 2: Double it and add next bit → 1×2 + 1 = 3
+Step 3: Double and add next bit  → 3×2 + 0 = 6
+Step 4: Double and add next bit  → 6×2 + 1 = 13</div>
+  <span class="result">∴ (1101)₂ = 13₁₀</span>
+  <p style="font-size:0.92rem; color:#555;">Verification: 1×8 + 1×4 + 0×2 + 1×1 = 8+4+0+1 = 13 ✓</p>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<div class="q-block">
+  <div class="q-title">Q.4.(B) — Solve any ONE &nbsp;(4 marks)</div>
+
+  <div class="sub-title">(1) What is a Flowchart? Explain in detail.</div>
+  <p>A <b>flowchart</b> is a <b>graphical or diagrammatic representation</b> of the steps of an algorithm or program using standard symbols connected by arrows.</p>
+  <p><b>Standard Flowchart Symbols:</b></p>
+  <table>
+    <thead><tr><th>Symbol</th><th>Shape</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td>Terminal</td><td>Oval</td><td>Start / End of program</td></tr>
+      <tr><td>Input/Output</td><td>Parallelogram</td><td>READ or PRINT operations</td></tr>
+      <tr><td>Process</td><td>Rectangle</td><td>Calculations / assignments</td></tr>
+      <tr><td>Decision</td><td>Diamond</td><td>Conditions / branching (Yes/No)</td></tr>
+      <tr><td>Flow lines</td><td>Arrows</td><td>Show direction of flow</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-title">(2) Subtraction using 2's Complement</div>
+  <p><b>i) 1010 − 101</b></p>
+  <div class="steps">101 written as 4-bit: 0101
+1's complement of 0101 = 1010
+2's complement         = 1010 + 1 = 1011
+
+  1010
++ 1011
+──────
+ 10101  ← carry (discard it)
+  0101</div>
+  <span class="result">∴ 1010 − 101 = 0101₂ = 5₁₀ &nbsp;&nbsp; (Since 10 − 5 = 5 ✓)</span>
+
+  <p style="margin-top:14px;"><b>ii) 1001 − 1110</b></p>
+  <div class="steps">1's complement of 1110 = 0001
+2's complement         = 0001 + 1 = 0010
+
+  1001
++ 0010
+──────
+  1011  ← No carry → result is NEGATIVE
+
+2's complement of 1011 = 0101</div>
+  <span class="result">∴ 1001 − 1110 = −0101₂ = −5₁₀ &nbsp;&nbsp; (Since 9 − 14 = −5 ✓)</span>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<div class="q-block">
+  <div class="q-title">Q.5.(A) — Answer any TWO &nbsp;(6 marks)</div>
+
+  <div class="sub-title">(1) Advantages of Flowchart</div>
+  <ol>
+    <li>Makes the logic of a program <b>easy to understand</b> visually.</li>
+    <li>Helps in <b>detecting errors</b> (debugging) in the program logic.</li>
+    <li>Acts as a <b>guide during coding</b> — programmer follows the flowchart.</li>
+    <li>Useful for <b>documentation</b> — others can understand the program easily.</li>
+    <li>Helps in <b>communication</b> between team members working on the same project.</li>
+    <li>Simplifies <b>complex logic</b> into clear, understandable steps.</li>
+  </ol>
+
+  <div class="sub-title">(2) What is Client-Server Network?</div>
+  <p>In a <b>client-server network</b>, computers are divided into two roles:</p>
+  <ul>
+    <li><b>Server:</b> A powerful computer that stores data and provides services (files, internet, printers) to other computers.</li>
+    <li><b>Client:</b> A computer that requests services from the server.</li>
+  </ul>
+  <p><b>Features:</b></p>
+  <ul>
+    <li>Centralized control and management</li>
+    <li>Better security — data is stored on the server</li>
+    <li>Easy to add more clients (scalable)</li>
+    <li>If the server fails, clients cannot access resources</li>
+  </ul>
+
+  <div class="sub-title">(3) What is Distributed Computing?</div>
+  <p>In <b>distributed computing</b>, processing is <b>spread across multiple computers</b> connected through a network. Each computer handles part of the task simultaneously, and the results are combined.</p>
+  <p><b>Advantages:</b></p>
+  <ul>
+    <li><b>Fault tolerant</b> – if one computer fails, others continue working</li>
+    <li>Faster processing due to parallel computation</li>
+    <li>Easily scalable by adding more computers</li>
+    <li>Efficient use of resources</li>
+    <li>No single point of failure</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<div class="q-block">
+  <div class="q-title">Q.5.(B) — Answer any ONE &nbsp;(4 marks)</div>
+
+  <div class="sub-title">(1) Difference between LAN and WAN</div>
+  <table>
+    <thead>
+      <tr><th>Point</th><th>LAN</th><th>WAN</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>Full Form</b></td><td>Local Area Network</td><td>Wide Area Network</td></tr>
+      <tr><td><b>Coverage Area</b></td><td>Small (room / building)</td><td>Large (country / world)</td></tr>
+      <tr><td><b>Speed</b></td><td>High (100 Mbps – 1 Gbps)</td><td>Lower speed</td></tr>
+      <tr><td><b>Cost</b></td><td>Low setup cost</td><td>High setup cost</td></tr>
+      <tr><td><b>Maintenance</b></td><td>Easy</td><td>Complex</td></tr>
+      <tr><td><b>Error Rate</b></td><td>Low</td><td>Higher</td></tr>
+      <tr><td><b>Example</b></td><td>School or office network</td><td>The Internet</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-title">(2) Binary A = 11010, B = 01100 — Find A+B and A−B</div>
+  <p><b>i) A + B = ?</b></p>
+  <div class="steps">   11010   (= 26₁₀)
+ + 01100   (= 12₁₀)
+ ───────
+  100110   (= 38₁₀)</div>
+  <span class="result">∴ A + B = 100110₂ = 38₁₀</span>
+
+  <p style="margin-top:14px;"><b>ii) A − B = ? &nbsp;(using 2's complement method)</b></p>
+  <div class="steps">1's complement of B (01100) = 10011
+2's complement              = 10011 + 1 = 10100
+
+   11010
+ + 10100
+ ───────
+  101110  ← carry (discard it)
+   01110</div>
+  <span class="result">∴ A − B = 01110₂ = 14₁₀ &nbsp;&nbsp; (Since 26 − 12 = 14 ✓)</span>
+
+  <div class="qdiv">✦ ✦ ✦</div>
+</div>
+
+</div><!-- /sheet-inner -->
+</div><!-- /sheet -->
+
+</body>
+</html>
