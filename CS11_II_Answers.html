@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Science II – Answer Paper | Std. 11th | Maharashtra Board</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #faf8f2;
+    --accent: #c0392b;
+    --gold: #b8860b;
+    --rule: #d4c9a8;
+    --light-bg: #f0ece0;
+    --code-bg: #e8e4d8;
+    --correct: #1a6b3c;
+    --shadow: rgba(26,26,46,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    padding: 2.5rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 30px,
+      rgba(255,255,255,0.02) 30px, rgba(255,255,255,0.02) 60px
+    );
+  }
+  header .college {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    font-weight: 900;
+    letter-spacing: .06em;
+    color: #f0c040;
+    position: relative;
+  }
+  header .exam-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    font-weight: 700;
+    margin: .4rem 0 .8rem;
+    position: relative;
+  }
+  header .meta {
+    display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap;
+    font-size: .85rem; letter-spacing: .04em;
+    opacity: .85; position: relative;
+  }
+  header .meta span { display: flex; align-items: center; gap: .4rem; }
+
+  /* ─── WRAPPER ─── */
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* ─── QUESTION BLOCK ─── */
+  .q-block {
+    margin-bottom: 2.8rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 1.4rem;
+    animation: fadeUp .5s ease both;
+  }
+  .q-block:nth-child(2) { animation-delay: .05s; }
+  .q-block:nth-child(3) { animation-delay: .10s; }
+  .q-block:nth-child(4) { animation-delay: .15s; }
+  .q-block:nth-child(5) { animation-delay: .20s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .q-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex; align-items: baseline; gap: .6rem;
+  }
+  .q-heading .marks {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .78rem;
+    background: var(--ink);
+    color: #f0c040;
+    padding: .15rem .55rem;
+    border-radius: 3px;
+    letter-spacing: .05em;
+  }
+
+  /* ─── MCQ ─── */
+  .mcq-list { list-style: none; }
+  .mcq-list li {
+    background: var(--light-bg);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: .65rem 1rem;
+    margin-bottom: .7rem;
+    display: grid;
+    grid-template-columns: 1.6rem 1fr auto;
+    gap: .5rem;
+    align-items: start;
+  }
+  .mcq-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--gold);
+    padding-top: .05rem;
+  }
+  .mcq-q { font-size: .95rem; }
+  .mcq-ans {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--correct);
+    white-space: nowrap;
+    padding-top: .05rem;
+  }
+  .mcq-reason {
+    grid-column: 2 / 4;
+    font-size: .82rem;
+    color: #555;
+    font-style: italic;
+    margin-top: .2rem;
+  }
+
+  /* ─── TRUE/FALSE ─── */
+  .tf-list { list-style: none; }
+  .tf-list li {
+    padding: .55rem 0;
+    border-bottom: 1px dashed var(--rule);
+    display: grid;
+    grid-template-columns: 1.6rem 1fr auto;
+    gap: .5rem;
+    align-items: start;
+    font-size: .95rem;
+  }
+  .tf-list li:last-child { border-bottom: none; }
+  .tf-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .75rem;
+    font-weight: 700;
+    padding: .15rem .45rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .tf-badge.true  { background: #d4edda; color: #155724; }
+  .tf-badge.false { background: #f8d7da; color: #721c24; }
+
+  /* ─── LONG ANSWER ─── */
+  .ans-block {
+    background: var(--light-bg);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1.4rem;
+  }
+  .ans-block h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: .7rem;
+    padding-bottom: .45rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .ans-block p { font-size: .93rem; margin-bottom: .5rem; }
+  .ans-block ul, .ans-block ol {
+    margin-left: 1.4rem;
+    font-size: .93rem;
+    margin-bottom: .5rem;
+  }
+  .ans-block li { margin-bottom: .3rem; }
+
+  /* comparison table */
+  .cmp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .88rem;
+    margin: .6rem 0;
+  }
+  .cmp-table th {
+    background: var(--ink);
+    color: var(--paper);
+    padding: .5rem .75rem;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: .03em;
+  }
+  .cmp-table td {
+    padding: .45rem .75rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .cmp-table tr:nth-child(even) td { background: rgba(0,0,0,.03); }
+  .cmp-table tr:last-child td { border-bottom: none; }
+
+  /* diagram box */
+  .diagram {
+    background: var(--code-bg);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .78rem;
+    padding: .8rem 1rem;
+    margin: .6rem 0;
+    white-space: pre;
+    overflow-x: auto;
+    line-height: 1.55;
+  }
+
+  /* sub-question label */
+  .sub-label {
+    font-weight: 600;
+    color: var(--gold);
+    font-size: .85rem;
+    margin: .9rem 0 .35rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+
+  /* divider */
+  hr.section-rule {
+    border: none;
+    border-top: 2px solid var(--rule);
+    margin: 2.4rem 0;
+  }
+
+  /* footer */
+  footer {
+    text-align: center;
+    font-size: .78rem;
+    color: #888;
+    padding: 1.5rem;
+    border-top: 1px solid var(--rule);
+    letter-spacing: .04em;
+  }
+
+  @media print {
+    body { background: white; }
+    header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .q-block { break-inside: avoid; }
+    .ans-block { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="college">JAI BAJRANG Jr. COLLEGE, KUMBHARI</div>
+  <div class="exam-title">Second Term Examination – Model Answer Paper</div>
+  <div class="meta">
+    <span>📘 Computer Science II</span>
+    <span>📋 Std. 11<sup>th</sup> | Maharashtra State Board</span>
+    <span>⏱ 3 Hours</span>
+    <span>🏅 Total Marks: 50</span>
+  </div>
+</header>
+
+<div class="wrapper">
+
+  <!-- ══════════════════════════════════════════════
+       Q.1  SELECT THE CORRECT ALTERNATIVE (5 marks)
+       ══════════════════════════════════════════════ -->
+  <div class="q-block">
+    <div class="q-heading">
+      Q. 1 &nbsp; Select the Correct Alternatives
+      <span class="marks">5 Marks</span>
+    </div>
+
+    <ul class="mcq-list">
+      <li>
+        <span class="mcq-num">1)</span>
+        <span class="mcq-q">________ is a volatile memory.</span>
+        <span class="mcq-ans">✔ a) RAM</span>
+        <span class="mcq-reason">RAM (Random Access Memory) is volatile — it loses all stored data when power is switched off.</span>
+      </li>
+      <li>
+        <span class="mcq-num">2)</span>
+        <span class="mcq-q">________ bus is unidirectional.</span>
+        <span class="mcq-ans">✔ b) Address</span>
+        <span class="mcq-reason">The Address Bus carries addresses only from the CPU to memory/I-O, so it is unidirectional. The Data Bus is bidirectional.</span>
+      </li>
+      <li>
+        <span class="mcq-num">3)</span>
+        <span class="mcq-q">Floppy disk is a ________ device.</span>
+        <span class="mcq-ans">✔ c) I/O</span>
+        <span class="mcq-reason">A Floppy disk drive is used both to read (input) and write (output) data, making it an I/O (Input/Output) device.</span>
+      </li>
+      <li>
+        <span class="mcq-num">4)</span>
+        <span class="mcq-q">DOT matrix printer is a ________ printer.</span>
+        <span class="mcq-ans">✔ a) Impact</span>
+        <span class="mcq-reason">A Dot Matrix printer forms characters by striking an inked ribbon against the paper with tiny pins — hence it is an Impact printer.</span>
+      </li>
+      <li>
+        <span class="mcq-num">5)</span>
+        <span class="mcq-q">A high quality high speed printer is ________.</span>
+        <span class="mcq-ans">✔ b) Laser</span>
+        <span class="mcq-reason">Laser printers produce very high quality output at high speeds using a laser beam and toner — they are the standard for high-quality, high-speed printing.</span>
+      </li>
+    </ul>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- ══════════════════════════════════════════════
+       Q.2  TRUE OR FALSE (3 marks)
+       ══════════════════════════════════════════════ -->
+  <div class="q-block">
+    <div class="q-heading">
+      Q. 2 &nbsp; State True or False
+      <span class="marks">3 Marks</span>
+    </div>
+
+    <ul class="tf-list">
+      <li>
+        <span style="color:var(--gold);font-weight:600;">1)</span>
+        <span>DMA increases the rate of data transfer.</span>
+        <span class="tf-badge true">TRUE</span>
+      </li>
+      <li>
+        <span style="color:var(--gold);font-weight:600;"></span>
+        <span style="font-size:.83rem;font-style:italic;color:#555;">
+          DMA (Direct Memory Access) allows peripheral devices to transfer data directly to/from memory without CPU intervention, which significantly increases the rate of data transfer.
+        </span>
+        <span></span>
+      </li>
+      <li>
+        <span style="color:var(--gold);font-weight:600;">2)</span>
+        <span>The DOS based programs are always stored in conventional memory.</span>
+        <span class="tf-badge true">TRUE</span>
+      </li>
+      <li>
+        <span></span>
+        <span style="font-size:.83rem;font-style:italic;color:#555;">
+          Conventional memory (the first 640 KB of RAM) is where DOS and DOS-based application programs are loaded and executed.
+        </span>
+        <span></span>
+      </li>
+      <li>
+        <span style="color:var(--gold);font-weight:600;">3)</span>
+        <span>PC-AT stands for PC with Advance Technology.</span>
+        <span class="tf-badge true">TRUE</span>
+      </li>
+      <li>
+        <span></span>
+        <span style="font-size:.83rem;font-style:italic;color:#555;">
+          PC-AT stands for Personal Computer – Advanced Technology. It was introduced by IBM in 1984, featuring the Intel 80286 processor.
+        </span>
+        <span></span>
+      </li>
+    </ul>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- ══════════════════════════════════════════════
+       Q.3  ANSWER THE FOLLOWING – ANY 4 (16 marks)
+       ══════════════════════════════════════════════ -->
+  <div class="q-block">
+    <div class="q-heading">
+      Q. 3 &nbsp; Answer the Following (Any 4)
+      <span class="marks">16 Marks (4 × 4)</span>
+    </div>
+
+    <!-- 3.1 Differences -->
+    <div class="ans-block">
+      <h4>3.1 &nbsp; Explain the difference between (any 2 of a, b, c)</h4>
+
+      <div class="sub-label">a) Keyboard and Mouse</div>
+      <table class="cmp-table">
+        <tr><th>Keyboard</th><th>Mouse</th></tr>
+        <tr><td>It is a text/command input device with a set of keys.</td><td>It is a pointing and clicking input device.</td></tr>
+        <tr><td>Used to enter alphanumeric data, symbols and commands.</td><td>Used to select, click, drag and navigate graphically.</td></tr>
+        <tr><td>Requires typing skill; more keystrokes for navigation.</td><td>Simple to use; moves cursor by physical movement.</td></tr>
+        <tr><td>Best for text-based tasks (typing, coding).</td><td>Best for GUI-based tasks (selecting menus, icons).</td></tr>
+        <tr><td>Types: QWERTY, AZERTY, ergonomic keyboards.</td><td>Types: Mechanical, optical, wireless, trackball.</td></tr>
+      </table>
+
+      <div class="sub-label">b) Laser Printer and Ink-Jet Printer</div>
+      <table class="cmp-table">
+        <tr><th>Laser Printer</th><th>Ink-Jet Printer</th></tr>
+        <tr><td>Uses laser beam + toner powder.</td><td>Uses liquid ink sprayed through tiny nozzles.</td></tr>
+        <tr><td>Very high speed (pages per minute).</td><td>Slower compared to laser.</td></tr>
+        <tr><td>High quality, sharp text output.</td><td>Good quality; excellent for colour/photos.</td></tr>
+        <tr><td>Higher initial cost; low running cost per page.</td><td>Low initial cost; higher cost per page.</td></tr>
+        <tr><td>Non-impact printer.</td><td>Non-impact printer.</td></tr>
+      </table>
+
+      <div class="sub-label">c) Software and Hardware</div>
+      <table class="cmp-table">
+        <tr><th>Software</th><th>Hardware</th></tr>
+        <tr><td>Set of programs / instructions that tell computer what to do.</td><td>Physical and tangible components of a computer.</td></tr>
+        <tr><td>Cannot be touched; exists as code/data.</td><td>Can be touched, seen and handled physically.</td></tr>
+        <tr><td>Examples: Windows OS, MS Word, Compiler.</td><td>Examples: CPU, Monitor, Keyboard, Hard Disk.</td></tr>
+        <tr><td>Types: System software, Application software.</td><td>Types: Input, Output, Processing, Storage devices.</td></tr>
+        <tr><td>Software controls hardware.</td><td>Hardware requires software to function.</td></tr>
+      </table>
+    </div>
+
+    <!-- 3.2 Motherboard -->
+    <div class="ans-block">
+      <h4>3.2 &nbsp; Enlist the Components and Slots Normally Assembled on a Motherboard</h4>
+      <p>The <strong>motherboard</strong> (also called the system board or main board) is the primary circuit board that connects all components of the computer. The following components and expansion slots are found on a typical motherboard:</p>
+      <ul>
+        <li><strong>CPU Socket</strong> – Holds the Central Processing Unit (e.g., Intel LGA or AMD AM socket).</li>
+        <li><strong>RAM Slots (DIMM)</strong> – Slots to install RAM modules (e.g., DDR4 DIMM slots).</li>
+        <li><strong>BIOS/CMOS Chip</strong> – Stores firmware to start (boot) the computer.</li>
+        <li><strong>CMOS Battery</strong> – A small cell battery to retain BIOS settings and system clock.</li>
+        <li><strong>Chipset</strong> – North Bridge (connects CPU to RAM, AGP) and South Bridge (connects to PCI, USB, IDE, etc.).</li>
+        <li><strong>PCI Slots</strong> – Peripheral Component Interconnect slots for expansion cards (Sound, NIC).</li>
+        <li><strong>AGP Slot</strong> – Accelerated Graphics Port for graphics/video cards.</li>
+        <li><strong>ISA Slots</strong> – Industry Standard Architecture (older expansion slots).</li>
+        <li><strong>IDE / SATA Connectors</strong> – To connect Hard Disk and CD/DVD drives.</li>
+        <li><strong>Floppy Connector</strong> – For connecting floppy disk drives.</li>
+        <li><strong>Power Connectors</strong> – ATX 20/24-pin connector for power supply.</li>
+        <li><strong>USB Headers</strong> – For front-panel USB ports.</li>
+        <li><strong>PS/2 Connectors</strong> – For keyboard and mouse.</li>
+        <li><strong>Serial &amp; Parallel Ports</strong> – COM ports and LPT port for older peripherals.</li>
+        <li><strong>Heat Sink Mounting Holes</strong> – For securing CPU cooler.</li>
+      </ul>
+    </div>
+
+    <!-- 3.3 Input/Output Devices -->
+    <div class="ans-block">
+      <h4>3.3 &nbsp; List any Four Input and Output Devices and Explain any One</h4>
+      <p><strong>Input Devices:</strong> Keyboard, Mouse, Scanner, Joystick, Light Pen, Microphone</p>
+      <p><strong>Output Devices:</strong> Monitor (VDU), Printer, Speaker, Plotter, Projector</p>
+
+      <div class="sub-label">Explanation: Monitor (Visual Display Unit – VDU)</div>
+      <p>A <strong>Monitor</strong> is the primary output device of a computer. It displays text, images, video, and graphical data in real time.</p>
+      <ul>
+        <li><strong>Types:</strong> CRT (Cathode Ray Tube), LCD (Liquid Crystal Display), LED, OLED.</li>
+        <li><strong>Resolution:</strong> Determined by number of pixels (e.g., 1920×1080 Full HD).</li>
+        <li><strong>Colour depth:</strong> Number of colours it can display (e.g., 16-bit, 24-bit True Colour).</li>
+        <li><strong>Refresh Rate:</strong> Number of times screen is redrawn per second (measured in Hz).</li>
+        <li>LCD/LED monitors are thin, consume less power, and produce less radiation than CRT monitors.</li>
+      </ul>
+    </div>
+
+    <!-- 3.4 Laser Printer Advantages/Disadvantages -->
+    <div class="ans-block">
+      <h4>3.4 &nbsp; Write Advantages and Disadvantages of Laser Printer</h4>
+      <div class="sub-label">Advantages</div>
+      <ul>
+        <li>Very high print speed (up to 200 pages per minute for commercial models).</li>
+        <li>Produces very high quality, sharp, and precise text and graphics output.</li>
+        <li>Low cost per page when used extensively (economical for large volumes).</li>
+        <li>Quiet operation compared to impact printers.</li>
+        <li>No smudging — toner is fused to paper using heat, giving a dry, smudge-free finish.</li>
+        <li>Handles a large variety of paper types and sizes.</li>
+      </ul>
+      <div class="sub-label">Disadvantages</div>
+      <ul>
+        <li>High initial purchase cost compared to ink-jet printers.</li>
+        <li>Toner cartridges are expensive to replace.</li>
+        <li>Bulkier and heavier than ink-jet printers.</li>
+        <li>Ozone gas may be emitted during printing — requires ventilation.</li>
+        <li>Colour laser printers are significantly more expensive than colour ink-jets.</li>
+        <li>Not suitable for printing on special media like fabric or glossy photo paper.</li>
+      </ul>
+    </div>
+
+    <!-- 3.5 Multimedia and Sound Card -->
+    <div class="ans-block">
+      <h4>3.5 &nbsp; What is Multimedia and Sound Card? Write their Applications</h4>
+      <p><strong>Multimedia</strong> refers to the integration of multiple forms of content — text, audio, images, animation, video, and interactivity — delivered through a computer or electronic device. The word "multi" means many and "media" means medium of communication.</p>
+      <p><strong>Applications of Multimedia:</strong></p>
+      <ul>
+        <li>Education – e-learning, interactive CD-ROMs, virtual classrooms.</li>
+        <li>Entertainment – video games, digital movies, music players.</li>
+        <li>Business – presentations, video conferencing, digital advertising.</li>
+        <li>Medicine – medical imaging, simulation for surgery training.</li>
+        <li>Communication – video calls, social media, multimedia messaging.</li>
+      </ul>
+      <p><strong>Sound Card (Audio Card):</strong> A sound card is an expansion card (or integrated chip on the motherboard) that enables the computer to produce and record sound. It converts digital audio data to analog signals (for speakers) and analog signals to digital (for microphone input).</p>
+      <p><strong>Applications of Sound Card:</strong></p>
+      <ul>
+        <li>Playing audio (music, video soundtracks) through speakers or headphones.</li>
+        <li>Voice recognition and voice input via microphone.</li>
+        <li>Audio/music production and recording software.</li>
+        <li>Gaming — real-time sound effects and surround sound.</li>
+        <li>Video conferencing and Internet telephony (VoIP).</li>
+      </ul>
+    </div>
+
+    <!-- 3.6 Interrupt -->
+    <div class="ans-block">
+      <h4>3.6 &nbsp; Explain the Concept of Interrupt</h4>
+      <p>An <strong>Interrupt</strong> is a signal sent to the CPU that temporarily halts (interrupts) the currently running program, causing the CPU to execute a special routine called an <strong>Interrupt Service Routine (ISR)</strong> or Interrupt Handler. After the ISR completes, the CPU resumes the original program.</p>
+      <div class="sub-label">Types of Interrupts</div>
+      <ul>
+        <li><strong>Hardware Interrupt:</strong> Generated by external devices (e.g., keyboard press, mouse click, disk I/O completion). Also called Maskable (can be disabled) or Non-Maskable (NMI, cannot be disabled — used for critical errors).</li>
+        <li><strong>Software Interrupt:</strong> Generated by a program (e.g., INT 21H in DOS) to request an OS service.</li>
+        <li><strong>Internal Interrupt (Trap/Exception):</strong> Caused by errors within the CPU — e.g., division by zero, invalid opcode, overflow.</li>
+      </ul>
+      <div class="sub-label">Working of an Interrupt</div>
+      <div class="diagram">CPU executes Program
+       │
+       ▼
+Interrupt Signal Received
+       │
+       ▼
+CPU saves current state (PC, registers) onto Stack
+       │
+       ▼
+CPU jumps to ISR (Interrupt Service Routine)
+       │
+       ▼
+ISR executes and services the interrupt
+       │
+       ▼
+CPU restores saved state from Stack
+       │
+       ▼
+CPU resumes original program</div>
+      <p><strong>Importance:</strong> Interrupts allow efficient multitasking, real-time response to hardware events, and are fundamental to how operating systems manage I/O operations without wasting CPU cycles in polling loops.</p>
+    </div>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- ══════════════════════════════════════════════
+       Q.4  ANSWER THE FOLLOWING – ANY 4 (16 marks)
+       ══════════════════════════════════════════════ -->
+  <div class="q-block">
+    <div class="q-heading">
+      Q. 4 &nbsp; Answer the Following (Any 4)
+      <span class="marks">16 Marks (4 × 4)</span>
+    </div>
+
+    <!-- 4.1 Physical vs Logical Memory -->
+    <div class="ans-block">
+      <h4>4.1 &nbsp; Write the Difference between Physical and Logical Memory</h4>
+      <table class="cmp-table">
+        <tr><th>Physical Memory</th><th>Logical Memory</th></tr>
+        <tr><td>Refers to the actual RAM chips installed on the motherboard.</td><td>Refers to the address space that a program uses — may be larger than physical RAM.</td></tr>
+        <tr><td>Finite and fixed (limited by hardware).</td><td>Can be extended using virtual memory techniques.</td></tr>
+        <tr><td>Accessed directly by the CPU hardware.</td><td>Addresses are translated to physical addresses by the Memory Management Unit (MMU).</td></tr>
+        <tr><td>Deals with real, hardware memory locations.</td><td>Deals with virtual/abstract addresses seen by a program.</td></tr>
+        <tr><td>Example: 8 GB DDR4 RAM installed in a PC.</td><td>Example: A program addressing memory from 0x0000 to 0xFFFF (its own virtual space).</td></tr>
+      </table>
+    </div>
+
+    <!-- 4.2 Semiconductor Memories -->
+    <div class="ans-block">
+      <h4>4.2 &nbsp; State Different Types of Semiconductor Memories and Explain Any One</h4>
+      <p>Semiconductor memories are electronic memories built from semiconductor materials (silicon). They are classified as:</p>
+      <ul>
+        <li><strong>RAM</strong> (Random Access Memory) — Volatile
+          <ul>
+            <li>SRAM (Static RAM)</li>
+            <li>DRAM (Dynamic RAM)</li>
+          </ul>
+        </li>
+        <li><strong>ROM</strong> (Read Only Memory) — Non-Volatile
+          <ul>
+            <li>PROM (Programmable ROM)</li>
+            <li>EPROM (Erasable Programmable ROM)</li>
+            <li>EEPROM (Electrically Erasable Programmable ROM)</li>
+          </ul>
+        </li>
+        <li><strong>Flash Memory</strong> — Non-Volatile (used in pen drives, SSDs)</li>
+        <li><strong>Cache Memory</strong> — High-speed volatile memory between CPU and RAM</li>
+      </ul>
+
+      <div class="sub-label">Explanation: EPROM (Erasable Programmable Read Only Memory)</div>
+      <p>EPROM is a type of ROM that can be programmed by the user using a special device called a <strong>PROM programmer/burner</strong>. Unlike PROM, it can be <strong>erased</strong> by exposing it to <strong>ultraviolet (UV) light</strong> for 15–20 minutes through a quartz window on the chip, and then reprogrammed.</p>
+      <ul>
+        <li>Non-volatile — retains data even when power is off.</li>
+        <li>Used for BIOS chips and embedded system firmware.</li>
+        <li>Can be erased and reused multiple times.</li>
+        <li>Identified by a small transparent quartz window on the chip.</li>
+      </ul>
+    </div>
+
+    <!-- 4.3 Impact/Non-Impact Printers -->
+    <div class="ans-block">
+      <h4>4.3 &nbsp; What is Meant by Impact and Non-Impact Printer? Explain Any One Impact Printer</h4>
+      <p><strong>Impact Printer:</strong> A printer that forms characters by physically striking an inked ribbon or the paper surface. It makes noise during printing. Examples: Dot Matrix Printer, Daisy Wheel Printer, Line Printer.</p>
+      <p><strong>Non-Impact Printer:</strong> A printer that forms characters without any physical contact between the print head and paper. It is quiet and produces high-quality output. Examples: Laser Printer, Ink-Jet Printer, Thermal Printer.</p>
+
+      <div class="sub-label">Dot Matrix Printer (Impact Printer)</div>
+      <p>A <strong>Dot Matrix Printer (DMP)</strong> prints by striking a matrix of tiny pins against an inked ribbon onto paper. Characters are formed as a pattern (matrix) of dots.</p>
+      <ul>
+        <li><strong>Print Head:</strong> Contains 9 or 24 pins arranged in a column. A 24-pin head gives better quality (near letter quality, NLQ).</li>
+        <li><strong>Speed:</strong> Measured in CPS (Characters Per Second) — typically 100 to 600 CPS.</li>
+        <li><strong>Advantages:</strong> Can print multi-part (carbon copy) forms; low cost per page; robust and reliable.</li>
+        <li><strong>Disadvantages:</strong> Noisy; lower print quality compared to laser/inkjet; slow.</li>
+        <li><strong>Uses:</strong> Bank passbook printing, invoices, and multi-copy receipts.</li>
+      </ul>
+    </div>
+
+    <!-- 4.4 DT Matrix Advantages/Disadvantages -->
+    <div class="ans-block">
+      <h4>4.4 &nbsp; Explain the Advantages and Disadvantages of D.T. Matrix Printer</h4>
+      <div class="sub-label">Advantages of Dot Matrix Printer</div>
+      <ul>
+        <li>Can print on multi-layered carbon copy paper (multi-part forms) — no other printer can do this.</li>
+        <li>Very low cost per page — ribbon cartridges are cheap.</li>
+        <li>Robust and durable; can function in dusty and industrial environments.</li>
+        <li>Capable of printing continuous (tractor-feed) stationery without paper jams.</li>
+        <li>Relatively low purchase price.</li>
+        <li>Works well in ATMs and point-of-sale (POS) terminals for receipt printing.</li>
+      </ul>
+      <div class="sub-label">Disadvantages of Dot Matrix Printer</div>
+      <ul>
+        <li>Very noisy during operation — the striking of pins creates significant sound.</li>
+        <li>Lower print quality — characters look dotty; not suitable for high-quality documents.</li>
+        <li>Slow speed compared to laser and ink-jet printers.</li>
+        <li>Limited graphics capability; graphics are rough and low resolution.</li>
+        <li>Ribbon cartridges require frequent replacement for consistent print quality.</li>
+        <li>Print head pins can break and require costly replacement.</li>
+      </ul>
+    </div>
+
+    <!-- 4.5 Volatile vs Non-Volatile -->
+    <div class="ans-block">
+      <h4>4.5 &nbsp; Explain the Difference between Volatile and Non-Volatile Memories. Give One Example Each.</h4>
+      <table class="cmp-table">
+        <tr><th>Volatile Memory</th><th>Non-Volatile Memory</th></tr>
+        <tr><td>Loses all stored data when power supply is switched off.</td><td>Retains stored data even when power supply is switched off.</td></tr>
+        <tr><td>Temporary storage; used for active processing.</td><td>Permanent storage; used to store data/programs persistently.</td></tr>
+        <tr><td>Generally faster access speed.</td><td>Generally slower access speed (except Flash/SSD).</td></tr>
+        <tr><td>Used as primary (main) memory.</td><td>Used as secondary or ROM memory.</td></tr>
+        <tr><td><strong>Example: RAM</strong> — programs and data loaded into RAM disappear on shutdown.</td><td><strong>Example: ROM / Hard Disk</strong> — BIOS stored in ROM and files on Hard Disk are retained after power-off.</td></tr>
+      </table>
+    </div>
+
+    <!-- 4.6 Conventional Memory -->
+    <div class="ans-block">
+      <h4>4.6 &nbsp; What do you Mean by Conventional Memory?</h4>
+      <p><strong>Conventional Memory</strong> (also known as <strong>Base Memory</strong>) refers to the first <strong>640 KB</strong> of the RAM address space in a DOS-based PC. This was the memory region that the original IBM PC and the DOS operating system could directly address and use for running programs.</p>
+      <ul>
+        <li>The PC's total addressable memory in real mode is 1 MB (1024 KB).</li>
+        <li>The first 640 KB (0x00000 – 0x9FFFF) is Conventional Memory used by DOS and application programs.</li>
+        <li>The remaining 384 KB (0xA0000 – 0xFFFFF) is the <strong>Upper Memory Area (UMA)</strong>, reserved for BIOS, video memory, and ROM.</li>
+      </ul>
+      <div class="diagram">0 KB  ┌─────────────────────────────┐
+      │   Conventional Memory        │  ← DOS programs run here
+640 KB├─────────────────────────────┤
+      │   Upper Memory Area (UMA)    │  ← BIOS, Video RAM, ROM
+1024 KB└─────────────────────────────┘</div>
+      <p><strong>Limitation:</strong> The 640 KB ceiling was a major bottleneck for running large applications under DOS. This led to the development of extended memory management techniques (EMS, XMS) and later, protected-mode multitasking operating systems like Windows.</p>
+    </div>
+
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- ══════════════════════════════════════════════
+       Q.5  ANSWER THE FOLLOWING – ANY 2 (10 marks)
+       ══════════════════════════════════════════════ -->
+  <div class="q-block">
+    <div class="q-heading">
+      Q. 5 &nbsp; Answer the Following (Any 2)
+      <span class="marks">10 Marks (2 × 5)</span>
+    </div>
+
+    <!-- 5.1 Semiconductor Memories (detailed, any 2) -->
+    <div class="ans-block">
+      <h4>5.1 &nbsp; State Different Types of Semiconductor Memories and Explain Any Two</h4>
+      <p><strong>Types:</strong> RAM (SRAM, DRAM), ROM (PROM, EPROM, EEPROM), Flash Memory, Cache Memory.</p>
+
+      <div class="sub-label">1. DRAM – Dynamic Random Access Memory</div>
+      <p>DRAM stores each bit of data in a tiny capacitor within an integrated circuit. Because capacitors leak charge, DRAM requires periodic <strong>refreshing</strong> (thousands of times per second) to retain data. It is volatile — loses data when power is off.</p>
+      <ul>
+        <li>Higher density — more bits per chip area than SRAM; used as main system RAM.</li>
+        <li>Slower than SRAM but far cheaper and available in larger capacities.</li>
+        <li>Modern variants: SDRAM, DDR, DDR2, DDR3, DDR4, DDR5.</li>
+      </ul>
+
+      <div class="sub-label">2. SRAM – Static Random Access Memory</div>
+      <p>SRAM stores each bit using a flip-flop circuit (4–6 transistors). It does <strong>not</strong> need refreshing as long as power is supplied. It is volatile.</p>
+      <ul>
+        <li>Much faster than DRAM — used as <strong>Cache Memory</strong> (L1, L2, L3).</li>
+        <li>More expensive and lower density than DRAM.</li>
+        <li>Consumes more power but offers very fast access times (nanoseconds).</li>
+      </ul>
+    </div>
+
+    <!-- 5.2 Hard Disk -->
+    <div class="ans-block">
+      <h4>5.2 &nbsp; Explain the Structure and Working of Hard Disk with Suitable Diagram</h4>
+      <p>A <strong>Hard Disk Drive (HDD)</strong> is a non-volatile, magnetic secondary storage device used to store large amounts of data permanently.</p>
+
+      <div class="sub-label">Structure</div>
+      <ul>
+        <li><strong>Platters:</strong> Circular disks coated with magnetic material (iron oxide or cobalt alloy). A drive may have 1–5 platters stacked on a spindle.</li>
+        <li><strong>Spindle:</strong> Rotates platters at high speed (5400 RPM or 7200 RPM).</li>
+        <li><strong>Read/Write Heads:</strong> Electromagnetic heads that float nanometers above platter surfaces to read/write data magnetically.</li>
+        <li><strong>Actuator Arm:</strong> Moves the read/write heads radially across the platters.</li>
+        <li><strong>Tracks:</strong> Concentric circular paths on each platter surface where data is written.</li>
+        <li><strong>Sectors:</strong> Each track is divided into sectors (usually 512 bytes or 4096 bytes each).</li>
+        <li><strong>Cylinders:</strong> The set of all tracks at the same radial position across all platters.</li>
+        <li><strong>Controller:</strong> Electronic board that controls all operations of the HDD.</li>
+      </ul>
+
+      <div class="diagram">         ┌────────────────────────────┐
+         │   Hard Disk Drive (HDD)    │
+         │                            │
+         │   ┌──────────────────┐     │
+         │   │   Platter (disk) │     │
+         │   │  ┌──────────┐    │     │
+         │   │  │  Tracks  │    │     │
+         │   │  │ (Sectors)│    │     │
+         │   │  └──────────┘    │     │
+         │   └──────────────────┘     │
+         │        │ Spindle           │
+         │  ══════╪══════  ← Platters │
+         │        │                   │
+         │   ┌────┴─────────────┐     │
+         │   │  Actuator Arm    │     │
+         │   │  (R/W Heads) ──► │     │
+         │   └──────────────────┘     │
+         └────────────────────────────┘</div>
+
+      <div class="sub-label">Working</div>
+      <ol>
+        <li>The platters spin at high speed (5400–7200 RPM).</li>
+        <li>The actuator arm moves the read/write head to the required track (<strong>seek time</strong>).</li>
+        <li>The drive waits for the required sector to rotate under the head (<strong>rotational latency</strong>).</li>
+        <li>The head reads/writes data by detecting/changing the magnetic polarity of the coating.</li>
+        <li>Data is transferred to/from RAM via the system bus (<strong>transfer time</strong>).</li>
+      </ol>
+      <p><strong>Access Time = Seek Time + Rotational Latency + Transfer Time</strong></p>
+    </div>
+
+    <!-- 5.3 Properties of CPU -->
+    <div class="ans-block">
+      <h4>5.3 &nbsp; Explain the Properties of CPU</h4>
+      <p>The <strong>CPU (Central Processing Unit)</strong> is the brain of the computer. It performs all arithmetic, logical, control, and input/output operations. Its key properties are:</p>
+      <ul>
+        <li><strong>Clock Speed:</strong> The speed at which the CPU executes instructions, measured in MHz or GHz. Higher clock speed = more instructions per second. Example: Intel Core i7 at 3.6 GHz.</li>
+        <li><strong>Word Length (Data Width):</strong> The number of bits processed simultaneously (e.g., 8-bit, 16-bit, 32-bit, 64-bit). Modern CPUs are 64-bit.</li>
+        <li><strong>Instruction Set:</strong> The set of machine language instructions the CPU can execute (e.g., CISC — Complex Instruction Set Computing; RISC — Reduced Instruction Set Computing).</li>
+        <li><strong>Register Set:</strong> Small, fast storage locations inside the CPU (e.g., Accumulator, Program Counter, Instruction Register, Stack Pointer).</li>
+        <li><strong>Cache Memory:</strong> High-speed memory (L1, L2, L3) built into or near the CPU to reduce memory access latency.</li>
+        <li><strong>Number of Cores:</strong> Modern CPUs have multiple cores (dual, quad, octa-core) to perform parallel processing.</li>
+        <li><strong>Arithmetic Logic Unit (ALU):</strong> Performs arithmetic (+, −, ×, ÷) and logical (AND, OR, NOT, XOR) operations.</li>
+        <li><strong>Control Unit (CU):</strong> Directs the operation of all other units — fetches, decodes, and executes instructions.</li>
+        <li><strong>Bus Interface:</strong> Connects the CPU to memory and I/O through Address, Data, and Control buses.</li>
+        <li><strong>Power Consumption:</strong> Measured in Watts (TDP – Thermal Design Power); lower TDP is desirable for laptops and embedded systems.</li>
+      </ul>
+    </div>
+
+    <!-- 5.4 ROM and its Types -->
+    <div class="ans-block">
+      <h4>5.4 &nbsp; What is Meant by ROM? Explain its Types in Brief</h4>
+      <p><strong>ROM (Read Only Memory)</strong> is a type of non-volatile semiconductor memory whose contents are permanently written during manufacture or by special programming devices. Under normal computer operation, ROM can only be <em>read</em> — not written. It retains data even after power is switched off.</p>
+      <p><strong>Uses of ROM:</strong> Storing BIOS/firmware, bootstrap loader, embedded system programs, and look-up tables.</p>
+
+      <div class="sub-label">Types of ROM</div>
+      <ul>
+        <li><strong>ROM (Mask ROM):</strong> Contents are permanently written during manufacturing by the chip maker. Cannot be changed by the user. Used for fixed firmware in calculators, appliances.</li>
+        <li><strong>PROM (Programmable ROM):</strong> Manufactured blank; can be programmed <em>once</em> by the user using a PROM burner. Once programmed, it cannot be erased. Fuses are permanently blown during programming.</li>
+        <li><strong>EPROM (Erasable Programmable ROM):</strong> Can be erased using UV light (through a quartz window) and reprogrammed. Used for BIOS chips and development. Erasing takes ~15–20 minutes.</li>
+        <li><strong>EEPROM (Electrically Erasable Programmable ROM):</strong> Can be erased and reprogrammed electrically, byte-by-byte, without removing from the circuit. Faster and more convenient than EPROM. Used in modern BIOS chips and smart cards.</li>
+        <li><strong>Flash ROM:</strong> An advanced form of EEPROM that is erased and written in blocks. Very fast, compact, and widely used in pen drives, SSDs, memory cards, and smartphones.</li>
+      </ul>
+    </div>
+
+    <!-- 5.5 Modem -->
+    <div class="ans-block">
+      <h4>5.5 &nbsp; Explain Modem and the Use of Modem</h4>
+      <p>The word <strong>MODEM</strong> stands for <strong>MOdulator-DEModulator</strong>. It is a hardware device that converts digital signals from a computer into analog signals suitable for transmission over telephone lines (<strong>Modulation</strong>), and converts incoming analog signals back to digital form (<strong>Demodulation</strong>).</p>
+
+      <div class="diagram">Computer           Telephone Line          Remote Computer
+[Digital] ──► [MODEM Modulates] ──► (Analog) ──► [MODEM Demodulates] ──► [Digital]
+           ◄── [MODEM Demodulates] ◄── (Analog) ◄── [MODEM Modulates] ◄──</div>
+
+      <div class="sub-label">Types of Modem</div>
+      <ul>
+        <li><strong>Internal Modem:</strong> Installed inside the computer as an expansion card (PCI slot).</li>
+        <li><strong>External Modem:</strong> Separate device connected via USB or serial port — portable and easy to configure.</li>
+        <li><strong>DSL Modem:</strong> Used for Digital Subscriber Line (DSL) broadband Internet.</li>
+        <li><strong>Cable Modem:</strong> Used for broadband internet over cable TV lines.</li>
+        <li><strong>Wireless Modem (Router-Modem):</strong> Provides wireless (Wi-Fi) internet connectivity.</li>
+      </ul>
+
+      <div class="sub-label">Uses of Modem</div>
+      <ul>
+        <li>Connecting a computer to the <strong>Internet</strong> via telephone or broadband lines.</li>
+        <li>Sending and receiving <strong>Fax</strong> documents over telephone lines.</li>
+        <li>Dial-up access to <strong>Bulletin Board Systems (BBS)</strong> and remote databases.</li>
+        <li>Enabling <strong>online communication</strong> — email, chat, video conferencing.</li>
+        <li><strong>Data communication</strong> between computers in different locations (WAN connectivity).</li>
+        <li>Remote access to corporate networks (VPN over DSL/Cable).</li>
+      </ul>
+      <p><strong>Speed of a modem</strong> is measured in <strong>bps (bits per second)</strong> or Kbps/Mbps. A standard dial-up modem operates at 56 Kbps; DSL modems operate at several Mbps.</p>
+    </div>
+
+  </div>
+
+</div><!-- /wrapper -->
+
+<footer>
+  Model Answer Paper — Jai Bajrang Jr. College, Kumbhari &nbsp;|&nbsp;
+  Computer Science II &nbsp;|&nbsp; Std. 11<sup>th</sup> &nbsp;|&nbsp; Maharashtra State Board &nbsp;|&nbsp;
+  All answers as per Maharashtra State Board syllabus
+</footer>
+
+</body>
+</html>
