@@ -1,333 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .solution-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .solution-card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .solution-card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .solution-card a:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exam Solutions</h1>
+        
+        <div class="solution-card">
+            <h2>Computer Science I</h2>
+            <a href="CS11_I_Answers.html">View Solutions</a>
+        </div>
+        
+        <div class="solution-card">
+            <h2>Computer Science II</h2>
+            <a href="CS11_II_Answers.html">View Solutions</a>
+        </div>
 
-<style>
-  :root { --accent: #185FA5; }
-  body { margin: 0; font-family: var(--font-sans); }
-  .tabs { display: flex; gap: 6px; flex-wrap: wrap; padding: 1rem 0 0.5rem; border-bottom: 0.5px solid var(--color-border-tertiary); }
-  .tab { padding: 6px 14px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); background: transparent; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); }
-  .tab.active { background: var(--color-background-info); color: var(--color-text-info); border-color: transparent; }
-  .section { display: none; padding: 1rem 0; }
-  .section.active { display: block; }
-  .q { margin-bottom: 1.25rem; border-left: 2px solid var(--color-border-info); padding-left: 12px; }
-  .qnum { font-size: 12px; font-weight: 500; color: var(--color-text-info); margin-bottom: 2px; }
-  .qtext { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 4px; }
-  .ans { font-size: 14px; color: var(--color-text-primary); }
-  .ans strong { font-weight: 500; }
-  .badge { display: inline-block; background: var(--color-background-success); color: var(--color-text-success); font-size: 12px; padding: 1px 8px; border-radius: var(--border-radius-md); font-weight: 500; margin-right: 4px; }
-  .formula { font-family: var(--font-mono); background: var(--color-background-secondary); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
-  .calc-box { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 14px; margin: 6px 0; font-size: 13px; }
-  table.diff { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 6px; }
-  table.diff th { background: var(--color-background-secondary); font-weight: 500; font-size: 12px; padding: 6px 8px; text-align: left; border-bottom: 0.5px solid var(--color-border-tertiary); }
-  table.diff td { padding: 5px 8px; border-bottom: 0.5px solid var(--color-border-tertiary); }
-</style>
-
-<div class="tabs">
-  <button class="tab active" onclick="show('secA')">Section A — MCQ</button>
-  <button class="tab" onclick="show('secA2')">Q.2 — VSA</button>
-  <button class="tab" onclick="show('secB')">Section B</button>
-  <button class="tab" onclick="show('secC')">Section C</button>
-  <button class="tab" onclick="show('secD')">Section D</button>
-</div>
-
-<div id="secA" class="section active">
-  <div class="q">
-    <div class="qnum">Q.1 (1) — Dimensions of sin θ</div>
-    <div class="ans"><span class="badge">Ans: (d)</span> sin θ is a pure ratio — it is dimensionless → <span class="formula">[M⁰L⁰T⁰]</span></div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.1 (2) — Distance of planet from Earth</div>
-    <div class="ans"><span class="badge">Ans: (d)</span> Parallax method — used for astronomical distances by measuring the parallax angle from two positions on Earth.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.1 (3) — Unit vector along î + ĵ</div>
-    <div class="ans"><span class="badge">Ans: (c)</span> Magnitude of (î + ĵ) = √(1²+1²) = √2 → Unit vector = <span class="formula">(î + ĵ)/√2</span></div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.1 (4) — Kepler's law of equal areas</div>
-    <div class="ans"><span class="badge">Ans: (c)</span> Law of equal areas → Conservation of angular momentum. The torque of gravitational force about the Sun is zero, so angular momentum is conserved.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.1 (5) — Potential difference between two points 1 cm apart</div>
-    <div class="calc-box">E = F/q = 3000/3 = 1000 V/m<br>V = E × d = 1000 × 0.01 = <strong>10 V</strong></div>
-    <div class="ans"><span class="badge">Ans: (a)</span> 10 V</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.1 (6) — Pole strengths of broken magnet (2:1 length ratio)</div>
-    <div class="ans"><span class="badge">Ans: (d)</span> Pole strength depends on the cross-sectional area, not length. Both pieces have the same cross-section → pole strength ratio = <strong>1:1</strong></div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.1 (7) — Magnetic dip when horizontal = vertical component</div>
-    <div class="calc-box">tan(δ) = B_V/B_H = 1 → δ = 45°</div>
-    <div class="ans"><span class="badge">Ans: (b)</span> 45°</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.1 (8) — Potential barrier in p-n diode</div>
-    <div class="ans"><span class="badge">Ans: (d)</span> Positive donor ions accumulate on n-side and negative acceptor ions on p-side near the junction, creating the built-in potential barrier.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.1 (9) — n-type and p-type silicon doping</div>
-    <div class="ans"><span class="badge">Ans: (c)</span> n-type → doped with Arsenic (pentavalent); p-type → doped with Boron (trivalent).</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.1 (10) — Pure semiconductor</div>
-    <div class="ans"><span class="badge">Ans: (b)</span> A pure (undoped) semiconductor is an <strong>intrinsic semiconductor</strong>. Equal numbers of electrons and holes are generated by thermal excitation.</div>
-  </div>
-</div>
-
-<div id="secA2" class="section">
-  <div class="q">
-    <div class="qnum">Q.2 (1) — Heavy and light objects released from same height</div>
-    <div class="ans">Both experience the same acceleration — acceleration due to gravity g is independent of mass (g ≈ 9.9 m/s²). Both reach the ground simultaneously.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.2 (2) — Deformation</div>
-    <div class="ans">Change in the shape or size of a body produced by an applied force (stress). The body may or may not recover its original shape depending on whether the force is within elastic limits.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.2 (3) — Static friction: self-adjusting force</div>
-    <div class="ans">Static friction automatically adjusts its magnitude to match the applied force (up to its maximum limiting value f_s = μN). It never exceeds what is needed to prevent motion — hence "self-adjusting."</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.2 (4) — Freely suspended bar magnet direction</div>
-    <div class="ans">It aligns in the geographic North-South direction, with its North pole pointing toward geographic North (magnetic south pole of Earth).</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.2 (5) — Critical frequency</div>
-    <div class="ans">The maximum frequency of a radio wave that can be reflected back to Earth by the ionosphere when transmitted vertically upward. Formula: <span class="formula">f_c = 9√N_max</span> Hz, where N_max is the maximum electron density.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.2 (6) — Wave</div>
-    <div class="ans">A disturbance (periodic) that propagates through a medium (or vacuum), transferring energy from one point to another without any net transport of matter.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.2 (7) — p-n junction</div>
-    <div class="ans">A junction formed by bringing p-type and n-type semiconductors into intimate contact. A depletion layer forms at the interface due to diffusion of majority carriers, creating a built-in electric field.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.2 (8) — Charge on p-type and n-type semiconductor</div>
-    <div class="ans">Both are electrically <strong>neutral</strong> (charge = 0). Although p-type has more holes and n-type has more electrons, the total positive and negative charges in each are equal (dopant atoms are neutral overall).</div>
-  </div>
-</div>
-
-<div id="secB" class="section">
-  <div class="q">
-    <div class="qnum">Q.3 — Vector representation</div>
-    <div class="ans"><strong>Graphical:</strong> A vector is represented by a directed line segment (arrow). The length (to scale) represents its magnitude; the arrowhead shows its direction.<br><strong>Symbolic:</strong> Written as <span class="formula">Ā</span> or <span class="formula">→A</span>. Magnitude is |Ā|. In component form: <span class="formula">Ā = Aₓî + Aᵧĵ + Aᵤk̂</span></div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.4 — Derivative of e²ˣ − tan x</div>
-    <div class="calc-box">d/dx(e²ˣ) = 2e²ˣ (chain rule)<br>d/dx(tan x) = sec²x<br><strong>Answer: 2e²ˣ − sec²x</strong></div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.5 — Seat belt safety</div>
-    <div class="ans">During sudden braking, passengers continue forward due to inertia (Newton's 1st law). The seat belt: (1) applies a retarding force to stop the passenger with the car, (2) spreads the stopping force over a longer time interval, reducing the peak force (Impulse = F×Δt = Δp), and (3) prevents the passenger from hitting the dashboard or windshield.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.6 — Torque of F̄ = 3î + ĵ − 4k̂ at (3,4,−2) about (−1,2,4)</div>
-    <div class="calc-box">
-      r̄ = (3−(−1))î + (4−2)ĵ + (−2−4)k̂ = 4î + 2ĵ − 6k̂<br><br>
-      τ = r̄ × F̄ = |î  ĵ  k̂|<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|4  2  −6|<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|3  1  −4|<br><br>
-      î: (2×(−4) − (−6)×1) = −8+6 = −2<br>
-      ĵ: −(4×(−4) − (−6)×3) = −(−16+18) = −2<br>
-      k̂: (4×1 − 2×3) = 4−6 = −2<br><br>
-      <strong>τ̄ = −2î − 2ĵ − 2k̂ N·m</strong>
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <h2>Mathematics</h2>
+                <p>View solutions for all math problems</p>
+                <a href="#">View Solutions</a>
+            </div>
+            
+            <div class="solution-card">
+                <h2>Physics</h2>
+                <p>View solutions for all physics problems</p>
+                <a href="/physics-11.html">View Solutions</a>
+            </div>
+            
+            <div class="solution-card">
+                <h2>Chemistry</h2>
+                <a href="#">View Solutions</a>
+            </div>
+            
+    <div class="solution-card">
+                <h2>English</h2>
+                <p>View solutions for all english problems</p>
+                <a href="#">View Solutions</a>
+            </div>
+            
+        </div>
     </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.7 — Work done moving 4 m along z-axis, F̄ = (−î + 2ĵ + 3k̂) N</div>
-    <div class="calc-box">
-      Displacement s̄ = 4k̂ m (only z-direction)<br>
-      W = F̄ · s̄ = (−1)(0) + (2)(0) + (3)(4)<br>
-      <strong>W = 12 J</strong>
-    </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.8 — Weight zero at Earth's centre</div>
-    <div class="ans">At the centre of Earth, the gravitational pull from all surrounding mass acts equally in all directions and cancels out, giving g = 0. Since W = mg, weight = 0. (Also: g = g₀(1 − d/R), at d = R, g = 0.)</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.9 — Cooking faster in pressure cooker</div>
-    <div class="ans">In a pressure cooker, the steam cannot escape, so pressure inside rises above atmospheric. Higher pressure raises the boiling point of water (above 100°C). Food cooks at this higher temperature, significantly speeding up cooking.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.10 — Dispersive power</div>
-    <div class="ans"><strong>Definition:</strong> Ability of a prism to split white light into constituent colours (dispersion). It is the ratio of angular dispersion to mean deviation.<br>
-    <span class="formula">ω = (μᵥ − μᵣ)/(μᵧ − 1)</span><br>
-    In terms of angles: <span class="formula">ω = (δᵥ − δᵣ)/δᵧ</span><br>
-    where μᵥ, μᵣ, μᵧ = refractive indices for violet, red, yellow; δ = deviation angles.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.11 — Current density in copper wire (r = 0.6 mm, I = 1 A)</div>
-    <div class="calc-box">
-      r = 0.6 × 10⁻³ m<br>
-      A = πr² = π × (0.6 × 10⁻³)² = π × 3.6 × 10⁻⁷ = 1.131 × 10⁻⁶ m²<br>
-      J = I/A = 1 / (1.131 × 10⁻⁶)<br>
-      <strong>J ≈ 8.84 × 10⁵ A/m²</strong>
-    </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.12 — SI units of pole strength & magnetic dipole moment</div>
-    <div class="ans">Pole strength: <span class="formula">A·m</span> (ampere-metre)<br>Magnetic dipole moment: <span class="formula">A·m²</span> (ampere-metre²)</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.13 — Skip distance</div>
-    <div class="ans">The minimum distance from the transmitter at which a sky wave (of given frequency) first returns to Earth after reflection from the ionosphere. Inside the skip zone, sky waves are not received.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.14 — Forward current in zero biased p-n junction</div>
-    <div class="ans">At zero bias, diffusion current (majority carriers) and drift current (minority carriers) are equal and opposite. Net current = 0. Therefore, forward current at zero bias is zero.</div>
-  </div>
-</div>
-
-<div id="secC" class="section">
-  <div class="q">
-    <div class="qnum">Q.15 — Five spheres on ruler (ruler: 1 cm to 11 cm → total 10 cm)</div>
-    <div class="calc-box">
-      Diameter of each sphere = 10 cm / 5 = 2 cm → radius = 1 cm<br><br>
-      (i) Area of central sphere (cross-section) = πr² = π × (1)² ≈ 3.14 cm²<br><br>
-      (ii) Absolute error in reading = Least count of ruler = 1 mm = 0.1 cm<br>
-      Absolute error = ±0.1 cm
-    </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.16 — Dimensional analysis: correct ≠ physically correct</div>
-    <div class="ans"><strong>Dimensionally correct but wrong:</strong> The equation may lack a dimensionless constant. E.g., s = ut + at² is dimensionally correct but physically wrong (missing ½).<br><strong>Dimensionally incorrect = necessarily wrong:</strong> If dimensions of LHS ≠ RHS, the equation violates the principle of homogeneity — it cannot be physically valid under any circumstances.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.17 — Ā = 3î + 4ĵ, B̄ = 7î + 24ĵ; find vector with magnitude |B̄| parallel to Ā</div>
-    <div class="calc-box">
-      |B̄| = √(7² + 24²) = √(49 + 576) = √625 = 25<br>
-      |Ā| = √(3² + 4²) = √(9 + 16) = √25 = 5<br>
-      Unit vector along Ā: â = (3î + 4ĵ)/5<br>
-      Required vector = 25 × (3î + 4ĵ)/5 = 5(3î + 4ĵ)<br>
-      <strong>= 15î + 20ĵ</strong>
-    </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.18 — Partially inelastic head-on collision (identical marbles)</div>
-    <div class="calc-box">
-      Let mass = m, initial velocity = u (one at rest).<br>
-      Conservation of momentum: u = v₁ + v₂ ... (1)<br>
-      Coefficient of restitution: e = (v₂ − v₁)/u → v₂ − v₁ = eu ... (2)<br><br>
-      Solving (1) & (2):<br>
-      v₁ = u(1−e)/2 &nbsp;&nbsp; v₂ = u(1+e)/2<br>
-      <strong>Ratio v₁ : v₂ = (1−e) : (1+e)</strong>
-    </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.19 — Mass of Earth (g = 9.81 m/s², Rₑ = 6.37×10⁶ m, G = 6.67×10⁻¹¹)</div>
-    <div class="calc-box">
-      From g = GM/R² → M = gR²/G<br>
-      M = (9.81 × (6.37×10⁶)²) / (6.67×10⁻¹¹)<br>
-      = (9.81 × 40.577×10¹²) / (6.67×10⁻¹¹)<br>
-      = 398.06×10¹² / 6.67×10⁻¹¹<br>
-      <strong>M ≈ 5.97 × 10²⁴ kg</strong>
-    </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.20 — Why balloon bursts when filled with air</div>
-    <div class="ans">As air is blown in, pressure inside increases. The rubber stretches elastically to accommodate the increased volume. Beyond the elastic limit, the rubber cannot withstand the excess pressure and ruptures (bursts). The stress exceeds the tensile strength of rubber.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.21 — Electric dipole: 2l = 2 cm, θ = 30°, E = 10⁵ N/C, τ = 10√3 N·m → find q</div>
-    <div class="calc-box">
-      τ = pE sin θ<br>
-      10√3 = p × 10⁵ × sin 30° = p × 10⁵ × 0.5<br>
-      p = 10√3 / (0.5 × 10⁵) = 2√3 × 10⁻⁴ C·m<br><br>
-      p = q × 2l = q × 2 × 10⁻² m<br>
-      q = (2√3 × 10⁻⁴) / (2 × 10⁻²)<br>
-      <strong>q = √3 × 10⁻² ≈ 1.73 × 10⁻² C</strong>
-    </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.22 — Bar magnet cut transverse / along its length</div>
-    <div class="ans"><strong>Cut transverse (across width/breadth):</strong> Two shorter magnets each of half the original length but same pole strength m. Magnetic moment M' = m × (L/2) = M/2 for each.<br><br><strong>Cut along its length:</strong> Two thinner magnets, each with half the original pole strength (m/2) but same length L. Magnetic moment M' = (m/2) × L = M/2 for each. Each piece is a complete magnet with both N and S poles.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.23 — Physicist–Work matching</div>
-    <div class="ans">
-      (i) H. Hertz → (a) Existence of EM waves, (b) Properties of EM waves<br>
-      (ii) J. Maxwell → (b) Properties of EM waves, (d) Displacement current<br>
-      (iii) G. Marconi → (c) Wireless communication
-    </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.24 — Frequency of red light (λ = 6.5×10⁻⁷ m, c = 3×10⁸ m/s)</div>
-    <div class="calc-box">
-      f = c/λ = (3×10⁸) / (6.5×10⁻⁷)<br>
-      <strong>f ≈ 4.6 × 10¹⁴ Hz</strong>
-    </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.25 — Carrier wave</div>
-    <div class="ans">A high-frequency sinusoidal electromagnetic wave generated by an oscillator, used to carry information/signals over long distances. The signal (audio/video) is superimposed on it by modulation (AM or FM). The carrier itself carries no useful information — it only serves as a vehicle.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.26 — Light travels in vacuum; sound cannot</div>
-    <div class="ans">Light is an electromagnetic wave — it consists of oscillating electric and magnetic fields that sustain each other and require no medium to propagate. Sound is a mechanical wave — it needs a material medium (particles) to transfer compression and rarefaction. In vacuum there are no particles, so sound cannot propagate.</div>
-  </div>
-</div>
-
-<div id="secD" class="section">
-  <div class="q">
-    <div class="qnum">Q.27 — Impulse: quantity related to change in momentum</div>
-    <div class="ans"><strong>Impulse (J̄):</strong> The product of force and the time interval for which it acts. It equals the change in momentum of a body.<br>
-    For constant force: <span class="formula">J = F × t</span><br>
-    For variable force: <span class="formula">J = ∫F dt = Δp = mv − mu</span><br><br>
-    <strong>When used instead of force:</strong> When force acts for a very short duration (collision, explosion, a bat hitting a ball), it is practically impossible to measure the force and time separately. It is easier and more meaningful to measure the net change in momentum — hence we use impulse.</div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.28 — Block on rough table: min and max weights in pan</div>
-    <div class="calc-box">
-      Max static friction = 10% of block's weight = 0.1 × 35 × 9.9 = 34.65 N<br>
-      Left: 20 kg load → pulls left with 20g N<br>
-      Right: (2 + n) kg pan → pulls right with (2+n)g N<br><br>
-      For block NOT to slide (net force ≤ friction):<br>
-      <strong>Minimum n:</strong> 20g − (2+n)g ≤ 34.65 → (18−n)×9.9 ≤ 34.65 → n ≥ 14.5 → <strong>n_min = 15</strong><br>
-      <strong>Maximum n:</strong> (2+n)g − 20g ≤ 34.65 → (n−18)×9.9 ≤ 34.65 → n ≤ 21.5 → <strong>n_max = 21</strong><br>
-      Weights in pan: minimum 15, maximum 21 ✓
-    </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.29 — Net force on each object</div>
-    <div class="ans">
-      (1) Rain drop at constant speed → Net force = <strong>0</strong> (gravity = air drag + buoyancy)<br>
-      (2) Cork floating on water → Net force = <strong>0</strong> (weight = buoyant force)<br>
-      (3) Kite stationary in sky → Net force = <strong>0</strong> (gravity = wind lift + string tension)<br>
-      (4) Car at constant 30 km/h → Net force = <strong>0</strong> (engine force = friction)<br>
-      (5) High-speed electron far from all fields → Net force = <strong>0</strong> (no gravitational or electromagnetic force acts on it)
-    </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.30 — EM wave: f = 50 MHz along +x, Ē = 9.6 ĵ V/m → find B̄</div>
-    <div class="calc-box">
-      B₀ = E₀/c = 9.6 / (3×10⁸) = 3.2 × 10⁻⁸ T<br><br>
-      Direction: Wave travels along +x̂, Ē along +ŷ<br>
-      B̄ must be ⊥ to both → along +ẑ (using right-hand rule: x̂ × ŷ = ẑ)<br>
-      <strong>B̄ = 3.2 × 10⁻⁸ k̂ T (along +z direction)</strong>
-    </div>
-  </div>
-  <div class="q">
-    <div class="qnum">Q.31 — Intrinsic vs Extrinsic semiconductors</div>
-    <table class="diff">
-      <tr><th>Property</th><th>Intrinsic</th><th>Extrinsic</th></tr>
-      <tr><td>Definition</td><td>Pure semiconductor (no dopant)</td><td>Doped with impurity atoms</td></tr>
-      <tr><td>Conductivity</td><td>Very low at room temp</td><td>Much higher</td></tr>
-      <tr><td>Charge carriers</td><td>nₑ = nₕ (electrons = holes)</td><td>nₑ ≠ nₕ (depends on dopant)</td></tr>
-      <tr><td>Types</td><td>Only one type</td><td>p-type and n-type</td></tr>
-      <tr><td>Example</td><td>Pure Si, pure Ge</td><td>Si+B (p-type), Si+As (n-type)</td></tr>
-      <tr><td>Temp dependence</td><td>Strongly increases with temp</td><td>Less sensitive at room temp</td></tr>
-      <tr><td>Fermi level</td><td>Exactly at middle of band gap</td><td>Shifts toward valence or conduction band</td></tr>
-    </table>
-  </div>
-</div>
-
-<script>
-function show(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  event.target.classList.add('active');
-}
-</script>
+</body>
+</html>
