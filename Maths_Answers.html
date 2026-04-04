@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathematics & Statistics II — Model Answer Paper | Std. 11th | Maharashtra Board</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Cinzel:wght@700;900&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --parchment: #fdf8f0;
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --crimson: #8b1a1a;
+    --green: #1a5c2e;
+    --teal: #0f4c5c;
+    --rule: #d9cdb8;
+    --light: #f5f0e8;
+    --mid: #e8e0d0;
+    --shadow: rgba(13,27,42,0.14);
+    --border: 1px solid var(--rule);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--parchment);
+    color: var(--navy);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--navy);
+    color: var(--parchment);
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::after {
+    content:'';
+    position:absolute; bottom:0; left:0; right:0;
+    height:4px;
+    background: linear-gradient(90deg, var(--crimson), var(--gold), var(--crimson));
+  }
+  header::before {
+    content:'';
+    position:absolute; inset:0;
+    background: repeating-linear-gradient(135deg,
+      transparent, transparent 25px, rgba(201,168,76,.04) 25px, rgba(201,168,76,.04) 50px);
+  }
+  .hdr-school {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(.9rem, 2.5vw, 1.2rem);
+    color: var(--gold-light);
+    letter-spacing:.1em;
+    position:relative;
+  }
+  .hdr-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    font-weight:900;
+    margin:.5rem 0;
+    position:relative;
+  }
+  .hdr-sub {
+    font-size:.95rem;
+    opacity:.8;
+    position:relative;
+  }
+  .hdr-meta {
+    display:flex; flex-wrap:wrap; justify-content:center; gap:2rem;
+    margin-top:1rem; font-size:.85rem; letter-spacing:.04em;
+    position:relative;
+  }
+  .hdr-meta span {
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(201,168,76,.3);
+    padding:.3rem .8rem;
+    border-radius:3px;
+  }
+
+  /* ── NAV ── */
+  .sticky-nav {
+    position: sticky; top:0; z-index:100;
+    background: var(--navy);
+    display:flex; flex-wrap:wrap; justify-content:center; gap:.3rem;
+    padding:.6rem 1rem;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+  .sticky-nav a {
+    color: var(--gold-light);
+    text-decoration:none;
+    font-family:'Cinzel',serif;
+    font-size:.75rem;
+    letter-spacing:.06em;
+    padding:.35rem .9rem;
+    border:1px solid rgba(201,168,76,.25);
+    border-radius:3px;
+    transition: all .2s;
+  }
+  .sticky-nav a:hover {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+  }
+
+  /* ── WRAPPER ── */
+  .wrapper { max-width:960px; margin:0 auto; padding:2.5rem 1.5rem 5rem; }
+
+  /* ── SECTION HEADER ── */
+  .section-hdr {
+    display:flex; align-items:center; gap:1rem;
+    margin: 2.5rem 0 1.5rem;
+    padding-bottom:.6rem;
+    border-bottom: 2px solid var(--gold);
+  }
+  .section-badge {
+    background: var(--navy);
+    color: var(--gold);
+    font-family:'Cinzel',serif;
+    font-size:.8rem;
+    font-weight:700;
+    padding:.4rem .9rem;
+    border-radius:3px;
+    letter-spacing:.08em;
+    white-space:nowrap;
+  }
+  .section-hdr h2 {
+    font-family:'Cinzel',serif;
+    font-size:1.3rem;
+    color: var(--navy);
+  }
+  .section-marks {
+    margin-left:auto;
+    font-family:'Fira Mono',monospace;
+    font-size:.75rem;
+    background: var(--crimson);
+    color:#fff;
+    padding:.25rem .6rem;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+
+  /* ── Q BLOCK ── */
+  .q-block {
+    background: #fff;
+    border: var(--border);
+    border-left: 4px solid var(--teal);
+    border-radius: 6px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.4rem;
+    box-shadow: 0 2px 8px var(--shadow);
+    animation: appear .4s ease both;
+  }
+  .q-block:nth-child(odd) { animation-delay:.05s; }
+  @keyframes appear {
+    from { opacity:0; transform:translateY(12px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .q-block.crimson { border-left-color: var(--crimson); }
+  .q-block.gold    { border-left-color: var(--gold); }
+  .q-block.green   { border-left-color: var(--green); }
+
+  .q-title {
+    font-family:'Cinzel',serif;
+    font-size:1rem;
+    font-weight:700;
+    color: var(--teal);
+    margin-bottom:.9rem;
+    display:flex; align-items:baseline; gap:.6rem;
+    flex-wrap:wrap;
+  }
+  .q-title.crimson { color: var(--crimson); }
+  .q-title.gold    { color: var(--gold); }
+  .q-title.green   { color: var(--green); }
+
+  .q-num {
+    background: var(--teal);
+    color:#fff;
+    font-size:.72rem;
+    padding:.15rem .5rem;
+    border-radius:3px;
+  }
+  .q-num.crimson { background:var(--crimson); }
+  .q-num.gold    { background:var(--gold); color:var(--navy); }
+  .q-num.green   { background:var(--green); }
+
+  /* ── MCQ ── */
+  .mcq-row {
+    background: var(--light);
+    border: var(--border);
+    border-radius:5px;
+    padding:.7rem 1rem;
+    margin-bottom:.7rem;
+    display:grid;
+    grid-template-columns: auto 1fr auto;
+    gap:.6rem;
+    align-items:start;
+  }
+  .mcq-idx { font-family:'Fira Mono',monospace; font-size:.8rem; color:var(--gold); font-weight:600; padding-top:.1rem; }
+  .mcq-question { font-size:.95rem; }
+  .mcq-answer { font-family:'Fira Mono',monospace; font-size:.8rem; font-weight:700; color:var(--green); white-space:nowrap; }
+  .mcq-reason { grid-column:2/4; font-size:.84rem; color:#555; font-style:italic; margin-top:.25rem; line-height:1.55; }
+
+  /* ── STEP BLOCK ── */
+  .steps { list-style:none; counter-reset:step-ct; }
+  .steps li {
+    counter-increment: step-ct;
+    padding:.45rem 0 .45rem 2.5rem;
+    position:relative;
+    border-bottom:1px dashed var(--rule);
+    font-size:.94rem;
+  }
+  .steps li:last-child { border-bottom:none; }
+  .steps li::before {
+    content:counter(step-ct);
+    position:absolute; left:0; top:.45rem;
+    width:1.5rem; height:1.5rem;
+    background:var(--teal); color:#fff;
+    border-radius:50%;
+    font-size:.72rem; font-family:'Fira Mono',monospace;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  /* ── ANSWER CHIP ── */
+  .ans-chip {
+    display:inline-block;
+    background: var(--green);
+    color:#fff;
+    font-family:'Fira Mono',monospace;
+    font-size:.8rem;
+    font-weight:600;
+    padding:.25rem .75rem;
+    border-radius:20px;
+    margin:.4rem 0;
+  }
+
+  /* ── MATH BOX ── */
+  .math-box {
+    background: var(--light);
+    border:var(--border);
+    border-left:3px solid var(--gold);
+    border-radius:4px;
+    padding:.7rem 1.1rem;
+    margin:.55rem 0;
+    font-size:.95rem;
+    overflow-x:auto;
+  }
+  .math-box.final {
+    background:#e8f5e9;
+    border-left-color: var(--green);
+    font-weight:600;
+  }
+
+  /* ── TABLE ── */
+  .cmp-table { width:100%; border-collapse:collapse; font-size:.88rem; margin:.7rem 0; }
+  .cmp-table th {
+    background:var(--navy); color:var(--parchment);
+    padding:.5rem .8rem; text-align:left;
+    font-family:'Cinzel',serif; font-size:.78rem; letter-spacing:.04em;
+  }
+  .cmp-table td { padding:.45rem .8rem; border-bottom:1px solid var(--rule); vertical-align:top; }
+  .cmp-table tr:nth-child(even) td { background:var(--light); }
+  .cmp-table tr:last-child td { border-bottom:none; }
+
+  /* ── CODE / MONO ── */
+  .mono {
+    font-family:'Fira Mono',monospace;
+    font-size:.82rem;
+    background:var(--mid);
+    padding:.6rem 1rem;
+    border-radius:4px;
+    margin:.5rem 0;
+    white-space:pre;
+    overflow-x:auto;
+    line-height:1.6;
+  }
+
+  /* ── SUB LABEL ── */
+  .sub-lbl {
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--crimson);
+    margin: .85rem 0 .35rem;
+  }
+
+  p { font-size:.94rem; margin:.35rem 0; }
+  ul, ol { margin:.35rem 0 .35rem 1.5rem; font-size:.94rem; }
+  li { margin-bottom:.25rem; }
+  strong { color:var(--navy); }
+
+  hr.sec { border:none; border-top:2px solid var(--rule); margin:2rem 0; }
+
+  /* ── RESULT BADGE ── */
+  .result-badge {
+    display:inline-flex; align-items:center; gap:.4rem;
+    background:var(--green); color:#fff;
+    font-family:'Fira Mono',monospace; font-size:.78rem; font-weight:700;
+    padding:.3rem .8rem; border-radius:4px; margin:.4rem 0;
+  }
+
+  /* ── TRUE/FALSE ── */
+  .tf-row { display:flex; gap:1rem; align-items:start; padding:.55rem 0; border-bottom:1px dashed var(--rule); font-size:.93rem; }
+  .tf-row:last-child { border:none; }
+  .tf-badge { font-family:'Fira Mono',monospace; font-size:.72rem; font-weight:700; padding:.15rem .5rem; border-radius:3px; white-space:nowrap; flex-shrink:0; margin-top:.15rem; }
+  .tf-true  { background:#d4edda; color:#155724; }
+  .tf-false { background:#f8d7da; color:#721c24; }
+  .tf-num   { font-family:'Fira Mono',monospace; font-size:.8rem; color:var(--gold); font-weight:600; flex-shrink:0; }
+  .tf-text  { flex:1; }
+  .tf-reason { font-size:.82rem; color:#555; font-style:italic; margin-top:.2rem; }
+
+  footer {
+    text-align:center; font-size:.78rem; color:#888;
+    padding:1.5rem; border-top:1px solid var(--rule);
+    letter-spacing:.04em;
+  }
+
+  @media (max-width:600px) {
+    .mcq-row { grid-template-columns:auto 1fr; }
+    .mcq-answer { grid-column:2; }
+    .mcq-reason { grid-column:1/3; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr-school">BVP / A &nbsp;·&nbsp; MAHARASHTRA STATE BOARD</div>
+  <div class="hdr-title">Mathematics &amp; Statistics — II</div>
+  <div class="hdr-sub">Second Semester Examination · Std. 11<sup>th</sup> · Model Answer Paper</div>
+  <div class="hdr-meta">
+    <span>⏱ Time: 3 Hours</span>
+    <span>🏅 Marks: 80</span>
+    <span>📐 Mathematics &amp; Statistics</span>
+    <span>📋 11<sup>th</sup> Standard</span>
+  </div>
+</header>
+
+<nav class="sticky-nav">
+  <a href="#sec-a">Section A</a>
+  <a href="#sec-b">Section B</a>
+  <a href="#sec-c">Section C</a>
+  <a href="#sec-d">Section D</a>
+</nav>
+
+<div class="wrapper">
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION A
+     ═══════════════════════════════════════════════════════ -->
+<div id="sec-a">
+  <div class="section-hdr">
+    <span class="section-badge">SECTION A</span>
+    <h2>Q.1 — Select the Correct Answer &amp; Q.2 — Short Answers</h2>
+    <span class="section-marks">2 + 4 = 16 Marks</span>
+  </div>
+
+  <!-- Q.1 MCQs -->
+  <div class="q-block crimson">
+    <div class="q-title crimson"><span class="q-num crimson">Q.1</span> Select and Write the Correct Answer (8 × 2 = 16 Marks)</div>
+
+    <!-- (1) -->
+    <div class="mcq-row">
+      <span class="mcq-idx">(1)</span>
+      <span class="mcq-question">If \(a\cos 2\theta + b\sin 2\theta = c\) has \(\alpha\) and \(\beta\) as its roots, then \(\tan\alpha + \tan\beta\) = ?</span>
+      <span class="mcq-answer">✔ (a) \(\dfrac{2b}{c+a}\)</span>
+      <span class="mcq-reason">
+        Substitute \(\cos 2\theta = \dfrac{1-t^2}{1+t^2},\ \sin 2\theta = \dfrac{2t}{1+t^2}\) where \(t = \tan\theta\):<br>
+        \(a(1-t^2)+2bt = c(1+t^2) \Rightarrow (a+c)t^2 - 2bt - (a-c)=0\)<br>
+        By Vieta's: \(\tan\alpha+\tan\beta = \dfrac{2b}{a+c} = \dfrac{2b}{c+a}\)
+      </span>
+    </div>
+
+    <!-- (2) -->
+    <div class="mcq-row">
+      <span class="mcq-idx">(2)</span>
+      <span class="mcq-question">Eccentricity of \(16x^2 - 3y^2 - 32x - 12y - 44 = 0\)</span>
+      <span class="mcq-answer">✔ (b) \(\sqrt{\dfrac{19}{3}}\)</span>
+      <span class="mcq-reason">
+        Complete the square: \(16(x-1)^2 - 3(y+2)^2 = 48 \Rightarrow \dfrac{(x-1)^2}{3} - \dfrac{(y+2)^2}{16}=1\)<br>
+        \(a^2=3,\ b^2=16,\ c^2=a^2+b^2=19,\ e = \dfrac{c}{a} = \dfrac{\sqrt{19}}{\sqrt{3}} = \sqrt{\dfrac{19}{3}}\)
+      </span>
+    </div>
+
+    <!-- (3) -->
+    <div class="mcq-row">
+      <span class="mcq-idx">(3)</span>
+      <span class="mcq-question">A college offers 5 morning courses and 3 evening courses. Ways a student selects exactly one course (morning or evening)?</span>
+      <span class="mcq-answer">✔ (c) 8</span>
+      <span class="mcq-reason">The student picks exactly one course from either session: \(5 + 3 = 8\) ways.</span>
+    </div>
+
+    <!-- (4) -->
+    <div class="mcq-row">
+      <span class="mcq-idx">(4)</span>
+      <span class="mcq-question">Total number of terms in \((x+y)^{100}+(x-y)^{100}\) after simplification</span>
+      <span class="mcq-answer">✔ (b) 51</span>
+      <span class="mcq-reason">
+        In \((x+y)^{100}\) the terms with odd powers of \(y\) are cancelled by the corresponding terms of \((x-y)^{100}\). Only even-power terms survive: \(y^0, y^2, y^4,\ldots,y^{100}\) → \(51\) terms.
+      </span>
+    </div>
+
+    <!-- (5) -->
+    <div class="mcq-row">
+      <span class="mcq-idx">(5)</span>
+      <span class="mcq-question">If set \(A\) is empty, then \(n[P[P[P(A)]]]\) = ?</span>
+      <span class="mcq-answer">✔ (d) 4</span>
+      <span class="mcq-reason">
+        \(n(A)=0 \Rightarrow n(P(A))=1 \Rightarrow n(P(P(A)))=2 \Rightarrow n(P(P(P(A))))=2^2=4\)
+      </span>
+    </div>
+
+    <!-- (6) -->
+    <div class="mcq-row">
+      <span class="mcq-idx">(6)</span>
+      <span class="mcq-question">If \(f(x)=\dfrac{1}{1-x}\), then \(f(f(f(x)))\) is</span>
+      <span class="mcq-answer">✔ (c) \(x\)</span>
+      <span class="mcq-reason">
+        \(f(f(x)) = f\!\left(\dfrac{1}{1-x}\right) = \dfrac{1}{1-\frac{1}{1-x}} = \dfrac{x-1}{x}\)<br>
+        \(f(f(f(x))) = f\!\left(\dfrac{x-1}{x}\right) = \dfrac{1}{1-\frac{x-1}{x}} = \dfrac{1}{\frac{1}{x}} = x\)
+      </span>
+    </div>
+
+    <!-- (7) -->
+    <div class="mcq-row">
+      <span class="mcq-idx">(7)</span>
+      <span class="mcq-question">\(\displaystyle\lim_{x\to\pi/2}\dfrac{3\cos x+\cos 3x}{(2x-\pi)^3}\)</span>
+      <span class="mcq-answer">✔ (c) \(-\dfrac{1}{2}\)</span>
+      <span class="mcq-reason">
+        Let \(t = x-\tfrac{\pi}{2}\) (so \(t\to 0\)). Then \(\cos x=-\sin t\) and \(\cos 3x=\sin 3t\).<br>
+        Numerator: \(-3\sin t + \sin 3t = -3\sin t+(3\sin t - 4\sin^3 t) = -4\sin^3 t\).<br>
+        Denominator: \((2t)^3 = 8t^3\).<br>
+        Limit \(= \dfrac{-4\sin^3 t}{8t^3} \to \dfrac{-4}{8}\cdot 1 = -\dfrac{1}{2}\)
+      </span>
+    </div>
+
+    <!-- (8) -->
+    <div class="mcq-row">
+      <span class="mcq-idx">(8)</span>
+      <span class="mcq-question">\(f(x)=x^2+\sin x+1\) for \(x\le 0\) and \(f(x)=x^2-2x+1\) for \(x>0\)</span>
+      <span class="mcq-answer">✔ (a) Continuous but NOT differentiable at \(x=0\)</span>
+      <span class="mcq-reason">
+        <strong>Continuity:</strong> \(f(0^-)=0+0+1=1\) and \(f(0^+)=0-0+1=1=f(0)\) ✓<br>
+        <strong>Differentiability:</strong> Left derivative \(= (2x+\cos x)|_0 = 1\). Right derivative \(=(2x-2)|_0=-2\).<br>
+        Since \(1\ne -2\), \(f\) is <em>not</em> differentiable at \(x=0\).
+      </span>
+    </div>
+  </div>
+
+  <!-- Q.2 Short answers -->
+  <div class="q-block gold">
+    <div class="q-title gold"><span class="q-num gold">Q.2</span> Short Answer Questions (4 × 1 = 4 Marks)</div>
+
+    <!-- (1) Matrix -->
+    <div class="sub-lbl">(1) If \(A=\begin{bmatrix}0&1{+}2i&-(2{-}i)\\-1{-}2i&0&-7\\2{-}i&7&0\end{bmatrix}\) where \(i=\sqrt{-1}\), prove \(A^T=-A\)</div>
+    <p>We compute the transpose \(A^T\) by swapping rows and columns:</p>
+    <div class="math-box">
+      \(A^T = \begin{bmatrix}0 & -1-2i & 2-i\\ 1+2i & 0 & 7\\ -(2-i) & -7 & 0\end{bmatrix}\)
+    </div>
+    <p>Now compute \(-A\):</p>
+    <div class="math-box">
+      \(-A = \begin{bmatrix}0 & -(1+2i) & (2-i)\\ 1+2i & 0 & 7\\ -(2-i) & -7 & 0\end{bmatrix} = \begin{bmatrix}0 & -1-2i & 2-i\\ 1+2i & 0 & 7\\ -(2-i) & -7 & 0\end{bmatrix}\)
+    </div>
+    <div class="result-badge">✓ &nbsp; A<sup>T</sup> = −A &nbsp; (Proved)</div>
+
+    <!-- (2) Line -->
+    <div class="sub-lbl">(2) Equation of the line parallel to the X-axis and 5 units above it</div>
+    <p>Any line parallel to the X-axis has the form \(y = k\). Being 5 units <em>above</em> the X-axis means \(k = 5\).</p>
+    <div class="math-box final">\(\boxed{y = 5}\)</div>
+
+    <!-- (3) Intersection -->
+    <div class="sub-lbl">(3) Point of intersection of \(x+2y=3\) and \(2x-y=1\)</div>
+    <p>From \(2x-y=1\): \(y=2x-1\). Substituting into the first equation:</p>
+    <div class="math-box">
+      \(x+2(2x-1)=3 \Rightarrow 5x=5 \Rightarrow x=1,\quad y=2(1)-1=1\)
+    </div>
+    <div class="math-box final">Point of intersection: \(\boxed{(1,\,1)}\)</div>
+
+    <!-- (4) Circle -->
+    <div class="sub-lbl">(4) Centre and radius of \(\left(x-\dfrac{1}{2}\right)^2+\left(y+\dfrac{1}{3}\right)^2=\dfrac{1}{36}\)</div>
+    <p>Comparing with \((x-h)^2+(y-k)^2=r^2\):</p>
+    <div class="math-box final">
+      Centre \(= \left(\dfrac{1}{2},\,-\dfrac{1}{3}\right)\), &emsp; Radius \(= \dfrac{1}{6}\)
+    </div>
+  </div>
+</div>
+
+<hr class="sec">
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION B
+     ═══════════════════════════════════════════════════════ -->
+<div id="sec-b">
+  <div class="section-hdr">
+    <span class="section-badge">SECTION B</span>
+    <h2>Q.3 to Q.14 — Attempt Any Eight (2 Marks Each)</h2>
+    <span class="section-marks">8 × 2 = 16 Marks</span>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q-block">
+    <div class="q-title"><span class="q-num">Q.3</span> Circle of diameter 40 cm, chord of length 20 cm — find length of minor arc</div>
+    <p>Radius \(r = 20\) cm. Using the chord–angle formula: \(\text{chord} = 2r\sin\!\dfrac{\theta}{2}\)</p>
+    <div class="math-box">
+      \(20 = 2(20)\sin\tfrac{\theta}{2} \Rightarrow \sin\tfrac{\theta}{2}=\tfrac{1}{2} \Rightarrow \tfrac{\theta}{2}=\tfrac{\pi}{6} \Rightarrow \theta=\tfrac{\pi}{3}\)
+    </div>
+    <div class="math-box final">
+      Minor arc length \(= r\theta = 20\cdot\dfrac{\pi}{3} = \dfrac{20\pi}{3}\) cm
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q-block">
+    <div class="q-title"><span class="q-num">Q.4</span> Show that \(\tan^2\theta+\cot^2\theta\ge 2\) for all \(\theta\in\mathbb{R}\)</div>
+    <p>By the AM–GM inequality, for any two positive real numbers \(a, b\):</p>
+    <div class="math-box">\(\dfrac{a+b}{2}\ge\sqrt{ab}\)</div>
+    <p>Set \(a=\tan^2\theta\) and \(b=\cot^2\theta\) (both positive for \(\theta\ne n\pi/2\)):</p>
+    <div class="math-box">
+      \(\dfrac{\tan^2\theta+\cot^2\theta}{2}\ge\sqrt{\tan^2\theta\cdot\cot^2\theta}=\sqrt{1}=1\)
+    </div>
+    <div class="math-box final">
+      \(\therefore\quad\tan^2\theta+\cot^2\theta\ge 2 \quad\square\)
+    </div>
+    <p><em>Equality holds when \(\tan^2\theta=\cot^2\theta\), i.e., \(\tan\theta=\pm1\), i.e., \(\theta=\pm\dfrac{\pi}{4}\).</em></p>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q-block">
+    <div class="q-title"><span class="q-num">Q.5</span> Prove: \(\cot 4x(\sin 5x+\sin 3x)=\cot x(\sin 5x-\sin 3x)\)</div>
+    <div class="sub-lbl">LHS</div>
+    <div class="math-box">
+      Using \(\sin A+\sin B=2\sin\tfrac{A+B}{2}\cos\tfrac{A-B}{2}\):<br>
+      \(\sin 5x+\sin 3x = 2\sin 4x\cos x\)<br>
+      \(\therefore\text{LHS}=\cot 4x\cdot 2\sin 4x\cos x = \dfrac{\cos 4x}{\sin 4x}\cdot 2\sin 4x\cos x = 2\cos 4x\cos x\)
+    </div>
+    <div class="sub-lbl">RHS</div>
+    <div class="math-box">
+      Using \(\sin A-\sin B=2\cos\tfrac{A+B}{2}\sin\tfrac{A-B}{2}\):<br>
+      \(\sin 5x-\sin 3x = 2\cos 4x\sin x\)<br>
+      \(\therefore\text{RHS}=\cot x\cdot 2\cos 4x\sin x = \dfrac{\cos x}{\sin x}\cdot 2\cos 4x\sin x = 2\cos 4x\cos x\)
+    </div>
+    <div class="result-badge">✓ &nbsp; LHS = RHS = 2 cos 4x · cos x &nbsp; (Proved)</div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="q-block">
+    <div class="q-title"><span class="q-num">Q.6</span> Slope, x-intercept, y-intercept of \(3x-y-9=0\)</div>
+    <p>Rewrite in slope-intercept form: \(y = 3x - 9\)</p>
+    <div class="math-box final">
+      Slope \(m = 3\)<br>
+      x-intercept (set \(y=0\)): \(3x=9 \Rightarrow x=3\) &nbsp;→ x-intercept \(= 3\)<br>
+      y-intercept (set \(x=0\)): \(-y=9 \Rightarrow y=-9\) &nbsp;→ y-intercept \(= -9\)
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="q-block">
+    <div class="q-title"><span class="q-num">Q.7</span> Locus of P such that AP = 2BP, where A(2,0) and B(0,3)</div>
+    <p>Let \(P=(x,y)\). Condition: \(AP^2=4\cdot BP^2\)</p>
+    <div class="math-box">
+      \((x-2)^2+y^2 = 4\bigl[x^2+(y-3)^2\bigr]\)<br>
+      \(x^2-4x+4+y^2 = 4x^2+4y^2-24y+36\)<br>
+      \(3x^2+3y^2+4x-24y+32=0\)
+    </div>
+    <div class="math-box final">Locus: \(\boxed{3x^2+3y^2+4x-24y+32=0}\)</div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="q-block">
+    <div class="q-title"><span class="q-num">Q.8</span> Parameter of point (27, −12) on parabola \(3y^2=16x\)</div>
+    <p>Rewrite: \(y^2=\dfrac{16}{3}x\) i.e. \(y^2=4ax\) where \(4a=\dfrac{16}{3}\Rightarrow a=\dfrac{4}{3}\).</p>
+    <p>Parametric form: \(x=at^2,\; y=2at\).</p>
+    <div class="math-box">
+      \(y=2at=-12 \Rightarrow t = \dfrac{-12}{2\cdot\frac{4}{3}} = \dfrac{-12}{\frac{8}{3}} = -12\times\dfrac{3}{8} = -\dfrac{9}{2}\)
+    </div>
+    <p>Verification: \(x=at^2=\dfrac{4}{3}\cdot\dfrac{81}{4}=27\) ✓</p>
+    <div class="math-box final">Parameter \(t = -\dfrac{9}{2}\)</div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="q-block">
+    <div class="q-title"><span class="q-num">Q.9</span> If pth, qth, rth terms of a G.P. are x, y, z, find \(x^{q-r}\cdot y^{r-p}\cdot z^{p-q}\)</div>
+    <p>Let first term \(= a\), common ratio \(= R\). Then \(x=aR^{p-1},\ y=aR^{q-1},\ z=aR^{r-1}\).</p>
+    <div class="math-box">
+      \(x^{q-r}\cdot y^{r-p}\cdot z^{p-q} = a^{(q-r)+(r-p)+(p-q)}\cdot R^{(p-1)(q-r)+(q-1)(r-p)+(r-1)(p-q)}\)
+    </div>
+    <p><strong>Exponent of a:</strong> \((q-r)+(r-p)+(p-q)=0\)</p>
+    <p><strong>Exponent of R:</strong> Expanding and collecting terms also gives \(0\).</p>
+    <div class="math-box final">\(\therefore\; x^{q-r}\cdot y^{r-p}\cdot z^{p-q} = a^0\cdot R^0 = \boxed{1}\)</div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="q-block">
+    <div class="q-title"><span class="q-num">Q.10</span> Show \(\dfrac{9!}{3!\,6!}+\dfrac{9!}{4!\,5!}=\dfrac{10!}{4!\,6!}\)</div>
+    <p>Recognising combinatorial notation: \(\dfrac{9!}{3!\,6!}=\binom{9}{3}=84\) and \(\dfrac{9!}{4!\,5!}=\binom{9}{4}=126\).</p>
+    <div class="math-box">
+      \(\text{LHS} = \dfrac{9!}{3!\,6!}+\dfrac{9!}{4!\,5!} = 9!\left[\dfrac{4\cdot 3!\cdot 5!+3!\cdot 6!}{3!\cdot 4!\cdot 5!\cdot 6!}\right]\)
+      \(= 9!\cdot\dfrac{3!\cdot 5!\,(4+6)}{3!\cdot 4!\cdot 5!\cdot 6!} = \dfrac{9!\cdot 10}{4!\cdot 6!} = \dfrac{10!}{4!\,6!} = \text{RHS}\quad\square\)
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="q-block">
+    <div class="q-title"><span class="q-num">Q.11</span> 6-digit numbers from digits 3,4,5,6,7,8 without repetition</div>
+    <p>Total 6-digit numbers: \(6! = 720\)</p>
+    <div class="sub-lbl">(a) Divisible by 5</div>
+    <p>Last digit must be 5. Remaining 5 places from 5 remaining digits: \(5! = 120\)</p>
+    <div class="math-box final">Divisible by 5: \(\mathbf{120}\)</div>
+    <div class="sub-lbl">(b) Not divisible by 5</div>
+    <div class="math-box final">Not divisible by 5: \(720 - 120 = \mathbf{600}\)</div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="q-block">
+    <div class="q-title"><span class="q-num">Q.12</span> If \(f:A\to B\) and \(g:B\to C\) are one-one, then \(g\circ f\) is also one-one</div>
+    <p><strong>Proof:</strong> Suppose \((g\circ f)(x_1)=(g\circ f)(x_2)\) for some \(x_1,x_2\in A\).</p>
+    <ul>
+      <li>\(\Rightarrow g(f(x_1))=g(f(x_2))\)</li>
+      <li>\(\Rightarrow f(x_1)=f(x_2)\) &nbsp;&nbsp; [since \(g\) is one-one]</li>
+      <li>\(\Rightarrow x_1=x_2\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [since \(f\) is one-one]</li>
+    </ul>
+    <div class="result-badge">∴ g∘f is one-one &nbsp; □</div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="q-block">
+    <div class="q-title"><span class="q-num">Q.13</span> \(f:R\to R\) defined by \(f(x)=\dfrac{3x}{5}+2\). Show one-one and onto, find \(f^{-1}\)</div>
+    <div class="sub-lbl">One-One</div>
+    <p>Let \(f(x_1)=f(x_2)\Rightarrow\dfrac{3x_1}{5}+2=\dfrac{3x_2}{5}+2\Rightarrow x_1=x_2\). Hence one-one.</p>
+    <div class="sub-lbl">Onto</div>
+    <p>For any \(y\in\mathbb{R}\), let \(x=\dfrac{5(y-2)}{3}\in\mathbb{R}\). Then \(f(x)=\dfrac{3}{5}\cdot\dfrac{5(y-2)}{3}+2=y\). Hence onto.</p>
+    <div class="sub-lbl">Inverse</div>
+    <p>Setting \(y=f(x)\): \(y=\dfrac{3x}{5}+2\Rightarrow x=\dfrac{5(y-2)}{3}\)</p>
+    <div class="math-box final">\(f^{-1}(x)=\dfrac{5(x-2)}{3}\)</div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="q-block">
+    <div class="q-title"><span class="q-num">Q.14</span> Evaluate \(\displaystyle\lim_{y\to 0}\dfrac{\sqrt{a+y}-\sqrt{a}}{y\sqrt{a+y}}\)</div>
+    <p>Rationalise the numerator by multiplying by \(\sqrt{a+y}+\sqrt{a}\):</p>
+    <div class="math-box">
+      \(\dfrac{\sqrt{a+y}-\sqrt{a}}{y\sqrt{a+y}} \times \dfrac{\sqrt{a+y}+\sqrt{a}}{\sqrt{a+y}+\sqrt{a}} = \dfrac{y}{y\sqrt{a+y}\left(\sqrt{a+y}+\sqrt{a}\right)}\)
+      \(= \dfrac{1}{\sqrt{a+y}\left(\sqrt{a+y}+\sqrt{a}\right)}\)
+    </div>
+    <p>As \(y\to 0\):</p>
+    <div class="math-box final">
+      \(\displaystyle\lim_{y\to 0} = \dfrac{1}{\sqrt{a}\left(\sqrt{a}+\sqrt{a}\right)} = \dfrac{1}{\sqrt{a}\cdot 2\sqrt{a}} = \boxed{\dfrac{1}{2a}}\)
+    </div>
+  </div>
+</div>
+
+<hr class="sec">
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION C
+     ═══════════════════════════════════════════════════════ -->
+<div id="sec-c">
+  <div class="section-hdr">
+    <span class="section-badge">SECTION C</span>
+    <h2>Q.15 to Q.26 — Attempt Any Eight (3 Marks Each)</h2>
+    <span class="section-marks">8 × 3 = 24 Marks</span>
+  </div>
+
+  <!-- Q15 -->
+  <div class="q-block green">
+    <div class="q-title green"><span class="q-num green">Q.15</span> Verify \(A(B+C)=AB+AC\)</div>
+    <p>Given: \(A=\begin{bmatrix}1&-1&3\\2&3&2\end{bmatrix},\; B=\begin{bmatrix}1&0\\-2&3\\4&3\end{bmatrix},\; C=\begin{bmatrix}1&2\\-2&0\\4&-3\end{bmatrix}\)</p>
+    <div class="sub-lbl">Step 1: Find B+C</div>
+    <div class="math-box">
+      \(B+C=\begin{bmatrix}2&2\\-4&3\\8&0\end{bmatrix}\)
+    </div>
+    <div class="sub-lbl">Step 2: Find A(B+C)</div>
+    <div class="math-box">
+      \(A(B+C)=\begin{bmatrix}1(2)+(-1)(-4)+3(8)&1(2)+(-1)(3)+3(0)\\2(2)+3(-4)+2(8)&2(2)+3(3)+2(0)\end{bmatrix}=\begin{bmatrix}30&-1\\8&13\end{bmatrix}\)
+    </div>
+    <div class="sub-lbl">Step 3: Find AB + AC</div>
+    <div class="math-box">
+      \(AB=\begin{bmatrix}15&6\\4&15\end{bmatrix},\quad AC=\begin{bmatrix}15&-7\\4&-2\end{bmatrix}\)
+      \(AB+AC=\begin{bmatrix}30&-1\\8&13\end{bmatrix}\)
+    </div>
+    <div class="result-badge">✓ &nbsp; A(B+C) = AB + AC = [[30, −1], [8, 13]] &nbsp; (Verified)</div>
+  </div>
+
+  <!-- Q16 -->
+  <div class="q-block green">
+    <div class="q-title green"><span class="q-num green">Q.16</span> Hyperbola \(21x^2-4y^2=84\) — all parameters</div>
+    <p>Divide by 84: \(\dfrac{x^2}{4}-\dfrac{y^2}{21}=1\). So \(a^2=4,\; b^2=21,\; a=2,\; b=\sqrt{21}\).</p>
+    <div class="math-box">
+      \(c^2 = a^2+b^2 = 4+21 = 25 \Rightarrow c=5\)
+    </div>
+    <table class="cmp-table">
+      <tr><th>Parameter</th><th>Formula</th><th>Value</th></tr>
+      <tr><td>Length of transverse axis</td><td>\(2a\)</td><td>\(4\) units</td></tr>
+      <tr><td>Length of conjugate axis</td><td>\(2b\)</td><td>\(2\sqrt{21}\) units</td></tr>
+      <tr><td>Eccentricity</td><td>\(e=c/a\)</td><td>\(5/2\)</td></tr>
+      <tr><td>Co-ordinates of foci</td><td>\((\pm c, 0)\)</td><td>\((\pm5,\,0)\)</td></tr>
+      <tr><td>Equations of directrices</td><td>\(x=\pm a/e = \pm a^2/c\)</td><td>\(x=\pm 4/5\)</td></tr>
+      <tr><td>Length of latus rectum</td><td>\(2b^2/a\)</td><td>\(2\times21/2=21\) units</td></tr>
+    </table>
+  </div>
+
+  <!-- Q17 -->
+  <div class="q-block green">
+    <div class="q-title green"><span class="q-num green">Q.17</span> Combined standard deviation for two samples of sizes 60 and 120</div>
+    <p>Given: \(n_1=60,\;\bar{x}_1=35.4,\;\sigma_1=4\) and \(n_2=120,\;\bar{x}_2=30.9,\;\sigma_2=5\).</p>
+    <div class="sub-lbl">Step 1: Combined Mean</div>
+    <div class="math-box">
+      \(\bar{x}_c = \dfrac{n_1\bar{x}_1+n_2\bar{x}_2}{n_1+n_2} = \dfrac{60(35.4)+120(30.9)}{180} = \dfrac{2124+3708}{180} = \dfrac{5832}{180} = 32.4\)
+    </div>
+    <div class="sub-lbl">Step 2: Deviations from Combined Mean</div>
+    <div class="math-box">
+      \(d_1=\bar{x}_1-\bar{x}_c=35.4-32.4=3.0\)<br>
+      \(d_2=\bar{x}_2-\bar{x}_c=30.9-32.4=-1.5\)
+    </div>
+    <div class="sub-lbl">Step 3: Combined Variance</div>
+    <div class="math-box">
+      \(\sigma_c^2 = \dfrac{n_1(\sigma_1^2+d_1^2)+n_2(\sigma_2^2+d_2^2)}{n_1+n_2}\)
+      \(= \dfrac{60(16+9)+120(25+2.25)}{180} = \dfrac{60(25)+120(27.25)}{180} = \dfrac{1500+3270}{180} = \dfrac{4770}{180} = 26.5\)
+    </div>
+    <div class="math-box final">
+      Combined S.D. \(= \sigma_c = \sqrt{26.5} = \dfrac{\sqrt{106}}{2} \approx 5.15\)
+    </div>
+  </div>
+
+  <!-- Q18 -->
+  <div class="q-block green">
+    <div class="q-title green"><span class="q-num green">Q.18</span> Letters of 'EQUATION' arranged in a row — probability</div>
+    <p>EQUATION has <strong>8 distinct letters</strong>. Vowels: E, U, A, I, O (5). Consonants: Q, T, N (3).</p>
+    <p>Total arrangements: \(8! = 40320\)</p>
+    <div class="sub-lbl">(i) All vowels together</div>
+    <div class="math-box">
+      Treat 5 vowels as one block → 4 units to arrange: \(4!\) ways. Vowels within block: \(5!\) ways.<br>
+      Favourable = \(4!\times 5! = 24\times 120 = 2880\)
+    </div>
+    <div class="math-box final">
+      \(P(\text{all vowels together}) = \dfrac{2880}{40320} = \dfrac{1}{14}\)
+    </div>
+    <div class="sub-lbl">(ii) Starts with a vowel and ends with a consonant</div>
+    <div class="math-box">
+      1st position (vowel): 5 choices &nbsp;|&nbsp; Last position (consonant): 3 choices<br>
+      Middle 6 positions: \(6! = 720\) ways<br>
+      Favourable = \(5\times 3\times 720 = 10800\)
+    </div>
+    <div class="math-box final">
+      \(P(\text{vowel first, consonant last}) = \dfrac{10800}{40320} = \dfrac{15}{56}\)
+    </div>
+  </div>
+
+  <!-- Q19 -->
+  <div class="q-block green">
+    <div class="q-title green"><span class="q-num green">Q.19</span> \(S_n=2(3^n-1)\): find nth term and show it is a G.P.</div>
+    <div class="sub-lbl">nth Term for n ≥ 2</div>
+    <div class="math-box">
+      \(t_n = S_n - S_{n-1} = 2(3^n-1)-2(3^{n-1}-1) = 2\cdot 3^n - 2\cdot 3^{n-1} = 2\cdot 3^{n-1}(3-1) = 4\cdot 3^{n-1}\)
+    </div>
+    <p>Check \(n=1\): \(t_1=S_1=2(3-1)=4=4\cdot 3^0\) ✓</p>
+    <div class="sub-lbl">Show G.P.</div>
+    <div class="math-box">
+      Common ratio \(r = \dfrac{t_{n+1}}{t_n} = \dfrac{4\cdot 3^n}{4\cdot 3^{n-1}} = 3 \quad\text{(constant)}\)
+    </div>
+    <div class="math-box final">The sequence is a G.P. with first term \(4\) and common ratio \(3\).</div>
+  </div>
+
+  <!-- Q20 -->
+  <div class="q-block green">
+    <div class="q-title green"><span class="q-num green">Q.20</span> Coefficient of \(x^9\) in \(\left(\dfrac{1}{x}+x^2\right)^{18}\)</div>
+    <p>General term: \(T_{r+1}=\dbinom{18}{r}\left(\dfrac{1}{x}\right)^{18-r}(x^2)^r = \dbinom{18}{r}\cdot x^{3r-18}\)</p>
+    <div class="math-box">
+      For \(x^9\): \(\;3r-18=9 \Rightarrow r=9\)
+    </div>
+    <div class="math-box final">
+      Coefficient \(= \dbinom{18}{9} = \mathbf{48620}\)
+    </div>
+  </div>
+
+  <!-- Q21 -->
+  <div class="q-block green">
+    <div class="q-title green"><span class="q-num green">Q.21</span> Domain of \(f(x)=\sqrt{\log(x^2-6x+6)}\)</div>
+    <div class="sub-lbl">Condition 1: Argument of log must be positive</div>
+    <div class="math-box">
+      \(x^2-6x+6>0\)<br>
+      Roots: \(x=\dfrac{6\pm\sqrt{36-24}}{2}=3\pm\sqrt{3}\)<br>
+      So: \(x<3-\sqrt{3}\) or \(x>3+\sqrt{3}\) &ensp; (i.e., \(x<1.27\) or \(x>4.73\))
+    </div>
+    <div class="sub-lbl">Condition 2: log value must be ≥ 0 for square root to exist</div>
+    <div class="math-box">
+      \(\log(x^2-6x+6)\ge 0 \Rightarrow x^2-6x+6\ge 1 \Rightarrow x^2-6x+5\ge 0\)<br>
+      \((x-1)(x-5)\ge 0 \Rightarrow x\le 1\text{ or }x\ge 5\)
+    </div>
+    <div class="sub-lbl">Intersection of both conditions</div>
+    <div class="math-box final">
+      Domain \(= (-\infty,\,1]\cup[5,\,+\infty)\)
+    </div>
+  </div>
+
+  <!-- Q22 -->
+  <div class="q-block green">
+    <div class="q-title green"><span class="q-num green">Q.22</span> Simplify \(\log_{10}\dfrac{28}{45}-\log_{10}\dfrac{35}{324}+\log_{10}\dfrac{325}{432}-\log_{10}\dfrac{13}{15}\)</div>
+    <div class="math-box">
+      \(= \log_{10}\left[\dfrac{28}{45}\times\dfrac{324}{35}\times\dfrac{325}{432}\times\dfrac{15}{13}\right]\)
+    </div>
+    <p>Factoring numerator and denominator:</p>
+    <div class="math-box">
+      Numerator: \(28\times 324\times 325\times 15 = 2^4\times 7\times 3^5\times 5^3\times 13\)<br>
+      Denominator: \(45\times 35\times 432\times 13 = 2^4\times 3^5\times 5^2\times 7\times 13\)<br>
+      Ratio \(= 5^3/5^2 = 5\)
+    </div>
+    <div class="math-box final">
+      \(= \log_{10}5\)
+    </div>
+  </div>
+
+  <!-- Q23 -->
+  <div class="q-block green">
+    <div class="q-title green"><span class="q-num green">Q.23</span> \(\displaystyle\lim_{x\to 1}\dfrac{x+x^3+x^5+\cdots+x^{2n-1}-n}{x-1}\)</div>
+    <div class="math-box">
+      \(= \lim_{x\to 1}\sum_{k=1}^{n}\dfrac{x^{2k-1}-1}{x-1}\)<br>
+      Using \(\lim_{x\to 1}\dfrac{x^m-1}{x-1}=m\):<br>
+      \(=\sum_{k=1}^{n}(2k-1) = 1+3+5+\cdots+(2n-1)\)
+    </div>
+    <div class="math-box final">
+      \(= n^2\)
+    </div>
+  </div>
+
+  <!-- Q24 -->
+  <div class="q-block green">
+    <div class="q-title green"><span class="q-num green">Q.24</span> \(\displaystyle\lim_{x\to 1}\dfrac{x^2+x\sqrt{x}-2}{x-1}\)</div>
+    <p>Substitute \(x=t^2\) (so \(t\to 1\)):</p>
+    <div class="math-box">
+      \(= \lim_{t\to 1}\dfrac{t^4+t^3-2}{t^2-1}\)
+    </div>
+    <p>Factor numerator: \(t^4+t^3-2=(t-1)(t^3+2t^2+2t+2)\). Factor denominator: \((t-1)(t+1)\).</p>
+    <div class="math-box">
+      \(= \lim_{t\to 1}\dfrac{t^3+2t^2+2t+2}{t+1} = \dfrac{1+2+2+2}{2} = \dfrac{7}{2}\)
+    </div>
+    <div class="math-box final">\(\displaystyle\lim_{x\to 1}\dfrac{x^2+x\sqrt{x}-2}{x-1} = \dfrac{7}{2}\)</div>
+  </div>
+
+  <!-- Q25 -->
+  <div class="q-block green">
+    <div class="q-title green"><span class="q-num green">Q.25</span> Differentiate \(y=\sin x\cdot\log x + e^x\cos x - e^x\sqrt{x}\)</div>
+    <p>Apply the product rule to each term:</p>
+    <div class="math-box">
+      \(\dfrac{d}{dx}(\sin x\cdot\log x) = \cos x\cdot\log x + \dfrac{\sin x}{x}\)<br><br>
+      \(\dfrac{d}{dx}(e^x\cos x) = e^x\cos x - e^x\sin x = e^x(\cos x - \sin x)\)<br><br>
+      \(\dfrac{d}{dx}(e^x\sqrt{x}) = e^x\sqrt{x} + e^x\cdot\dfrac{1}{2\sqrt{x}} = e^x\!\left(\sqrt{x}+\dfrac{1}{2\sqrt{x}}\right)\)
+    </div>
+    <div class="math-box final">
+      \(\dfrac{dy}{dx} = \cos x\cdot\log x + \dfrac{\sin x}{x} + e^x\!\left(\cos x - \sin x - \sqrt{x} - \dfrac{1}{2\sqrt{x}}\right)\)
+    </div>
+  </div>
+
+  <!-- Q26 -->
+  <div class="q-block green">
+    <div class="q-title green"><span class="q-num green">Q.26</span> Derivative of \(\log(2x+5)\) from first principles</div>
+    <div class="math-box">
+      \(f'(x) = \lim_{h\to 0}\dfrac{f(x+h)-f(x)}{h} = \lim_{h\to 0}\dfrac{\log(2x+2h+5)-\log(2x+5)}{h}\)
+    </div>
+    <div class="math-box">
+      \(= \lim_{h\to 0}\dfrac{1}{h}\log\!\left(1+\dfrac{2h}{2x+5}\right)\)
+    </div>
+    <p>Let \(t=\dfrac{2h}{2x+5}\) so \(h=\dfrac{t(2x+5)}{2}\) and as \(h\to 0, t\to 0\):</p>
+    <div class="math-box">
+      \(= \lim_{t\to 0}\dfrac{\log(1+t)}{\dfrac{t(2x+5)}{2}} = \dfrac{2}{2x+5}\lim_{t\to 0}\dfrac{\log(1+t)}{t} = \dfrac{2}{2x+5}\times 1\)
+    </div>
+    <div class="math-box final">
+      \(\dfrac{d}{dx}\bigl[\log(2x+5)\bigr] = \dfrac{2}{2x+5}\)
+    </div>
+  </div>
+</div>
+
+<hr class="sec">
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION D
+     ═══════════════════════════════════════════════════════ -->
+<div id="sec-d">
+  <div class="section-hdr">
+    <span class="section-badge">SECTION D</span>
+    <h2>Q.27 to Q.34 — Attempt Any Five (4 Marks Each)</h2>
+    <span class="section-marks">5 × 4 = 20 Marks</span>
+  </div>
+
+  <!-- Q27 -->
+  <div class="q-block crimson">
+    <div class="q-title crimson"><span class="q-num crimson">Q.27</span> Find the trigonometric functions of 45°</div>
+    <p>Consider a right-angled isosceles triangle with both legs equal to 1 unit.</p>
+    <p>Hypotenuse \(= \sqrt{1^2+1^2}=\sqrt{2}\).</p>
+    <table class="cmp-table">
+      <tr><th>Function</th><th>Definition</th><th>Value at 45°</th></tr>
+      <tr><td>\(\sin 45°\)</td><td>Opposite/Hypotenuse</td><td>\(\dfrac{1}{\sqrt{2}} = \dfrac{\sqrt{2}}{2}\)</td></tr>
+      <tr><td>\(\cos 45°\)</td><td>Adjacent/Hypotenuse</td><td>\(\dfrac{1}{\sqrt{2}} = \dfrac{\sqrt{2}}{2}\)</td></tr>
+      <tr><td>\(\tan 45°\)</td><td>Opposite/Adjacent</td><td>\(1\)</td></tr>
+      <tr><td>\(\cot 45°\)</td><td>Adjacent/Opposite</td><td>\(1\)</td></tr>
+      <tr><td>\(\sec 45°\)</td><td>Hypotenuse/Adjacent</td><td>\(\sqrt{2}\)</td></tr>
+      <tr><td>\(\text{cosec}\, 45°\)</td><td>Hypotenuse/Opposite</td><td>\(\sqrt{2}\)</td></tr>
+    </table>
+  </div>
+
+  <!-- Q28 -->
+  <div class="q-block crimson">
+    <div class="q-title crimson"><span class="q-num crimson">Q.28</span> Show \(3x-4y+10=0\) is tangent to hyperbola \(x^2-4y^2=20\); find point of contact</div>
+    <p>From the line: \(y=\dfrac{3x+10}{4}\). Substitute into the hyperbola:</p>
+    <div class="math-box">
+      \(x^2-4\cdot\dfrac{(3x+10)^2}{16}=20 \Rightarrow 4x^2-(3x+10)^2=80\)
+      \(4x^2-9x^2-60x-100=80 \Rightarrow -5x^2-60x-180=0\)
+      \(x^2+12x+36=0 \Rightarrow (x+6)^2=0\)
+    </div>
+    <p>The discriminant is <strong>zero</strong>, confirming a repeated root — hence the line is <strong>tangent</strong>.</p>
+    <div class="math-box">
+      \(x=-6,\quad y=\dfrac{3(-6)+10}{4}=\dfrac{-8}{4}=-2\)
+    </div>
+    <div class="math-box final">Point of contact: \((-6,\,-2)\)</div>
+    <p><em>Alternatively, using the condition for tangency \(c^2=a^2m^2-b^2\): with \(m=3/4,\;c=5/2,\;a^2=20,\;b^2=5\): \((5/2)^2=20(9/16)-5=45/4-5=25/4\,\checkmark\)</em></p>
+  </div>
+
+  <!-- Q29 -->
+  <div class="q-block crimson">
+    <div class="q-title crimson"><span class="q-num crimson">Q.29</span> Number of diagonals of an n-sided polygon</div>
+    <p>From \(n\) vertices we can draw \(\dbinom{n}{2}\) line segments. Subtract the \(n\) sides:</p>
+    <div class="math-box final">
+      Number of diagonals \(= \dbinom{n}{2}-n = \dfrac{n(n-1)}{2}-n = \dfrac{n(n-3)}{2}\)
+    </div>
+    <table class="cmp-table" style="margin-top:.7rem">
+      <tr><th>n</th><th>Formula</th><th>No. of Diagonals</th></tr>
+      <tr><td>(1) \(n=10\)</td><td>\(\frac{10\times7}{2}\)</td><td><strong>35</strong></td></tr>
+      <tr><td>(2) \(n=15\)</td><td>\(\frac{15\times12}{2}\)</td><td><strong>90</strong></td></tr>
+      <tr><td>(3) \(n=12\)</td><td>\(\frac{12\times9}{2}\)</td><td><strong>54</strong></td></tr>
+      <tr><td>(4) \(n=8\)</td><td>\(\frac{8\times5}{2}\)</td><td><strong>20</strong></td></tr>
+    </table>
+  </div>
+
+  <!-- Q30 -->
+  <div class="q-block crimson">
+    <div class="q-title crimson"><span class="q-num crimson">Q.30</span> Arrangements of letters of PLATOON (7 letters, O repeated twice)</div>
+    <p>Total letters: P, L, A, T, O, O, N. Consonants: P, L, T, N (4). Vowels: A, O, O (3).</p>
+    <p>Total arrangements: \(\dfrac{7!}{2!}=2520\)</p>
+    <div class="sub-lbl">(a) Two O's are never together</div>
+    <div class="math-box">
+      Arrangements with O's together: treat OO as one unit → \(6!\) arrangements \(= 720\)<br>
+      O's not together: \(2520-720=\mathbf{1800}\)
+    </div>
+    <div class="sub-lbl">(b) Consonants and vowels in alternate positions</div>
+    <p>With 7 positions, pattern must be C V C V C V C (4 consonants in odd positions, 3 vowels in even positions):</p>
+    <div class="math-box">
+      Arrange 4 consonants (all distinct): \(4! = 24\) ways<br>
+      Arrange 3 vowels (A, O, O with repetition): \(\dfrac{3!}{2!} = 3\) ways<br>
+      Total \(= 24\times 3 = \mathbf{72}\)
+    </div>
+  </div>
+
+  <!-- Q31 -->
+  <div class="q-block crimson">
+    <div class="q-title crimson"><span class="q-num crimson">Q.31</span> Prove by induction: \(t_n=5^n-1\), given \(t_{n+1}=5t_n+4,\;t_1=4\)</div>
+    <div class="sub-lbl">Step 1 — Base Case (n = 1)</div>
+    <div class="math-box">
+      \(t_1 = 5^1-1 = 4\) ✓ (matches given \(t_1=4\))
+    </div>
+    <div class="sub-lbl">Step 2 — Inductive Hypothesis</div>
+    <p>Assume \(t_k=5^k-1\) for some integer \(k\ge 1\).</p>
+    <div class="sub-lbl">Step 3 — Inductive Step (show for n = k+1)</div>
+    <div class="math-box">
+      \(t_{k+1} = 5t_k+4 = 5(5^k-1)+4 = 5^{k+1}-5+4 = 5^{k+1}-1\)
+    </div>
+    <p>This is exactly the formula with \(n=k+1\).</p>
+    <div class="result-badge">∴ By mathematical induction, t_n = 5ⁿ − 1 for all n ≥ 1 &nbsp; □</div>
+  </div>
+
+  <!-- Q32 -->
+  <div class="q-block crimson">
+    <div class="q-title crimson"><span class="q-num crimson">Q.32</span> Using \(\varepsilon\text{-}\delta\) definition, prove \(\displaystyle\lim_{x\to 1}(x^2+x+1)=3\)</div>
+    <p>We must show: given \(\varepsilon>0\), \(\exists\,\delta>0\) such that \(|x-1|<\delta \Rightarrow |f(x)-3|<\varepsilon\).</p>
+    <div class="math-box">
+      \(|f(x)-3| = |x^2+x+1-3| = |x^2+x-2| = |(x+2)(x-1)| = |x+2|\cdot|x-1|\)
+    </div>
+    <p>If \(|x-1|<1\), then \(0<x<2\), so \(2<x+2<4 \Rightarrow |x+2|<4\).</p>
+    <div class="math-box">
+      Choose \(\delta = \min\!\left(1,\,\dfrac{\varepsilon}{4}\right)\). Then: \(|f(x)-3|=|x+2|\cdot|x-1|<4\cdot\dfrac{\varepsilon}{4}=\varepsilon\)
+    </div>
+    <div class="result-badge">∴ lim(x→1) (x² + x + 1) = 3 &nbsp; □</div>
+  </div>
+
+  <!-- Q33 -->
+  <div class="q-block crimson">
+    <div class="q-title crimson"><span class="q-num crimson">Q.33</span> \(\displaystyle\lim_{x\to 0}\dfrac{1}{x^{12}}\!\left[1-\cos\!\tfrac{x^2}{2}-\cos\!\tfrac{x^4}{4}+\cos\!\tfrac{x^2}{2}\cdot\cos\!\tfrac{x^4}{4}\right]\)</div>
+    <p>Let \(A=\cos\!\dfrac{x^2}{2}\) and \(B=\cos\!\dfrac{x^4}{4}\). The bracket is:</p>
+    <div class="math-box">
+      \(1-A-B+AB = (1-A)(1-B)\)
+    </div>
+    <p>Using the standard result \(1-\cos\theta\sim\dfrac{\theta^2}{2}\) as \(\theta\to 0\):</p>
+    <div class="math-box">
+      \(1-\cos\dfrac{x^2}{2}\sim\dfrac{(x^2/2)^2}{2}=\dfrac{x^4}{8}\)<br>
+      \(1-\cos\dfrac{x^4}{4}\sim\dfrac{(x^4/4)^2}{2}=\dfrac{x^8}{32}\)
+    </div>
+    <div class="math-box">
+      \(\text{Limit} = \lim_{x\to 0}\dfrac{(1-A)(1-B)}{x^{12}} = \lim_{x\to 0}\dfrac{\frac{x^4}{8}\cdot\frac{x^8}{32}}{x^{12}} = \dfrac{1}{8}\cdot\dfrac{1}{32} = \dfrac{1}{256}\)
+    </div>
+    <div class="math-box final">\(\displaystyle\lim_{x\to 0}\cdots = \dfrac{1}{256}\)</div>
+  </div>
+
+  <!-- Q34 -->
+  <div class="q-block crimson">
+    <div class="q-title crimson"><span class="q-num crimson">Q.34</span> Find k so that \(f(x)=\dfrac{24^x-8^x-3^x+1}{12^x-4^x-3^x+1}\) is continuous at \(x=0\)</div>
+    <p>Factor the numerator and denominator:</p>
+    <div class="math-box">
+      \(\text{Numerator: }\;24^x-8^x-3^x+1 = 8^x(3^x-1)-(3^x-1)=(3^x-1)(8^x-1)\)<br>
+      \(\text{Denominator: }\;12^x-4^x-3^x+1 = 4^x(3^x-1)-(3^x-1)=(3^x-1)(4^x-1)\)
+    </div>
+    <div class="math-box">
+      \(f(x) = \dfrac{(3^x-1)(8^x-1)}{(3^x-1)(4^x-1)} = \dfrac{8^x-1}{4^x-1}\quad(x\ne 0)\)
+    </div>
+    <div class="math-box">
+      \(\lim_{x\to 0}f(x)=\lim_{x\to 0}\dfrac{8^x-1}{4^x-1} = \dfrac{\lim_{x\to 0}\frac{8^x-1}{x}}{\lim_{x\to 0}\frac{4^x-1}{x}} = \dfrac{\ln 8}{\ln 4} = \dfrac{3\ln 2}{2\ln 2} = \dfrac{3}{2}\)
+    </div>
+    <p>For continuity at \(x=0\): \(k = f(0) = \displaystyle\lim_{x\to 0}f(x)\)</p>
+    <div class="math-box final">\(\boxed{k = \dfrac{3}{2}}\)</div>
+  </div>
+
+</div><!-- /sec-d -->
+
+</div><!-- /wrapper -->
+
+<footer>
+  Model Answer Paper — Mathematics &amp; Statistics II &nbsp;|&nbsp;
+  Std. 11<sup>th</sup> &nbsp;|&nbsp; Maharashtra State Board &nbsp;|&nbsp;
+  BVP / A · Second Semester Examination
+</footer>
+
+</body>
+</html>
