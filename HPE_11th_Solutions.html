@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>आरोग्य आणि शारीरिक शिक्षण - उत्तरपत्रिका | इयत्ता ११ वी</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+
+  :root {
+    --bg: #fdf6ec;
+    --paper: #fffef9;
+    --ink: #1a1208;
+    --accent: #7b3f00;
+    --accent2: #c0622a;
+    --rule: #c8b89a;
+    --margin: #e8c9a0;
+    --highlight: #fff3cd;
+    --border: #a0855a;
+    --green: #2d6a2d;
+    --red: #9b2226;
+    --blue: #1a3a6b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .page-wrapper {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+    padding: 18px 28px 14px;
+    text-align: center;
+    border-bottom: 4px solid var(--accent2);
+  }
+  .header h1 {
+    font-family: 'Tiro Devanagari Marathi', serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+  .header .sub {
+    font-size: 0.88rem;
+    opacity: 0.88;
+    letter-spacing: 0.03em;
+  }
+  .meta-bar {
+    background: #fff8f0;
+    border: 1.5px solid var(--border);
+    border-top: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 16px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  /* Answer Sheet Body */
+  .answer-sheet {
+    background: var(--paper);
+    border: 1.5px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Ruled paper effect */
+  .answer-sheet::before {
+    content: '';
+    position: absolute;
+    left: 60px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--margin);
+    z-index: 0;
+  }
+
+  .question-block {
+    padding: 18px 28px 14px 76px;
+    border-bottom: 1px dashed var(--rule);
+    position: relative;
+    z-index: 1;
+  }
+  .question-block:last-child {
+    border-bottom: none;
+  }
+
+  /* Question number badge */
+  .q-label {
+    position: absolute;
+    left: 8px;
+    top: 18px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    writing-mode: horizontal-tb;
+  }
+
+  /* Question text */
+  .q-title {
+    font-family: 'Tiro Devanagari Marathi', serif;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1.5px solid var(--rule);
+    line-height: 1.6;
+  }
+  .q-title .marks {
+    float: right;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+
+  .sub-q {
+    margin: 8px 0 4px 0;
+    font-weight: 700;
+    color: var(--accent2);
+    font-size: 0.92rem;
+  }
+
+  /* Answer lines */
+  .answer {
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 27px,
+      #e8ddd0 27px,
+      #e8ddd0 28px
+    );
+    padding: 4px 0 4px 4px;
+    line-height: 28px;
+    font-family: 'Tiro Devanagari Marathi', serif;
+    font-size: 0.97rem;
+    color: #1a1208;
+  }
+
+  /* Numbered answers */
+  .ans-row {
+    display: flex;
+    align-items: flex-start;
+    margin: 3px 0;
+    line-height: 1.75;
+    font-size: 0.95rem;
+  }
+  .ans-num {
+    min-width: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .ans-text {
+    flex: 1;
+    line-height: 1.75;
+  }
+  .ans-fill {
+    color: var(--green);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+  }
+
+  /* Jodya table */
+  .jodya-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 0.9rem;
+  }
+  .jodya-table th {
+    background: var(--accent);
+    color: #fff;
+    padding: 6px 12px;
+    text-align: center;
+    font-size: 0.82rem;
+  }
+  .jodya-table td {
+    padding: 6px 12px;
+    border: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .jodya-table tr:nth-child(even) td {
+    background: #fdf0e0;
+  }
+  .arrow { color: var(--accent2); font-weight: 700; text-align: center; }
+
+  /* True/False */
+  .tf-row {
+    display: flex;
+    align-items: flex-start;
+    margin: 4px 0;
+    gap: 8px;
+    font-size: 0.93rem;
+    line-height: 1.7;
+  }
+  .badge-true {
+    background: #d4edda; color: var(--green);
+    padding: 1px 9px; border-radius: 10px;
+    font-weight: 700; font-size: 0.78rem;
+    flex-shrink: 0; margin-top: 4px;
+    border: 1px solid var(--green);
+  }
+  .badge-false {
+    background: #f8d7da; color: var(--red);
+    padding: 1px 9px; border-radius: 10px;
+    font-weight: 700; font-size: 0.78rem;
+    flex-shrink: 0; margin-top: 4px;
+    border: 1px solid var(--red);
+  }
+
+  /* Definition box */
+  .def-box {
+    background: #fff8ed;
+    border-left: 4px solid var(--accent2);
+    border-radius: 0 6px 6px 0;
+    padding: 8px 12px;
+    margin: 8px 0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+  .def-title {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.93rem;
+    margin-bottom: 3px;
+  }
+
+  /* Short answer */
+  .short-ans {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+  .short-q {
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 3px;
+  }
+  .bullet-list {
+    padding-left: 18px;
+    margin: 4px 0;
+  }
+  .bullet-list li {
+    margin: 3px 0;
+    line-height: 1.75;
+    font-size: 0.93rem;
+  }
+
+  /* Takta (table for Q5) */
+  .takta {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 0.92rem;
+  }
+  .takta th {
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 14px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.88rem;
+  }
+  .takta td {
+    padding: 8px 14px;
+    border: 1.5px solid var(--border);
+    vertical-align: middle;
+    line-height: 1.65;
+  }
+  .takta tr:nth-child(even) td {
+    background: #fdf3e5;
+  }
+  .fill-ans {
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .note-box {
+    background: var(--highlight);
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    padding: 7px 13px;
+    font-size: 0.8rem;
+    color: #7a5000;
+    margin: 8px 0 4px 0;
+  }
+
+  /* Section divider */
+  .section-divider {
+    text-align: center;
+    padding: 6px 0 2px;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: #fdf0e0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page-wrapper { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>द्वितीय सत्रान्त परीक्षा — उत्तरपत्रिका</h1>
+    <div class="sub">विषय : आरोग्य आणि शारीरिक शिक्षण &nbsp;|&nbsp; इयत्ता : ११ वी &nbsp;|&nbsp; माध्यम : मराठी</div>
+  </div>
+  <div class="meta-bar">
+    <span>📋 वर्ग : ११ वा</span>
+    <span>⏱ वेळ : १.०० तास</span>
+    <span>✅ एकूण गुण : २५</span>
+    <span>🏫 Maharashtra State Board</span>
+  </div>
+
+  <div class="answer-sheet">
+
+    <!-- ============ प्र.१ ============ -->
+    <div class="section-divider">प्रश्न १</div>
+
+    <!-- (अ) रिकाम्या जागा भरा -->
+    <div class="question-block">
+      <span class="q-label">प्र.१ (अ)</span>
+      <div class="q-title">रिकाम्या जागा भरा. <span class="marks">२ गुण</span></div>
+      <div class="ans-row"><span class="ans-num">(१)</span><span class="ans-text">राष्ट्रकुल क्रीडा स्पर्धेचे आयोजन भारतात <span class="ans-fill">२०१०</span> साली करण्यात आले.</span></div>
+      <div class="ans-row"><span class="ans-num">(२)</span><span class="ans-text">स्थूलता म्हणजेच शरीरात <span class="ans-fill">चरबी</span> चे प्रमाण वाढणे होय.</span></div>
+      <div class="ans-row"><span class="ans-num">(३)</span><span class="ans-text">प्लायोमेट्रिक्स प्रशिक्षणामध्ये दोन संचांमधील विश्रांतीचा कालावधी हा <span class="ans-fill">२ ते ३ मिनिटे</span> इतका असतो.</span></div>
+      <div class="ans-row"><span class="ans-num">(४)</span><span class="ans-text">श्वास रोखून धरण्याची क्रिया म्हणजे <span class="ans-fill">कुंभक</span> होय.</span></div>
+    </div>
+
+    <!-- (ब) योग्य जोड्या -->
+    <div class="question-block">
+      <span class="q-label">प्र.१ (ब)</span>
+      <div class="q-title">योग्य जोड्या लावा. <span class="marks">२ गुण</span></div>
+      <table class="jodya-table">
+        <tr>
+          <th>'अ' गट</th>
+          <th></th>
+          <th>'ब' गट (उत्तर)</th>
+        </tr>
+        <tr>
+          <td>(१) ताकद वाढवणारा आहार</td>
+          <td class="arrow">→</td>
+          <td><span class="ans-fill">(क)</span> ड्रायफ्रुटस, नॉनव्हेज सूप, साखर, मिल्कशेक इत्यादी.</td>
+        </tr>
+        <tr>
+          <td>(२) झीज भरून काढणारा आहार</td>
+          <td class="arrow">→</td>
+          <td><span class="ans-fill">(ब)</span> सायीसह दूध, केळी, जर्दाळू, अंडी इत्यादी.</td>
+        </tr>
+        <tr>
+          <td>(३) थकवा कमी करणारा आहार</td>
+          <td class="arrow">→</td>
+          <td><span class="ans-fill">(अ)</span> मनुकांचे सरबत, साळीच्या लाह्यांचे पाणी, श्रीखंड, ताक इत्यादी.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- (क) चूक/बरोबर -->
+    <div class="question-block">
+      <span class="q-label">प्र.१ (क)</span>
+      <div class="q-title">खालील विधाने चूक आहेत की बरोबर ते लिहा. <span class="marks">२ गुण</span></div>
+      <div class="tf-row">
+        <span class="ans-num">(१)</span>
+        <span class="ans-text">व्हर्च्युअल गेम्सद्वारे खेळाडू इतरांच्या मदतीशिवाय खेळू शकत नाही.</span>
+        <span class="badge-false">✗ चूक</span>
+      </div>
+      <div class="tf-row">
+        <span class="ans-num">(२)</span>
+        <span class="ans-text">मोबाईल फिटनेस अ‍ॅप्लिकेशनद्वारे हृदयाचा दर मोजता येतो.</span>
+        <span class="badge-true">✓ बरोबर</span>
+      </div>
+      <div class="tf-row">
+        <span class="ans-num">(३)</span>
+        <span class="ans-text">व्यायाम करताना आपली शरीरस्थिती योग्य असावी.</span>
+        <span class="badge-true">✓ बरोबर</span>
+      </div>
+      <div class="tf-row">
+        <span class="ans-num">(४)</span>
+        <span class="ans-text">मोबाईलच्या अतिवापराने शरीरावर कोणताही वाईट परिणाम होत नाही.</span>
+        <span class="badge-false">✗ चूक</span>
+      </div>
+    </div>
+
+    <!-- ============ प्र.२ ============ -->
+    <div class="section-divider">प्रश्न २</div>
+    <div class="question-block">
+      <span class="q-label">प्र.२</span>
+      <div class="q-title">खालील प्रश्नांची एका वाक्यात उत्तरे लिहा. <span class="marks">५ गुण</span></div>
+
+      <div class="ans-row" style="margin-top:6px;">
+        <span class="ans-num">(१)</span>
+        <span class="ans-text">भारतीय ऑलिंपिक संघटनेची स्थापना <strong>१९२७</strong> साली करण्यात आली.</span>
+      </div>
+
+      <div class="ans-row">
+        <span class="ans-num">(२)</span>
+        <span class="ans-text">मोबाईल, संगणक, टीव्ही इत्यादी इलेक्ट्रॉनिक उपकरणांच्या पडद्यासमोर घालवलेल्या वेळास <strong>स्क्रीनवेळ</strong> असे म्हणतात.</span>
+      </div>
+
+      <div class="ans-row">
+        <span class="ans-num">(३)</span>
+        <span class="ans-text">व्यायामापूर्वी शरीराला आवश्यक पोषण मिळवण्यासाठी पोषक आहार सेवन करण्याच्या कालावधीस <strong>आदान काल</strong> असे म्हणतात.</span>
+      </div>
+
+      <div class="ans-row">
+        <span class="ans-num">(४)</span>
+        <span class="ans-text">व्यक्तीच्या वजन (kg) ला उंचीच्या वर्गाने (m²) भागल्यावर मिळणाऱ्या मूल्यास <strong>बी.एम.आय. (Body Mass Index)</strong> असे म्हणतात.</span>
+      </div>
+
+      <div class="ans-row">
+        <span class="ans-num">(५)</span>
+        <span class="ans-text">ऑलिंपिक स्पर्धेचे ध्येय वाक्य <strong>"सिटियस, अल्टियस, फोर्टियस"</strong> (Citius, Altius, Fortius) असून त्याचा अर्थ <strong>"जलद, उच्च, बलवान"</strong> असा आहे.</span>
+      </div>
+    </div>
+
+    <!-- ============ प्र.३ ============ -->
+    <div class="section-divider">प्रश्न ३</div>
+    <div class="question-block">
+      <span class="q-label">प्र.३</span>
+      <div class="q-title">व्याख्या लिहा. (कोणतेही दोन) <span class="marks">४ गुण</span></div>
+      <div class="note-box">📝 खालीलपैकी कोणत्याही <strong>दोन</strong> व्याख्या लिहाव्यात.</div>
+
+      <div class="def-box">
+        <div class="def-title">(१) योग :</div>
+        मन, शरीर व आत्मा यांचे ऐक्य साधण्याच्या प्रक्रियेस <strong>योग</strong> असे म्हणतात. योग हे भारतीय परंपरेतील एक प्राचीन शास्त्र असून त्याद्वारे शारीरिक, मानसिक व आध्यात्मिक स्वास्थ्य प्राप्त होते. "योग: चित्तवृत्तिनिरोध:" — महर्षी पतंजलींनी योगाची ही व्याख्या सांगितली आहे.
+      </div>
+
+      <div class="def-box">
+        <div class="def-title">(२) आसन :</div>
+        शरीराची स्थिर व सुखकर अवस्था म्हणजे <strong>आसन</strong> होय. महर्षी पतंजलींनी <em>"स्थिरं सुखं आसनम्"</em> असे आसनाचे लक्षण सांगितले आहे. आसनांमुळे शरीर लवचिक, स्नायू बळकट आणि मन शांत होते.
+      </div>
+
+      <div class="def-box">
+        <div class="def-title">(३) स्थूलता :</div>
+        शरीरात चरबीचे प्रमाण अत्यधिक वाढल्यामुळे वजन सामान्यापेक्षा खूप जास्त होण्याच्या स्थितीस <strong>स्थूलता</strong> असे म्हणतात. जेव्हा व्यक्तीचा बी.एम.आय. (BMI) ३० पेक्षा जास्त असतो, तेव्हा त्या स्थितीस स्थूलता असे म्हणतात.
+      </div>
+    </div>
+
+    <!-- ============ प्र.४ ============ -->
+    <div class="section-divider">प्रश्न ४</div>
+    <div class="question-block">
+      <span class="q-label">प्र.४</span>
+      <div class="q-title">खालील प्रश्नांची थोडक्यात उत्तरे लिहा. (कोणतेही तीन) <span class="marks">६ गुण</span></div>
+      <div class="note-box">📝 खालीलपैकी कोणत्याही <strong>तीन</strong> प्रश्नांची उत्तरे लिहावीत.</div>
+
+      <!-- Q4(1) -->
+      <div class="short-ans">
+        <div class="short-q">(१) विज्ञान शाखेत शिकणाऱ्या विद्यार्थ्यांला क्रीडा क्षेत्रातील कोणकोणत्या संधी उपलब्ध आहेत?</div>
+        <div style="margin-left:8px; line-height:1.8; font-size:0.93rem;">
+          विज्ञान शाखेतील विद्यार्थ्यांना क्रीडा क्षेत्रात पुढील संधी उपलब्ध आहेत :
+          <ul class="bullet-list">
+            <li><strong>क्रीडा चिकित्सक (Sports Doctor)</strong> — खेळाडूंच्या आरोग्याची देखभाल करणे.</li>
+            <li><strong>फिजिओथेरपिस्ट (Physiotherapist)</strong> — खेळाडूंच्या दुखापतींवर उपचार करणे.</li>
+            <li><strong>क्रीडा पोषणतज्ज्ञ (Sports Nutritionist)</strong> — खेळाडूंच्या आहाराचे नियोजन करणे.</li>
+            <li><strong>क्रीडा शरीरक्रियाशास्त्रज्ञ (Sports Physiologist)</strong> — खेळाडूंच्या शारीरिक क्षमतेचा अभ्यास करणे.</li>
+            <li><strong>क्रीडा मानसशास्त्रज्ञ (Sports Psychologist)</strong> — खेळाडूंच्या मानसिक तयारीसाठी मार्गदर्शन करणे.</li>
+            <li><strong>क्रीडा संशोधक (Sports Researcher)</strong> — क्रीडा क्षेत्रात नवीन संशोधन करणे.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Q4(2) -->
+      <div class="short-ans" style="border-top:1px dotted var(--rule); padding-top:8px;">
+        <div class="short-q">(२) इजा/दुखापत म्हणजे काय?</div>
+        <div style="margin-left:8px; line-height:1.85; font-size:0.93rem;">
+          खेळताना अथवा व्यायाम करताना शरीराच्या अंतर्गत किंवा बाह्य भागाला होणाऱ्या नुकसानास <strong>इजा किंवा दुखापत</strong> असे म्हणतात.<br>
+          दुखापतींचे दोन प्रकार आहेत :
+          <ul class="bullet-list">
+            <li><strong>तीव्र दुखापत (Acute Injury)</strong> — एकाएकी होणारी दुखापत; उदा. हाड मोडणे, सांधा निखळणे.</li>
+            <li><strong>दीर्घकालीन दुखापत (Chronic Injury)</strong> — हळूहळू वारंवार होणारी दुखापत; उदा. स्नायू ताणणे, कंडरा दुखणे.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Q4(3) -->
+      <div class="short-ans" style="border-top:1px dotted var(--rule); padding-top:8px;">
+        <div class="short-q">(३) सप्लिमेंट घेण्याबाबतचे गैरसमज कोणते ते लिहा.</div>
+        <div style="margin-left:8px; line-height:1.8; font-size:0.93rem;">
+          सप्लिमेंट घेण्याबाबत खालील गैरसमज आढळतात :
+          <ul class="bullet-list">
+            <li>सप्लिमेंट म्हणजे जादूची गोळी असून कमी श्रमात जास्त परिणाम मिळतो.</li>
+            <li>नैसर्गिक सप्लिमेंट सुरक्षित असतात, त्यांचे दुष्परिणाम होत नाहीत.</li>
+            <li>सप्लिमेंट घेतल्यास लवकर स्नायू बळकट होतात व वजन कमी होते.</li>
+            <li>डॉक्टरांच्या सल्ल्याशिवाय सप्लिमेंट घेणे सुरक्षित आहे.</li>
+            <li>सप्लिमेंट हे योग्य आहाराला पर्याय ठरू शकतात.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Q4(4) -->
+      <div class="short-ans" style="border-top:1px dotted var(--rule); padding-top:8px;">
+        <div class="short-q">(४) आहार घेताना मनाची स्थिती कशी हवी याचे वर्णन करा.</div>
+        <div style="margin-left:8px; line-height:1.8; font-size:0.93rem;">
+          आहार घेताना मनाची स्थिती पुढीलप्रमाणे असावी :
+          <ul class="bullet-list">
+            <li>आहार घेताना मन <strong>शांत, प्रसन्न व आनंदी</strong> असावे.</li>
+            <li>जेवताना चिंता, राग, भीती, उद्वेग यांपासून दूर राहावे.</li>
+            <li>जेवण <strong>एकाग्रतेने व हळूहळू चावून</strong> करावे; जेणेकरून पचन चांगले होते.</li>
+            <li>जेवताना मोबाईल, टीव्ही यांचा वापर <strong>टाळावा</strong>.</li>
+            <li>अन्नाबद्दल <strong>कृतज्ञ भावना</strong> बाळगावी.</li>
+            <li>गरजेपुरताच आहार घ्यावा — अतिआहार टाळावा.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Q4(5) -->
+      <div class="short-ans" style="border-top:1px dotted var(--rule); padding-top:8px;">
+        <div class="short-q">(५) स्थूलपणा कसा टाळता येऊ शकतो ते तुमच्या शब्दांत मांडा.</div>
+        <div style="margin-left:8px; line-height:1.8; font-size:0.93rem;">
+          स्थूलपणा टाळण्यासाठी पुढील उपाय करता येतात :
+          <ul class="bullet-list">
+            <li><strong>नियमित व्यायाम</strong> व शारीरिक हालचाली कराव्यात — धावणे, पोहणे, सायकलिंग इत्यादी.</li>
+            <li><strong>संतुलित व पोषणयुक्त आहार</strong> घ्यावा — फळे, भाज्या, धान्य यांचा समावेश असावा.</li>
+            <li>जंक फूड, तेलकट, तळलेले व अतिगोड पदार्थ <strong>टाळावेत</strong>.</li>
+            <li>भरपूर पाणी प्यावे व शरीर <strong>हायड्रेट</strong> ठेवावे.</li>
+            <li>पुरेशी <strong>झोप (७-८ तास)</strong> घ्यावी.</li>
+            <li>स्क्रीन टाईम कमी करावा व मैदानावर <strong>मोकळ्या हवेत खेळावे</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ प्र.५ ============ -->
+    <div class="section-divider">प्रश्न ५</div>
+    <div class="question-block">
+      <span class="q-label">प्र.५</span>
+      <div class="q-title">खालील तक्ता पूर्ण करा. <span class="marks">४ गुण</span></div>
+
+      <table class="takta">
+        <tr>
+          <th style="width:40%;">उत्तेजके (Doping Substance)</th>
+          <th>दुष्परिणाम</th>
+        </tr>
+        <tr>
+          <td>डायथुरेटिक्स (Diuretics)</td>
+          <td><span class="fill-ans">शरीरातील पाण्याची कमतरता (निर्जलीकरण), स्नायूंना गोळे येणे</span></td>
+        </tr>
+        <tr>
+          <td><span class="fill-ans">अ‍ॅनाबॉलिक स्टेरॉईड्स (Anabolic Steroids)</span></td>
+          <td>हृदयविकाराच्या झटक्याने मृत्यू संभव</td>
+        </tr>
+        <tr>
+          <td>एरिथ्रोपोईटिन (EPO)</td>
+          <td><span class="fill-ans">रक्त घट्ट होणे, रक्तवाहिन्या बंद पडणे, हृदयविकार</span></td>
+        </tr>
+        <tr>
+          <td><span class="fill-ans">पेप्टाईड हार्मोन्स / ह्यूमन ग्रोथ हार्मोन (HGH)</span></td>
+          <td>किडनी निकामी होणे, यकृताचा कर्करोग</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align:center; padding: 14px; background:#fdf0e0; border-top: 2px solid var(--border); color: var(--accent); font-size:0.8rem; border-radius: 0 0 8px 8px;">
+      ✅ सर्व प्रश्नांची उत्तरे संपली &nbsp;|&nbsp; All the Best! &nbsp;|&nbsp; इयत्ता ११ वी — आरोग्य आणि शारीरिक शिक्षण
+    </div>
+
+  </div><!-- end answer-sheet -->
+</div><!-- end page-wrapper -->
+</body>
+</html>
