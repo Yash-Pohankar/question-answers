@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 11 English – Solved Paper | BVP</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --bg: #faf8f2;
+    --card: #ffffff;
+    --border: #d6cfc0;
+    --accent: #1a3a5c;
+    --accent2: #c0392b;
+    --accent3: #27613a;
+    --highlight: #fff3cd;
+    --text: #1c1c1c;
+    --muted: #555;
+    --tag-bg: #eaf0fa;
+    --tag-text: #1a3a5c;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+    padding: 0 0 60px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--accent);
+    color: #fff;
+    padding: 28px 40px 22px;
+    border-bottom: 4px solid var(--accent2);
+  }
+  header .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  header h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  header .meta {
+    font-size: 0.92rem;
+    opacity: 0.82;
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .marks-pill {
+    background: var(--accent2);
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* ── LAYOUT ── */
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── SECTION BANNER ── */
+  .section-banner {
+    margin: 38px 0 0;
+    padding: 10px 22px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 3px;
+  }
+
+  /* ── QUESTION BLOCK ── */
+  .q-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-top: 22px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .q-block .q-head {
+    background: #f0ece3;
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .q-block .q-head .q-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent);
+  }
+  .marks-tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border: 1px solid #b5c8e8;
+    border-radius: 4px;
+    padding: 2px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .q-body {
+    padding: 16px 22px 20px;
+  }
+
+  /* ── SUB-QUESTION ── */
+  .sub-q {
+    margin-top: 18px;
+  }
+  .sub-q:first-child { margin-top: 0; }
+  .sub-label {
+    font-weight: 700;
+    color: var(--accent2);
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .sub-label .sub-marks {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-weight: 400;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .question-text {
+    background: var(--highlight);
+    border-left: 3px solid #e6a817;
+    padding: 7px 12px;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #555;
+    border-radius: 0 3px 3px 0;
+  }
+  .answer {
+    font-size: 1rem;
+    color: var(--text);
+  }
+
+  /* ── LISTS ── */
+  ol.ans-list, ul.ans-list {
+    padding-left: 22px;
+    margin-top: 4px;
+  }
+  ol.ans-list li, ul.ans-list li {
+    margin-bottom: 5px;
+  }
+
+  /* ── KEYWORD HIGHLIGHT ── */
+  .kw {
+    font-weight: 700;
+    color: var(--accent3);
+  }
+  .kw2 { font-weight: 700; color: var(--accent); }
+
+  /* ── CORRECTION BOX ── */
+  .correction {
+    display: inline-block;
+    background: #fdecea;
+    border: 1px solid #e8b4b1;
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 0.93rem;
+  }
+  .correct-text {
+    display: inline-block;
+    background: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 0.93rem;
+  }
+
+  /* ── TABLE ── */
+  table.vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 0.95rem;
+  }
+  table.vocab-table th {
+    background: #f0ece3;
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  table.vocab-table td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+  }
+  table.vocab-table tr:nth-child(even) td { background: #faf8f4; }
+
+  /* ── MIND MAP ── */
+  .mind-map-container {
+    margin-top: 12px;
+    padding: 16px;
+    background: #f7fbf4;
+    border: 1px solid #b2d9b8;
+    border-radius: 6px;
+  }
+  .mind-map-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .mind-map-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .branch {
+    background: #fff;
+    border: 2px solid var(--accent3);
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+  .branch-head {
+    font-weight: 700;
+    color: var(--accent3);
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+  .branch ul {
+    list-style: disc inside;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+
+  /* ── SPEECH BOX ── */
+  .speech-box {
+    background: #f8f4ff;
+    border: 1px solid #c9b8ee;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-top: 8px;
+    font-size: 0.97rem;
+  }
+  .speech-box p { margin-bottom: 8px; }
+  .speech-box p:last-child { margin-bottom: 0; }
+  .speech-para-label {
+    font-weight: 700;
+    color: #6a3fa0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── POEM BOX ── */
+  .poem-box {
+    background: #f0f7ff;
+    border-left: 4px solid var(--accent);
+    padding: 12px 18px;
+    margin-top: 8px;
+    font-style: italic;
+    line-height: 2;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* ── APPRECIATION BOX ── */
+  .appreciation {
+    background: #fff9f0;
+    border: 1px solid #f0d49a;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-top: 8px;
+  }
+  .appreciation-row {
+    margin-bottom: 10px;
+  }
+  .appreciation-row:last-child { margin-bottom: 0; }
+  .appr-label {
+    font-weight: 700;
+    color: #b5600a;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+  }
+
+  /* ── SCRIPT BOX ── */
+  .script-box {
+    background: #f5f9ff;
+    border: 1px solid #9bbfea;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-top: 8px;
+    font-size: 0.96rem;
+  }
+  .script-line {
+    margin-bottom: 8px;
+  }
+  .script-stage {
+    font-weight: 700;
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  /* ── DIVIDER ── */
+  hr.q-divider {
+    border: none;
+    border-top: 1px dashed var(--border);
+    margin: 14px 0;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; font-size: 14px; }
+    header { background: #1a3a5c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .q-block { box-shadow: none; border: 1px solid #ccc; }
+    .section-banner { background: #1a3a5c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 18px 18px 14px; }
+    header h1 { font-size: 1.4rem; }
+    .wrapper { padding: 0 12px; }
+    .q-body { padding: 12px 14px 16px; }
+    .mind-map-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrapper">
+    <div class="top-row">
+      <div>
+        <div class="meta">BVP / A &nbsp;|&nbsp; Second Semester Examination &nbsp;|&nbsp; Class 11th</div>
+        <h1>Subject: ENGLISH — Complete Solved Paper</h1>
+        <div class="meta">Time: 3 Hrs. &nbsp;|&nbsp; Maharashtra State Board</div>
+      </div>
+      <div class="marks-pill">Total Marks: 80</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrapper">
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--              SECTION I : PROSE                      -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="section-banner">Section – I : Prose</div>
+
+<!-- Q.1.(A) Tiger Hill -->
+<div class="q-block">
+  <div class="q-head">
+    <span class="q-title">Q.1.(A) — Read the extract (Tiger Hill) and complete the activities</span>
+    <span class="marks-tag">12 Marks</span>
+  </div>
+  <div class="q-body">
+
+    <!-- A-1 -->
+    <div class="sub-q">
+      <div class="sub-label">A-1) Global Understanding <span class="sub-marks">[2 Marks]</span></div>
+      <div class="question-text">Complete the following list of preparations made for the assault on Tiger Hill.</div>
+      <div class="answer">
+        <ol class="ans-list">
+          <li>Throughout the last week of June 1999, <span class="kw">18 Grenadiers probed</span> to establish the extent of the enemy's defences.</li>
+          <li>They also <span class="kw">explored to scout for suitable routes</span> for the assault.</li>
+          <li>After confirming the multidirectional assault as the best strategy, the commanding officer of <span class="kw">41 Field Regiment drew up an elaborate artillery fire plan.</span></li>
+          <li>Individual guns were used in a <span class="kw">direct firing role.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-2 -->
+    <div class="sub-q">
+      <div class="sub-label">A-2) Complex Factual <span class="sub-marks">[2 Marks]</span></div>
+      <div class="question-text">Write one or two lines about each of the following units: (1) 18 Grenadiers &nbsp; (2) 8 Sikh</div>
+      <div class="answer">
+        <p><span class="kw2">(1) 18 Grenadiers:</span> Throughout the last week of June 1999, 18 Grenadiers probed to establish the extent of the enemy's defences and scouted for suitable routes for the assault on Tiger Hill. They were rested and recouped after their achievements at Tololing and Hump.</p>
+        <br>
+        <p><span class="kw2">(2) 8 Sikh:</span> 8 Sikh was already deployed at the base of Tiger Hill. Both 18 Grenadiers and 8 Sikh were assisted by a crack team from the High Altitude Warfare School, with maximum possible artillery, engineering and other combat support.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-3 -->
+    <div class="sub-q">
+      <div class="sub-label">A-3) Interference / Interpretation / Analysis <span class="sub-marks">[2 Marks]</span></div>
+      <div class="question-text">Enlist any four facts which made the capturing of Tiger Hill a national challenge.</div>
+      <div class="answer">
+        <ol class="ans-list">
+          <li>Tiger Hill <span class="kw">towers majestically above all other mountaintops</span> in its vicinity, making it naturally difficult to capture.</li>
+          <li>Being located <span class="kw">almost 10 kilometres north of the Srinagar–Kargil–Leh highway</span>, the enemy position dominated large parts of the highway.</li>
+          <li>The <span class="kw">sharp triangular top</span> of Tiger Hill was clearly visible from the highway and appeared almost impossible to capture.</li>
+          <li>The <span class="kw">media had projected the entire episode as a national challenge</span>, making its capture a matter of national pride and intense public focus.</li>
+        </ol>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-4 -->
+    <div class="sub-q">
+      <div class="sub-label">A-4) Personal Response <span class="sub-marks">[2 Marks]</span></div>
+      <div class="question-text">Would you like to join the Indian Army, Navy, or Airforce? If yes, then elaborate.</div>
+      <div class="answer">
+        <p>Yes, I would like to join the <span class="kw">Indian Army.</span> The bravery and selfless dedication displayed by our soldiers during operations like the capture of Tiger Hill is deeply inspiring. Serving in the Army would give me the opportunity to defend my nation and protect the lives of millions of citizens. It is a profession that builds strong discipline, leadership, and teamwork. The feeling of wearing a uniform and serving the country fills one with immense pride and patriotism. I believe no profession is more noble than one in which a person is willing to sacrifice personal comfort for the safety of others.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-5 -->
+    <div class="sub-q">
+      <div class="sub-label">A-5) Language Study — Do as directed <span class="sub-marks">[2 Marks]</span></div>
+      <div class="answer">
+
+        <p><strong>(1)</strong> <em>Although located almost 10 kilometres north of the Srinagar–Kargil–Leh–highway the enemy position on this mountain top dominated parts of this highway.</em><br>(Divide the sentence into clauses and give the use of the underlined word)</p>
+        <ul class="ans-list" style="margin-top:6px;">
+          <li><span class="kw2">Main Clause:</span> The enemy position on this mountain top dominated parts of this highway.</li>
+          <li><span class="kw2">Subordinate Clause:</span> Although located almost 10 kilometres north of the Srinagar–Kargil–Leh–highway.</li>
+          <li><span class="kw2">Use of 'Although':</span> It is a <em>subordinating conjunction</em> used to introduce a clause of concession/contrast. It highlights that despite being far from the highway, the enemy still had control over it.</li>
+        </ul>
+
+        <br>
+        <p><strong>(2)</strong> Both these units were assisted by a crack team from the High Altitude Warfare School. <em>(Rewrite beginning 'A crack team….')</em></p>
+        <p class="correct-text" style="margin-top:6px; display:block;">A crack team from the High Altitude Warfare School assisted both these units.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-6 -->
+    <div class="sub-q">
+      <div class="sub-label">A-6) Language Study <span class="sub-marks">[2 Marks]</span></div>
+      <div class="answer">
+
+        <p><strong>(1) Meaning of words/phrases from the extract:</strong></p>
+        <table class="vocab-table" style="margin-top:6px; margin-bottom:12px;">
+          <tr><th>Word / Phrase</th><th>Meaning</th></tr>
+          <tr><td>(i) projected</td><td>Presented / portrayed to the public</td></tr>
+          <tr><td>(ii) episode</td><td>An incident or event</td></tr>
+          <tr><td>(iii) assigned</td><td>Given a particular duty or task</td></tr>
+          <tr><td>(iv) features</td><td>Geographical characteristics of a place</td></tr>
+          <tr><td>(v) to scout for</td><td>To search for / look for carefully</td></tr>
+        </table>
+
+        <p><strong>(2) Words/Phrases related to war strategies from the extract:</strong></p>
+        <p style="margin-top:4px;">probed, establish defences, scout for routes, multidirectional assault, elaborate artillery fire plan, direct firing role, combat support, fortified position, maximum possible artillery.</p>
+
+        <br>
+        <p><strong>Meaning of the idiom "to hit the bull's eye":</strong> To achieve exactly what one aimed for; to be perfectly accurate.</p>
+        <p><strong>Sentence:</strong> <em>The student hit the bull's eye by answering every question correctly in the examination.</em></p>
+
+        <br>
+        <p><strong>Words related to war affairs from the extract:</strong></p>
+        <p>assault, defences, artillery, regiment, multibarrelled, rocket launchers, mortars, Air Force, combat support, fortified position, Grenadiers, engineering.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q.1.(B) Language Study -->
+<div class="q-block">
+  <div class="q-head">
+    <span class="q-title">Q.1.(B) — Language Study</span>
+    <span class="marks-tag">4 Marks</span>
+  </div>
+  <div class="q-body">
+
+    <!-- B-1 -->
+    <div class="sub-q">
+      <div class="sub-label">B-1) Do as directed <span class="sub-marks">[3 Marks]</span></div>
+      <div class="answer">
+
+        <p><strong>(1)</strong> We can accept our life gracefully. <em>(Rewrite using modal auxiliary showing compulsion)</em></p>
+        <p class="correct-text" style="display:block; margin-top:4px; margin-bottom:12px;">We <span class="kw">must</span> accept our life gracefully.</p>
+
+        <p><strong>(2)</strong> As I entered the post office, the post master presented me with a telegram. <em>(Begin the sentence 'No sooner….')</em></p>
+        <p class="correct-text" style="display:block; margin-top:4px; margin-bottom:12px;"><span class="kw">No sooner did I enter the post office than</span> the post master presented me with a telegram.</p>
+
+        <p><strong>(3)</strong> The mother roots after her child. <em>(Make it a rhetorical question)</em></p>
+        <p class="correct-text" style="display:block; margin-top:4px;">Does the mother not root after her child?</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- B-2 -->
+    <div class="sub-q">
+      <div class="sub-label">B-2) Spot the Error <span class="sub-marks">[1 Mark]</span></div>
+      <div class="question-text">Summers in Delhi are extreme hot.</div>
+      <div class="answer">
+        <p><span class="correction">'extreme'</span> → should be → <span class="correct-text">'extremely'</span></p>
+        <p style="margin-top:6px;"><strong>Reason:</strong> An adverb (extremely) must be used to modify an adjective (hot), not an adjective (extreme).</p>
+        <p style="margin-top:6px;"><strong>Correct Sentence:</strong> <em>Summers in Delhi are <span class="kw">extremely</span> hot.</em></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q.2.(A) Traveller extract -->
+<div class="q-block">
+  <div class="q-head">
+    <span class="q-title">Q.2.(A) — Read the extract (The Traveller and his Bag) and complete activities</span>
+    <span class="marks-tag">12 Marks</span>
+  </div>
+  <div class="q-body">
+
+    <!-- A-1 -->
+    <div class="sub-q">
+      <div class="sub-label">A-1) Global Understanding <span class="sub-marks">[2 Marks]</span></div>
+      <div class="question-text">Complete the following sentence by choosing two correct alternatives. "The souvenirs symbolized personal freedom because…"</div>
+      <div class="answer">
+        <p>The two correct alternatives are:</p>
+        <ol class="ans-list">
+          <li><span class="kw">(1) They symbolized personal freedom</span> — because at the end, when the man built a statue of all his objects and left them behind, he experienced true freedom from his burdensome past.</li>
+          <li><span class="kw">(4) There were bitter memories attached to them</span> — each souvenir was connected to a misfortune or difficulty the man had experienced on his journey.</li>
+        </ol>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-2 -->
+    <div class="sub-q">
+      <div class="sub-label">A-2) Complex Factual <span class="sub-marks">[2 Marks]</span></div>
+      <div class="question-text">Describe the two scenes enacted by the actor. (about 50 words)</div>
+      <div class="answer">
+        <p>The actor enacted two scenes. In the <span class="kw">first scene</span>, he walked around picking things up, working harder and harder to carry the bag until he finally fell down exhausted. In the <span class="kw">second scene</span>, after the traveller recognized himself and started crying, the actor dramatically enacted the story connected to each souvenir from the bag, making the traveller relive his painful memories.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-3 -->
+    <div class="sub-q">
+      <div class="sub-label">A-3) Inference / Interpretation / Analysis <span class="sub-marks">[2 Marks]</span></div>
+      <div class="question-text">Guess the advice given through the story. (about 50 words)</div>
+      <div class="answer">
+        <p>The story advises us that we should <span class="kw">not burden ourselves with painful memories and regrets of the past.</span> Just as the traveller collected souvenirs from every misfortune, we tend to hold on to our sorrows. True personal freedom lies in <span class="kw">letting go of these emotional burdens</span> and moving forward in life with a light heart.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-4 -->
+    <div class="sub-q">
+      <div class="sub-label">A-4) Personal Response <span class="sub-marks">[2 Marks]</span></div>
+      <div class="question-text">Explain the following quote in about 50 words: "Burden of life becomes a real burden when not shared."</div>
+      <div class="answer">
+        <p>This quote means that the difficulties and hardships of life feel much heavier when we face them <span class="kw">alone.</span> When we share our problems and sorrows with others, the weight becomes lighter. Just as the traveller's bag grew heavier as he collected souvenirs in solitude, <span class="kw">sharing our pain with loved ones provides relief, strength, and a sense of belonging.</span></p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-5 -->
+    <div class="sub-q">
+      <div class="sub-label">A-5) Language Study <span class="sub-marks">[2 Marks]</span></div>
+      <div class="answer">
+
+        <p><strong>(i)</strong> The actors approached him and asked why he was so sad. <em>(Change into direct narration)</em></p>
+        <p class="correct-text" style="display:block; margin-top:4px; margin-bottom:12px;">The actors approached him and asked, <span class="kw">"Why are you so sad?"</span></p>
+
+        <p><strong>(ii)</strong> He looked at the bag and started crying. <em>(Rewrite using 'No sooner….than')</em></p>
+        <p class="correct-text" style="display:block; margin-top:4px;"><span class="kw">No sooner did he look at the bag than</span> he started crying.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-6 Vocabulary -->
+    <div class="sub-q">
+      <div class="sub-label">A-6) Vocabulary — Match Column A with Column B <span class="sub-marks">[2 Marks]</span></div>
+      <div class="answer">
+        <table class="vocab-table">
+          <tr><th>Column A</th><th>Column B (Correct Match)</th></tr>
+          <tr><td>(1) Souvenir</td><td>(c) Object kept as a reminder</td></tr>
+          <tr><td>(2) Rehearsal</td><td>(d) Practice performance of a play</td></tr>
+          <tr><td>(3) Monument</td><td>(a) Something set up to keep alive the memory of an event</td></tr>
+          <tr><td>(4) Peculiar</td><td>(b) Unique</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q.2.(B) Summary Writing -->
+<div class="q-block">
+  <div class="q-head">
+    <span class="q-title">Q.2.(B) — Summary Writing</span>
+    <span class="marks-tag">3 Marks</span>
+  </div>
+  <div class="q-body">
+    <div class="question-text">Write a summary of the above extract with a suitable title. (Hints: heavy bag, street actor, personal freedom, message)</div>
+    <div class="answer">
+      <p><strong>Title: <span class="kw">The Burden of Memories</span></strong></p>
+      <br>
+      <p>A man was on a long journey carrying a heavy bag. Whenever he experienced a misfortune, he had a custom of placing a souvenir into his bag as a reminder. As a result, the bag grew heavier and heavier with every passing mile. One day, he arrived at a crossroad where he saw a group of street actors improvising a play. One actor imitated the burdened man, dramatically showing how the weight crushed him until he fell exhausted. When the traveller recognized himself in the performance, he began to cry. The actor then enacted the story of each souvenir. Finally, the actor suggested the traveller build a monument of all his objects. The man did so, and upon leaving the statue behind, he felt a sense of personal freedom for the first time. The message of the story is that <span class="kw">we must let go of the painful memories of the past to achieve true freedom and peace in life.</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- Q.2.(C) Mind Mapping -->
+<div class="q-block">
+  <div class="q-head">
+    <span class="q-title">Q.2.(C) — Mind Mapping: Birthday Party for a Friend</span>
+    <span class="marks-tag">3 Marks</span>
+  </div>
+  <div class="q-body">
+    <div class="question-text">Develop a Mind Map on the topic: 'A Birthday Party for a Friend' (2–3 main branches, 2–3 sub-branches each)</div>
+    <div class="mind-map-container">
+      <div class="mind-map-title">🎂 BIRTHDAY PARTY FOR A FRIEND</div>
+      <div class="mind-map-grid">
+        <div class="branch">
+          <div class="branch-head">🏠 Venue &amp; Arrangements</div>
+          <ul>
+            <li>Home / Garden</li>
+            <li>Restaurant / Hall</li>
+            <li>Decorations &amp; Theme</li>
+          </ul>
+        </div>
+        <div class="branch">
+          <div class="branch-head">🍕 Food &amp; Refreshments</div>
+          <ul>
+            <li>Birthday Cake</li>
+            <li>Snacks &amp; Drinks</li>
+            <li>Dinner / Lunch</li>
+          </ul>
+        </div>
+        <div class="branch">
+          <div class="branch-head">🎉 Activities &amp; Entertainment</div>
+          <ul>
+            <li>Games &amp; Fun</li>
+            <li>Music &amp; Dance</li>
+            <li>Photo Booth</li>
+          </ul>
+        </div>
+        <div class="branch">
+          <div class="branch-head">👥 Guests</div>
+          <ul>
+            <li>Close Friends</li>
+            <li>Family Members</li>
+            <li>Classmates</li>
+          </ul>
+        </div>
+        <div class="branch">
+          <div class="branch-head">🎁 Gifts</div>
+          <ul>
+            <li>Personalized Gifts</li>
+            <li>Books / Gadgets</li>
+            <li>Handmade Cards</li>
+          </ul>
+        </div>
+        <div class="branch">
+          <div class="branch-head">📋 Planning</div>
+          <ul>
+            <li>Invitations</li>
+            <li>Budget</li>
+            <li>Schedule / Timing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--            SECTION II : POETRY                      -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="section-banner">Section – II : Poetry</div>
+
+<!-- Q.3.(A) -->
+<div class="q-block">
+  <div class="q-head">
+    <span class="q-title">Q.3.(A) — Extract from "Between Nose and Eyes" — Complete the activities</span>
+    <span class="marks-tag">10 Marks</span>
+  </div>
+  <div class="q-body">
+
+    <!-- A-1 -->
+    <div class="sub-q">
+      <div class="sub-label">A-1) Global Understanding <span class="sub-marks">[2 Marks]</span></div>
+      <div class="answer">
+        <p><strong>(1)</strong> State whether True or False; correct if false:</p>
+        <p style="margin-top:6px;"><em>"The Ear was appointed as a judge."</em></p>
+        <p style="margin-top:4px;"><span class="kw">TRUE.</span> Chief Baron Ear sat to balance the laws, famed for his talent in nicely discerning — meaning Ear was appointed as the judge in this contest.</p>
+
+        <br>
+        <p><strong>(2)</strong> The Tongue justifies the possession of spectacles on behalf of the Nose. Pick up the expressions from the extract that argue in favour of the Nose.</p>
+        <ul class="ans-list" style="margin-top:6px;">
+          <li>"The Nose has had spectacles always in wear, <em>Which amounts to possession time out of mind.</em>"</li>
+          <li>"The spectacles were made with a straddle <em>As wide as the ridge of the Nose is; in short, Designed to sit close to it, just like a saddle.</em>"</li>
+          <li>"The spectacles plainly were made for the Nose, And the Nose was as plainly intended for them."</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-2 -->
+    <div class="sub-q">
+      <div class="sub-label">A-2) Inferences / Interpretation / Analysis <span class="sub-marks">[2 Marks]</span></div>
+      <div class="answer">
+        <p><strong>(1) State what you understood by the given phrases:</strong></p>
+        <ul class="ans-list" style="margin-top:6px; margin-bottom:10px;">
+          <li><span class="kw2">(a) Unhappily wrong</span> — To cause someone unpleasant trouble or set someone in a position of conflict and discomfort.</li>
+          <li><span class="kw2">(b) Time out of mind</span> — Since time immemorial; from a time so far back that it cannot be remembered.</li>
+        </ul>
+
+        <p><strong>(2)</strong> For what reason were Ear and Tongue given the duties?</p>
+        <p style="margin-top:5px;"><span class="kw2">Ear</span> was given the duty of a judge because he was "famed for his talent in nicely discerning" — meaning he had the ability to carefully listen and make fair judgements.</p>
+        <p style="margin-top:5px;"><span class="kw2">Tongue</span> was given the duty of a lawyer because she argued "with great deal of skill, and a wig full of learning" — meaning she was eloquent, knowledgeable, and skilled in argumentation.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-3 -->
+    <div class="sub-q">
+      <div class="sub-label">A-3) Personal Response <span class="sub-marks">[2 Marks]</span></div>
+      <div class="question-text">Justify the arguments of the Tongue in the extract.</div>
+      <div class="answer">
+        <p>The Tongue argued brilliantly in favour of the Nose. Her first argument was based on <span class="kw">long possession</span> — the Nose has always had the spectacles, which amounts to an undeniable claim. Her second argument was based on <span class="kw">physical design</span> — the spectacles were made with a straddle as wide as the ridge of the Nose, perfectly fitted like a saddle. These arguments are logically sound because they are supported both by tradition and physical evidence. Even the second half of the poem, where the Tongue argues for the Eyes, shows her skill; but the original arguments for the Nose remain the stronger and more convincing ones.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-4 -->
+    <div class="sub-q">
+      <div class="sub-label">A-4) Poetic Devices <span class="sub-marks">[2 Marks]</span></div>
+      <div class="question-text">Comment on the following characters depicted in the extract, in a sentence or a phrase. (a) Nose &nbsp; (b) Eyes</div>
+      <div class="answer">
+        <ul class="ans-list">
+          <li><span class="kw2">(a) Nose:</span> The Nose is portrayed as the rightful and long-standing claimant of the spectacles, supported by the fact that they were physically designed to rest upon it.</li>
+          <li><span class="kw2">(b) Eyes:</span> The Eyes are depicted as the challenging claimants who dispute the Nose's ownership of the spectacles, arguing that since they are the ones who use spectacles to see, the spectacles should belong to them.</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- A-5 -->
+    <div class="sub-q">
+      <div class="sub-label">A-5) Poetic Creativity <span class="sub-marks">[2 Marks]</span></div>
+      <div class="question-text">Write four lines of poetry on the ear. The beginning is given: "There are two …"</div>
+      <div class="answer">
+        <div class="poem-box">
+          There are two ears on my head,<br>
+          They hear every word that is said,<br>
+          They listen to music, laughter and cheer,<br>
+          And bring to my heart, joy throughout the year.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Q.3.(B) Poetic Appreciation -->
+<div class="q-block">
+  <div class="q-head">
+    <span class="q-title">Q.3.(B) — Poetic Appreciation of the given poem extract</span>
+    <span class="marks-tag">4 Marks</span>
+  </div>
+  <div class="q-body">
+    <div class="question-text">Read the poem and write appreciation as per the given points: (1) Theme (2) Language (3) Message (4) My Opinion</div>
+    <div class="appreciation">
+      <div class="appreciation-row">
+        <div class="appr-label">(1) Theme</div>
+        <p>The poem presents a <span class="kw">humorous legal dispute</span> between the Nose and the Eyes over the right to own and wear spectacles. It satirically mirrors real-life arguments and courtroom debates where both sides use logic and clever rhetoric to justify their claims.</p>
+      </div>
+      <div class="appreciation-row">
+        <div class="appr-label">(2) Language</div>
+        <p>The language of the poem is <span class="kw">witty, playful, and formal</span>. The poet makes extensive use of <em>personification</em>, giving human qualities to body parts like the Nose, Eyes, Ear, and Tongue. The tone mimics a courtroom drama, with formal legal language used in a comical context. The rhyme scheme is regular and adds a musical quality to the poem.</p>
+      </div>
+      <div class="appreciation-row">
+        <div class="appr-label">(3) Message</div>
+        <p>The poem conveys the message that <span class="kw">every dispute has two sides</span>, and clever arguments can be constructed for either party. It also satirizes the way legal battles are often won not by truth alone but by the most persuasive speaker. Ultimately, even the wisest judge makes decisions that may not fully satisfy everyone.</p>
+      </div>
+      <div class="appreciation-row">
+        <div class="appr-label">(4) My Opinion</div>
+        <p>I find this poem <span class="kw">extremely entertaining and thought-provoking</span>. The poet's creativity in using body parts as characters in a courtroom drama is both original and amusing. The poem not only makes us laugh but also subtly encourages us to think critically about arguments and judgements in everyday life. It is a memorable poem that blends humour with wisdom.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--         SECTION III : WRITING SKILL                 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="section-banner">Section – III : Writing Skill</div>
+
+<div class="q-block">
+  <div class="q-head">
+    <span class="q-title">Q.4 — Complete the activities as per the instructions</span>
+    <span class="marks-tag">16 Marks</span>
+  </div>
+  <div class="q-body">
+
+    <!-- Q4(A) -->
+    <div class="sub-q">
+      <div class="sub-label">Q.4(A) — Script for Prize Distribution Ceremony <span class="sub-marks">[4 Marks]</span></div>
+      <div class="question-text">Imagine you are the compere of a 'Prize Distribution Ceremony' of your college. Write a script using the given points: (i) Introduction (ii) Welcome speech (iii) Lighting the lamp (iv) Welcome song (v) Main events (vi) Vote of thanks</div>
+      <div class="script-box">
+        <div class="script-line"><span class="script-stage">[Introduction]</span><br>Good morning, respected Principal, Vice Principal, esteemed teachers, honourable Chief Guest, proud parents, and dear students. I am [Name], and I have the great honour of being your host for today's Prize Distribution Ceremony. Welcome to this glorious occasion where we celebrate the achievements of our brilliant students.</div>
+        <div class="script-line"><span class="script-stage">[Welcome Speech]</span><br>We warmly welcome our Chief Guest [Name], our respected Principal [Name], Vice Principal [Name], and all distinguished guests present here today. Your presence adds immense grace and inspiration to this special occasion.</div>
+        <div class="script-line"><span class="script-stage">[Lighting the Lamp]</span><br>I now humbly request our respected Principal and Chief Guest to kindly come forward and light the ceremonial lamp — the symbol of knowledge, wisdom, and enlightenment.</div>
+        <div class="script-line"><span class="script-stage">[Welcome Song]</span><br>Our talented students will now set the mood for this joyous occasion with a melodious welcome song. Let us enjoy their performance.</div>
+        <div class="script-line"><span class="script-stage">[Main Events — Prize Distribution]</span><br>We shall now proceed to the prize distribution ceremony. I request our respected Principal to announce the award categories. I then invite our honourable Chief Guest to kindly distribute the prizes to our deserving achievers. [Prizes are distributed amidst applause.]</div>
+        <div class="script-line"><span class="script-stage">[Vote of Thanks]</span><br>I now request [Name], [Designation], to kindly propose the vote of thanks. [After vote of thanks] — This brings our Prize Distribution Ceremony to a wonderful close. Thank you all for gracing this occasion with your presence. Have a blessed day!</div>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- Q4(B) -->
+    <div class="sub-q">
+      <div class="sub-label">Q.4(B) — Teacher's Day Celebration Programme Schedule <span class="sub-marks">[4 Marks]</span></div>
+      <div class="question-text">Imagine you have to arrange a Teacher's Day Celebration Programme in your college. Prepare a schedule of the programme.</div>
+      <div class="answer" style="margin-top:8px;">
+        <p><strong>Teacher's Day Celebration Programme Schedule</strong></p>
+        <p style="margin:4px 0;"><strong>Date:</strong> 5th September &nbsp;|&nbsp; <strong>Venue:</strong> College Auditorium &nbsp;|&nbsp; <strong>Time:</strong> 10:00 AM – 12:30 PM</p>
+        <table class="vocab-table" style="margin-top:8px;">
+          <tr><th>Time</th><th>Event</th></tr>
+          <tr><td>10:00 AM</td><td>Welcome and Introduction by the Host</td></tr>
+          <tr><td>10:05 AM</td><td>Lighting of the Lamp by Principal and Chief Guest</td></tr>
+          <tr><td>10:15 AM</td><td>Welcome Song by Students</td></tr>
+          <tr><td>10:25 AM</td><td>Speech by College Captain / Students' Representative</td></tr>
+          <tr><td>10:40 AM</td><td>Cultural Performances — Dance, Skit, Music</td></tr>
+          <tr><td>11:15 AM</td><td>Felicitation and Honouring of Teachers by Students</td></tr>
+          <tr><td>11:40 AM</td><td>Games and Fun Activities organized by Students for Teachers</td></tr>
+          <tr><td>12:00 PM</td><td>Address by the Principal</td></tr>
+          <tr><td>12:15 PM</td><td>Vote of Thanks</td></tr>
+          <tr><td>12:25 PM</td><td>National Anthem</td></tr>
+          <tr><td>12:30 PM</td><td>Distribution of Refreshments</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- Q4(C) -->
+    <div class="sub-q">
+      <div class="sub-label">Q.4(C) — Script for Annual Day Function (as Host) <span class="sub-marks">[4 Marks]</span></div>
+      <div class="question-text">As a host, how do you prepare the script on the topic of 'Annual Day Function'?</div>
+      <div class="script-box">
+        <div class="script-line"><span class="script-stage">[Opening]</span><br>Good evening, respected Principal [Name], Vice Principal, esteemed teachers, beloved parents, and dear students. I, [Name], have the honour and privilege of being your host for today's Annual Day celebration. A very warm welcome to each and every one of you.</div>
+        <div class="script-line"><span class="script-stage">[Welcome Note]</span><br>Annual Day is a momentous occasion when we come together to celebrate the talent, hard work, and achievements of our institution. It fills us with immense pride to witness the accomplishments of our students over the past year.</div>
+        <div class="script-line"><span class="script-stage">[Welcome Address by Principal]</span><br>I now request our respected Principal, [Name], to kindly deliver the welcome address. [After address] — Thank you, Sir/Ma'am, for your inspiring and motivating words.</div>
+        <div class="script-line"><span class="script-stage">[Lamp Lighting &amp; Cultural Performances]</span><br>I now invite the dignitaries to light the ceremonial lamp. [After lamp lighting] — Our talented students will now present a series of cultural performances — including dance, drama, and music — that they have worked hard to prepare.</div>
+        <div class="script-line"><span class="script-stage">[Prize Distribution]</span><br>We shall now move to the highlight of the evening — the prize distribution. I request our Chief Guest to kindly come forward to distribute the awards to our achievers.</div>
+        <div class="script-line"><span class="script-stage">[Closing]</span><br>I now request [Name] to deliver the vote of thanks. [After vote of thanks] — This brings our Annual Day celebration to a memorable and joyous close. Thank you all for being a part of this special evening. Good night and a safe journey home!</div>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- Q4(D) Speech -->
+    <div class="sub-q">
+      <div class="sub-label">Q.4(D) — Speech: "Benefits of Music" (about 150 words) <span class="sub-marks">[4 Marks]</span></div>
+      <div class="speech-box">
+        <p><span class="speech-para-label">Opening</span><br>
+        Respected teachers and dear friends,<br>
+        Today, I stand before you to speak on the topic — <strong>"Benefits of Music."</strong></p>
+
+        <p><span class="speech-para-label">Body</span><br>
+        Music is one of the most beautiful creations of mankind. It is a universal language that transcends barriers of age, culture, and geography. The benefits of music are numerous and profound.</p>
+
+        <p>Firstly, music has tremendous <strong>therapeutic value</strong>. It reduces stress, anxiety, and depression. Medical research has proved that music therapy helps patients recover faster from illness.</p>
+
+        <p>Secondly, music <strong>enhances our cognitive abilities</strong>. Learning music improves memory, concentration, and mathematical skills in children.</p>
+
+        <p>Thirdly, music <strong>brings people together</strong>, fostering unity, cultural understanding, and social harmony among people of different backgrounds.</p>
+
+        <p>Fourthly, music is a powerful medium of <strong>self-expression.</strong> It allows us to convey emotions that words alone cannot capture.</p>
+
+        <p><span class="speech-para-label">Conclusion</span><br>
+        In conclusion, music enriches our lives in countless ways. Let us embrace music and allow it to heal, inspire, and uplift every soul. Thank you.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--              SECTION IV : NOVEL                     -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="section-banner">Section – IV : Novel</div>
+
+<div class="q-block">
+  <div class="q-head">
+    <span class="q-title">Q.5 — Complete the following as per the instructions</span>
+    <span class="marks-tag">16 Marks</span>
+  </div>
+  <div class="q-body">
+
+    <!-- A -->
+    <div class="sub-q">
+      <div class="sub-label">Q.5(A) — Complete the activities as per the instructions <span class="sub-marks">[4 Marks]</span></div>
+      <div class="answer">
+
+        <p><strong>(1) Pick out the odd element from each:</strong></p>
+        <ul class="ans-list" style="margin-top:6px; margin-bottom:12px;">
+          <li>(a) Plot, Characters, Characterization, Dialogue → <span class="kw">Characterization</span> (it is a technique, not a structural element of drama)</li>
+          <li>(b) Characterization, Plot, Dialogue, Character → <span class="kw">Characterization</span></li>
+          <li>(c) Character, Characterization, Dialogue, Plot → <span class="kw">Characterization</span></li>
+          <li>(d) Dialogue, Characterization, Plot, Character → <span class="kw">Characterization</span></li>
+        </ul>
+
+        <p><strong>(2) Choose the correct alternative and rewrite the sentence:</strong></p>
+        <ul class="ans-list" style="margin-top:6px;">
+          <li>(a) Sentimental comedy is the type of <span class="kw">Drama.</span></li>
+          <li>(b) Tragedy is a drama which has an <span class="kw">unhappy</span> ending.</li>
+          <li>(c) In the Victorian period (1837 to 1901), the reign of Queen Victoria, the type of plays includes: <span class="kw">(iv) All types of plays were performed.</span></li>
+          <li>(d) This is NOT an element of drama: <span class="kw">(iii) Poetry.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- B -->
+    <div class="sub-q">
+      <div class="sub-label">Q.5(B) — Answer in about 50 words <span class="sub-marks">[4 Marks]</span></div>
+      <div class="answer">
+
+        <p><strong>(1) Discuss the theme of the play.</strong></p>
+        <p style="margin-top:5px; margin-bottom:14px;">The play <em>An Enemy of the People</em> by Henrik Ibsen has the central theme of <span class="kw">truth versus social pressure.</span> Dr. Stockman discovers that the town's baths are contaminated but faces resistance from the authorities and townspeople who prioritize economic interests over public health. The play powerfully explores <span class="kw">moral courage, individual integrity, and the conflict between personal conscience and a corrupt majority.</span></p>
+
+        <p><strong>(2) Write the character sketch of Dr. Stockman.</strong></p>
+        <p style="margin-top:5px;">Dr. Thomas Stockman is the protagonist of Ibsen's play. He is an <span class="kw">idealistic, honest, and courageous</span> man who firmly believes in truth above all else. As the Medical Officer of the baths, he discovers water contamination and bravely fights to expose it despite opposition from his brother, the Mayor, and the townspeople. He represents the spirit of <span class="kw">moral courage and unwavering integrity</span> in the face of a corrupt and self-interested society.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- C -->
+    <div class="sub-q">
+      <div class="sub-label">Q.5(C) — Grammar: Do as directed <span class="sub-marks">[4 Marks]</span></div>
+      <div class="answer">
+
+        <p><strong>(1)</strong> Further advance was stalled due to accurate fire by the enemy. <em>(Change the voice)</em></p>
+        <p class="correct-text" style="display:block; margin-top:4px; margin-bottom:12px;">The accurate fire of the enemy <span class="kw">stalled the further advance.</span></p>
+
+        <p><strong>(2)</strong> I spent my high school years in Mumbai. <em>(Choose the correct change into past perfect continuous tense)</em></p>
+        <p class="correct-text" style="display:block; margin-top:4px;"><span class="kw">(a) I had been spending my high school years in Mumbai.</span></p>
+        <p style="font-size:0.9rem; color:var(--muted); margin-top:4px;">Reason: Past perfect continuous tense is formed with 'had been + V-ing', showing an action that was ongoing before a point in the past.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <!-- D -->
+    <div class="sub-q">
+      <div class="sub-label">Q.5(D) — Put 'a', 'an' or 'the' at the proper place <span class="sub-marks">[4 Marks]</span></div>
+      <div class="answer">
+        <table class="vocab-table">
+          <tr><th>#</th><th>Sentence</th><th>Correct Article</th></tr>
+          <tr><td>1</td><td>Ravi walked up to ……… Principals.</td><td><span class="kw">the</span> Principals</td></tr>
+          <tr><td>2</td><td>Ahmad lives in ……… small town.</td><td><span class="kw">a</span> small town</td></tr>
+          <tr><td>3</td><td>I need ……… English Marathi dictionary.</td><td><span class="kw">an</span> English Marathi dictionary</td></tr>
+          <tr><td>4</td><td>My son is ……… MBBS Doctor.</td><td><span class="kw">an</span> MBBS Doctor</td></tr>
+          <tr><td>5</td><td>The nose is ……… organ for smelling.</td><td><span class="kw">an</span> organ for smelling</td></tr>
+          <tr><td>6</td><td>……… spectacles are solely for the purpose of helping the eyes to see clearly.</td><td><span class="kw">The</span> spectacles</td></tr>
+          <tr><td>7</td><td>……… child might be afraid of dogs.</td><td><span class="kw">A</span> child</td></tr>
+          <tr><td>8</td><td>What ……… beautiful day.</td><td><span class="kw">a</span> beautiful day</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
